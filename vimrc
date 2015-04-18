@@ -80,8 +80,6 @@ nmap <leader>c :let @/= ""<CR>
 nmap <silent> tw :set wrap!<CR>
 " update vimrc
 nmap <silent> <leader>uv :source $MYVIMRC<CR>
-" update snippets
-nmap <silent> <leader>us :call ReloadAllSnippets()<CR>
 " update syntax highlighting
 nmap <silent> <leader>uf :syntax sync fromstart<CR>
 " remove all trailing white space

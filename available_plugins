@@ -10,5 +10,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-surround'
 Plugin 'Align'
 Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'lilydjwg/colorizer'
+
+" Overkill
+" Plugin 'Valloric/YouCompleteMe'
