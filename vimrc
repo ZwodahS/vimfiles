@@ -18,27 +18,27 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Generic setup
 set encoding=utf-8
-set t_Co=256 " # Set terminal color
-syntax on " # Syntax highlighting on
-set title " # Display path at top
-set backspace=2 " # Allow backspace to delete other keys
-set wildignore+=*.swp,*.zip,*.o,*.class,*.jar,*.pyc,venv,venv3 " # set wild ignore for ctrlp
-set scroll=15 " # Set scroll for ctrl-U ctrl-D
+set t_Co=256                                                        " Set terminal color
+syntax on                                                           " Syntax highlighting on
+set title                                                           " Display path at top
+set backspace=2                                                     " Allow backspace to delete other keys
+set wildignore+=*.swp,*.zip,*.o,*.class,*.jar,*.pyc,venv,venv3      " set wild ignore for ctrlp
+set scroll=15                                                       " Set scroll for ctrl-U ctrl-D
 set autoread
-set hlsearch " # highlight search term
-set hidden " # allow buffer to switch when not saved
+set hlsearch                                                        " highlight search term
+set hidden                                                          " allow buffer to switch when not saved
 set ruler
-set smartindent
-set nowrap                                  " Disable line wrap
+set smartindent                                                     " Autoindent
+set nowrap                                                          " Disable line wrap
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Special EOL char
-set listchars=tab:¬\ ,eol:↵                 " set the character for special char
+set listchars=tab:¬\ ,eol:↵                                         " set the character for special char
 " toggle for showing eol and other char
 nmap <silent> tl :set list!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" line number and relative line number
-set number                                  " line number
-set relativenumber                          " relative line number
+set number                                                          " line number
+set relativenumber                                                  " relative line number
 hi LineNr ctermfg=27
 " Toggle for showing line number
 nmap <silent> tn :set number!<CR>
@@ -58,9 +58,9 @@ set shiftwidth=4
 set expandtab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" For Airline
-set laststatus=2                            " Always display the statusline in all windows
-set showtabline=2                           " Always display the tabline, even if there is only one tab
-set noshowmode                              " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set laststatus=2                                                    " Always display the statusline in all windows
+set showtabline=2                                                   " Always display the tabline, even if there is only one tab
+set noshowmode                                                      " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" set file type for some stuffs
 autocmd BufRead,BufNewFile .gitignore set filetype=conf.gitignore
@@ -85,8 +85,8 @@ nmap <silent> <leader>us :call ReloadAllSnippets()<CR>
 " update syntax highlighting
 nmap <silent> <leader>uf :syntax sync fromstart<CR>
 " remove all trailing white space
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 nmap <silent> <leader><space> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+" Toggle paste mode, (aka turn off smart indent)
 nmap <silent> tiii :set paste! <CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Edit important files
@@ -119,7 +119,6 @@ nmap <silent> tcc5 :hi Comment ctermfg = 13<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Gundo Plugin
 " gundo (undo tree)
 nmap <silent> tu :GundoToggle<CR>
@@ -128,6 +127,11 @@ nmap <silent> tu :GundoToggle<CR>
 " toggle nerd tree
 nmap <silent> tf :NERDTreeToggle<CR>
 let g:NERDTreeWinPos="right"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" YouCompleteMe Plugin
+let g:ycm_min_num_of_chars_for_completion = 4                       " Autocomplete only appears after 4 char (prevent if, def, for and all those keyword)
+let g:ycm_key_list_select_completion = ['<C-J>']                    " Set selection to <C-J>
+let g:ycm_key_list_previous_completion = ['<C-K>']                  " Set prev selection to <C-K>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Jedi Plugin
 let g:jedi#popup_on_dot = 0
@@ -145,18 +149,9 @@ hi def link CtrlSpaceNormal   Normal
 hi def link CtrlSpaceSelected Visual
 hi def link CtrlSpaceSearch   IncSearch
 hi def link CtrlSpaceStatus   StatusLine
-" Colors of CtrlSpace for Solarized Dark
-" (MacVim and Console Vim under iTerm2 with Solarized Dark theme)
-" Based on Solarized TablineSel
 hi CtrlSpaceSelected ctermfg=22 ctermbg=9 cterm=bold,reverse
-" Based on Solarized Tabline/TablineFill
-" original Normal
-" hi CtrlSpaceNormal   guifg=#839496 guibg=#073642 guisp=#839496 gui=NONE ctermfg=12 ctermbg=0 cterm=NONE
-" tweaked Normal with darker background in Gui
 hi CtrlSpaceNormal   ctermfg=12 ctermbg=0 cterm=NONE
-" Based on Title
 hi CtrlSpaceSearch   ctermfg=9 ctermbg=NONE term=bold cterm=bold
-" Based on PmenuThumb
 hi CtrlSpaceStatus   term=reverse cterm=reverse ctermfg=12 ctermbg=8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Easy Motion Plugin
@@ -190,12 +185,12 @@ nnoremap <silent> <leader>3 :call HiInterestingWord(3)<cr>
 nnoremap <silent> <leader>4 :call HiInterestingWord(4)<cr>
 nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
 nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
-hi def InterestingWord1 guifg=#000000 ctermfg=16 guibg=#ffa724 ctermbg=214
-hi def InterestingWord2 guifg=#000000 ctermfg=16 guibg=#aeee00 ctermbg=154
-hi def InterestingWord3 guifg=#000000 ctermfg=16 guibg=#8cffba ctermbg=121
-hi def InterestingWord4 guifg=#000000 ctermfg=16 guibg=#b88853 ctermbg=137
-hi def InterestingWord5 guifg=#000000 ctermfg=16 guibg=#ff9eb8 ctermbg=211
-hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
+hi def InterestingWord1 ctermfg=16 ctermbg=214
+hi def InterestingWord2 ctermfg=16 ctermbg=154
+hi def InterestingWord3 ctermfg=16 ctermbg=121
+hi def InterestingWord4 ctermfg=16 ctermbg=137
+hi def InterestingWord5 ctermfg=16 ctermbg=211
+hi def InterestingWord6 ctermfg=16 ctermbg=195
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Training
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

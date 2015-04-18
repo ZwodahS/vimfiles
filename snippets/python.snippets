@@ -1,0 +1,28 @@
+snippet #!
+	#!/usr/bin/env python
+
+snippet pdb
+	import pdb; pdb.set_trace()
+snippet traceback
+	import traceback; traceback.print_exc()
+snippet timerclass
+	import time
+	import logging
+	"""http://preshing.com/20110924/timing-your-code-using-pythons-with-statement/"""
+	class Timer(object):
+		def __init__(self, title=None):
+			self.title = "{0} Took {1}ms".format(title or "???", "{0:.5f}")
+		def __enter__(self):
+			self.time = time.process_time()
+		def __exit__(self, *args):
+			logging.info(self.title.format((time.process_time() - self.time)*1000))
+snippet benchmark
+	with Timer("${0}") as t:
+snippet decode
+	decode("${0:utf-8}")
+snippet trequest
+	tornado.httpclient.HTTPRequest
+snippet tcoroutine
+	@tornado.gen.coroutine
+snippet thttperror
+	tornado.httpclient.HTTPError
