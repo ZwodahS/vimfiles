@@ -10,3 +10,5 @@ cd bundle
 if [ ! -e vundle ]; then
     ln -s ../ext-repo/vundle vundle
 fi
+cd ..
+cp available_plugins plugins
