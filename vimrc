@@ -16,6 +16,7 @@ source $vim_home/plugins
 call vundle#end()            " required
 filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set colorcolumn=120
 colorscheme jellybeans
 """" Generic setup
 set encoding=utf-8
@@ -35,9 +36,6 @@ set nowrap                                                          " Disable li
 nnoremap ; :
 " map ! to :! to start running bash command
 nnoremap ! :!
-" re highlight selection after indentation
-vnoremap > >gv
-vnoremap < <gv
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Special EOL char
 set listchars=tab:¬\ ,eol:↵                                         " set the character for special char
@@ -120,7 +118,7 @@ let g:NERDTreeWinPos="left"
 """" YouCompleteMe Plugin
 set completeopt=menu,longest
 let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_min_num_of_chars_for_completion = 4                       " Autocomplete only appears after 4 char (prevent if, def, for and all those keyword)
+let g:ycm_min_num_of_chars_for_completion = 2
 "let g:ycm_key_list_select_completion = ['<C-J>']                    " Set selection to <C-J>
 "let g:ycm_key_list_previous_completion = ['<C-K>']                  " Set prev selection to <C-K>
 " let g:ycm_autoclose_preview_window_after_completion = 1
@@ -164,7 +162,7 @@ omap / <Plug>(easymotion-tn)
 nmap J <Plug>(easymotion-j)
 nmap K <Plug>(easymotion-k)
 nmap - <Plug>(easymotion-prefix)
-let g:EasyMotion_keys = "qwertasdfgpoiuylkjhmnv"
+let g:EasyMotion_keys = "qwertasdfgpoiuylkjhmnvQWERTASDFGPOIUYLKJHMNV"
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """" Interesting words, taken from https://github.com/nicknisi/dotfiles
 function! HiInterestingWord(n)

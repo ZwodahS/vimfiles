@@ -3,7 +3,7 @@ snippet #!
 
 snippet pdb
 	import pdb; pdb.set_trace()
-snippet traceback
+snippet tb
 	import traceback; traceback.print_exc()
 snippet timerclass
 	import time
@@ -20,13 +20,3 @@ snippet benchmark
 	with Timer("${0}") as t:
 snippet decode
 	decode("${0:utf-8}")
-snippet trequest
-	tornado.httpclient.HTTPRequest
-snippet tcoroutine
-	@tornado.gen.coroutine
-snippet thttperror
-	tornado.httpclient.HTTPError
-snippet tor
-	tornado
-snippet logg
-	logging
