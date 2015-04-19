@@ -16,6 +16,7 @@ call vundle#begin($vim_home."/vundle")
 call vundle#end()            " required
 filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme jellybeans
 """" Generic setup
 set encoding=utf-8
 set t_Co=256                                                        " Set terminal color
@@ -30,6 +31,8 @@ set hidden                                                          " allow buff
 set ruler
 set smartindent                                                     " Autoindent
 set nowrap                                                          " Disable line wrap
+" map ; to :
+nnoremap ; :
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Special EOL char
 set listchars=tab:¬\ ,eol:↵                                         " set the character for special char
@@ -98,22 +101,6 @@ nmap <leader>vp :tabedit $vim_home/plugins<CR>
 nmap <C-W>t :tab split<CR>
 " close all tab except active
 nmap <C-W>r :tabonly<CR>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Toggle comment color
-" set the comment color to a specific predefined color
-" (tcc = toggle comment color)
-" tcc0 : dark gray
-nmap <silent> tcc0 :hi Comment ctermfg = 0<CR>
-" tcc1 : default gray
-nmap <silent> tcc1 :hi Comment ctermfg = 8<CR>
-" tcc2 : blue
-nmap <silent> tcc2 :hi Comment ctermfg = 38<CR>
-" tcc3 : green
-nmap <silent> tcc3 :hi Comment ctermfg = 28<CR>
-" tcc4 : orange
-nmap <silent> tcc4 :hi Comment ctermfg = 130<CR>
-nmap <silent> tcc5 :hi Comment ctermfg = 13<CR>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -152,6 +139,13 @@ hi CtrlSpaceNormal   ctermfg=12 ctermbg=0 cterm=NONE
 hi CtrlSpaceSearch   ctermfg=9 ctermbg=NONE term=bold cterm=bold
 hi CtrlSpaceStatus   term=reverse cterm=reverse ctermfg=12 ctermbg=8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Tab merge Plugin
+nmap <leader>m :Tabmerge<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Window windowswap Plugin
+let g:windowswap_map_keys = 0 "prevent default bindings
+nnoremap <C-W>y :call WindowSwap#MarkWindowSwap()<CR>
+nnoremap <C-W>p :call WindowSwap#DoWindowSwap()<CR>
 """" Easy Motion Plugin
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)

@@ -13,6 +13,7 @@ Plugin 'lilydjwg/colorizer'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
-
-" Overkill
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Tabmerge'
+Plugin 'wesQ3/vim-windowswap'
+Plugin 'nanotech/jellybeans.vim'
