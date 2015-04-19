@@ -33,20 +33,24 @@ set smartindent                                                     " Autoindent
 set nowrap                                                          " Disable line wrap
 " map ; to :
 nnoremap ; :
+" map ! to :! to start running bash command
+nnoremap ! :!
+" re highlight selection after indentation
+vnoremap > >gv
+vnoremap < <gv
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Special EOL char
 set listchars=tab:¬\ ,eol:↵                                         " set the character for special char
 " toggle for showing eol and other char
-nmap <silent> tl :set list!<CR>
+nnoremap <silent> <leader>l :set list!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" line number and relative line number
 set number                                                          " line number
 set relativenumber                                                  " relative line number
-hi LineNr ctermfg=27
 " Toggle for showing line number
-nmap <silent> tn :set number!<CR>
-" Toggle for showing relative number
-nmap <silent> tr :set relativenumber!<CR>
+nmap <silent> <leader>n :set number!<CR>
+" Toggle for showing jelative number
+nmap <silent> <leader>r :set relativenumber!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" For Folding
 set foldmethod=indent
@@ -77,10 +81,10 @@ autocmd BufRead,BufNewFile *.zdoc set filetype=zdoc
 nnoremap <silent> <F9> :!clear; python %<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Common Binding
-" clear search [L_c]
-nmap <leader>c :let @/= ""<CR>
+" clear search
+nmap <silent> <leader>c :let @/= ""<CR>
 " toggle wrap
-nmap <silent> tw :set wrap!<CR>
+nmap <silent> <leader>w :set wrap!<CR>
 " update vimrc
 nmap <silent> <leader>uv :source $MYVIMRC<CR>
 " update syntax highlighting
@@ -88,7 +92,7 @@ nmap <silent> <leader>uf :syntax sync fromstart<CR>
 " remove all trailing white space
 nmap <silent> <leader><space> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Toggle paste mode, (aka turn off smart indent)
-nmap <silent> tiii :set paste! <CR>
+nmap <silent> <leader>i :set paste! <CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Edit important files
 " open vimrc
@@ -106,12 +110,12 @@ nmap <C-W>r :tabonly<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Gundo Plugin
 " gundo (undo tree)
-nmap <silent> tu :GundoToggle<CR>
+nmap <leader>g :GundoToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" NerdTree Plugin
 " toggle nerd tree
-nmap <silent> tf :NERDTreeToggle<CR>
-let g:NERDTreeWinPos="right"
+nmap <leader>f :NERDTreeToggle<CR>
+let g:NERDTreeWinPos="left"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" YouCompleteMe Plugin
 let g:ycm_min_num_of_chars_for_completion = 4                       " Autocomplete only appears after 4 char (prevent if, def, for and all those keyword)
@@ -192,6 +196,7 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 """" Unbind Stuffs
 nnoremap Q <nop>
+nnoremap <C-H> <NOP>
 nnoremap <C-Q> <NOP>
 inoremap <C-J> <NOP>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
