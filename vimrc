@@ -12,7 +12,7 @@ filetype off
 set rtp+=$vim_home/bundle/vundle
 call vundle#begin($vim_home."/vundle")
 " Plugins
-:source $vim_home/plugins
+source $vim_home/plugins
 call vundle#end()            " required
 filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -118,9 +118,13 @@ nmap <leader>f :NERDTreeToggle<CR>
 let g:NERDTreeWinPos="left"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" YouCompleteMe Plugin
+set completeopt=menu,longest
+let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_min_num_of_chars_for_completion = 4                       " Autocomplete only appears after 4 char (prevent if, def, for and all those keyword)
-let g:ycm_key_list_select_completion = ['<C-J>']                    " Set selection to <C-J>
-let g:ycm_key_list_previous_completion = ['<C-K>']                  " Set prev selection to <C-K>
+"let g:ycm_key_list_select_completion = ['<C-J>']                    " Set selection to <C-J>
+"let g:ycm_key_list_previous_completion = ['<C-K>']                  " Set prev selection to <C-K>
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_autoclose_preview_window_after_insertion = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Jedi Plugin
 let g:jedi#popup_on_dot = 0
@@ -131,6 +135,7 @@ let g:jedi#usages_command = ""
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = ""
 let g:jedi#show_call_signatures = "0"
+let g:jedi#auto_vim_configuration = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" CtrlSpace Plugin
 let g:ctrlspace_ignored_files = "[venv3|venv]"
@@ -143,6 +148,9 @@ hi CtrlSpaceNormal   ctermfg=12 ctermbg=0 cterm=NONE
 hi CtrlSpaceSearch   ctermfg=9 ctermbg=NONE term=bold cterm=bold
 hi CtrlSpaceStatus   term=reverse cterm=reverse ctermfg=12 ctermbg=8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Snipmate plugin
+:imap <C-T> <Plug>snipMateNextOrTrigger
+:smap <C-T> <Plug>snipMateNextOrTrigger
 """" Tab merge Plugin
 nmap <leader>m :Tabmerge<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -200,3 +208,4 @@ nnoremap <C-H> <NOP>
 nnoremap <C-Q> <NOP>
 inoremap <C-J> <NOP>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+set completeopt-=preview
