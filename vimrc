@@ -127,6 +127,11 @@ let g:ycm_min_num_of_chars_for_completion = 2
 " let g:ycm_autoclose_preview_window_after_completion = 1
 " let g:ycm_autoclose_preview_window_after_insertion = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" UltiSnips
+let g:UltiSnipsExpandTrigger="<C-T>"
+let g:UltiSnipsJumpForwardTrigger="<C-K>"
+let g:UltiSnipsJumpBackwardTrigger="<C-K>"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Jedi Plugin
 let g:jedi#popup_on_dot = 0
 let g:jedi#goto_assignments_command = "<leader>gp"
@@ -211,4 +216,3 @@ nnoremap <C-H> <NOP>
 nnoremap <C-Q> <NOP>
 inoremap <C-J> <NOP>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-set completeopt-=preview

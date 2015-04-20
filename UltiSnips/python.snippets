@@ -1,10 +1,12 @@
 snippet #!
 	#!/usr/bin/env python
-
+endsnippet
 snippet pdb
 	import pdb; pdb.set_trace()
+endsnippet
 snippet tbp
 	import traceback; traceback.print_exc()
+endsnippet
 snippet timerclass
 	import time
 	import logging
@@ -16,7 +18,9 @@ snippet timerclass
 			self.time = time.process_time()
 		def __exit__(self, *args):
 			logging.info(self.title.format((time.process_time() - self.time)*1000))
+endsnippet
 snippet benchmark
 	with Timer("${0}") as t:
-snippet decodeutf8
+snippet decode8
 	decode("${0:utf-8}")
+endsnippet
