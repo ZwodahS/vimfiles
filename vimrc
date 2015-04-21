@@ -16,7 +16,7 @@ source $vim_home/plugins
 call vundle#end()            " required
 filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set colorcolumn=120
+set colorcolumn=100,120
 colorscheme jellybeans
 """" Generic setup
 set encoding=utf-8
@@ -36,6 +36,9 @@ set nowrap                                                          " Disable li
 nnoremap ; :
 " map ! to :! to start running bash command
 nnoremap ! :!
+" https://coderwall.com/p/sdhfug/vim-swap-backup-and-undo-files
+" set directory to store swp
+set directory=~/.vim/.swp//
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Special EOL char
 set listchars=tab:¬\ ,eol:↵                                         " set the character for special char
