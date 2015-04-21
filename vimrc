@@ -165,7 +165,9 @@ omap / <Plug>(easymotion-tn)
 nmap J <Plug>(easymotion-j)
 nmap K <Plug>(easymotion-k)
 nmap - <Plug>(easymotion-prefix)
-let g:EasyMotion_keys = "qwertasdfgpoiuylkjhmnvQWERTASDFGPOIUYLKJHMNV"
+
+nmap <M-W> <Plug>(easymotion-bd-w)
+let g:EasyMotion_keys = "qwertasdfgpoiulkjhQWERTASDFGPOIUYLKJHMNVvcbnm"
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """" Interesting words, taken from https://github.com/nicknisi/dotfiles
 function! HiInterestingWord(n)
