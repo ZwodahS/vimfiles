@@ -129,7 +129,7 @@ let g:ycm_min_num_of_chars_for_completion = 2
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" UltiSnips
 let g:UltiSnipsExpandTrigger="<C-T>"
-let g:UltiSnipsJumpForwardTrigger="<C-K>"
+let g:UltiSnipsJumpForwardTrigger="<C-T>"
 let g:UltiSnipsJumpBackwardTrigger="<C-K>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Jedi Plugin
