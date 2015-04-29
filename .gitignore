@@ -1,5 +1,5 @@
 /vundle
 /bundle
 .netrwhist
-plugins
+installed_plugins.vim
 .swp

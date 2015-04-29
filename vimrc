@@ -1,3 +1,4 @@
+set encoding=utf-8
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " @ZwodahS
 " github/zwodahs
@@ -12,14 +13,13 @@ filetype off
 set rtp+=$vim_home/bundle/vundle
 call vundle#begin($vim_home."/vundle")
 " Plugins
-source $vim_home/plugins
+source $vim_home/installed_plugins.vim
 call vundle#end()            " required
 filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set colorcolumn=100,120
 colorscheme jellybeans
 """" Generic setup
-set encoding=utf-8
 set t_Co=256                                                        " Set terminal color
 syntax on                                                           " Syntax highlighting on
 set title                                                           " Display path at top
@@ -99,7 +99,9 @@ nmap <silent> <leader>i :set paste! <CR>
 " open vimrc
 nmap <leader>vv :tabedit $vim_home/vimrc<CR>
 " open plugins
-nmap <leader>vp :tabedit $vim_home/plugins<CR>
+nmap <leader>vp :tabedit $vim_home/installed_plugins.vim<CR>
+" open new_commands
+nmap <leader>vn :tabedit $vim_home/new_commands<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Tabs
 " open current buffer in new tab
@@ -142,6 +144,9 @@ let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = ""
 let g:jedi#show_call_signatures = "0"
 let g:jedi#auto_vim_configuration = 0
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Eighties plugin
+let g:eighties_minimum_width = 101
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" CtrlSpace Plugin
 let g:ctrlspace_ignored_files = "[venv3|venv]"
@@ -154,25 +159,25 @@ hi CtrlSpaceNormal   ctermfg=12 ctermbg=0 cterm=NONE
 hi CtrlSpaceSearch   ctermfg=9 ctermbg=NONE term=bold cterm=bold
 hi CtrlSpaceStatus   term=reverse cterm=reverse ctermfg=12 ctermbg=8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Snipmate plugin
-:imap <C-T> <Plug>snipMateNextOrTrigger
-:smap <C-T> <Plug>snipMateNextOrTrigger
 """" Tab merge Plugin
-nmap <leader>m :Tabmerge<cr>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>,m :Tabmerge<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Window windowswap Plugin
 let g:windowswap_map_keys = 0 "prevent default bindings
 nnoremap <C-W>y :call WindowSwap#MarkWindowSwap()<CR>
 nnoremap <C-W>p :call WindowSwap#DoWindowSwap()<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Easy Motion Plugin
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 nmap J <Plug>(easymotion-j)
 nmap K <Plug>(easymotion-k)
 nmap - <Plug>(easymotion-prefix)
-
 nmap <M-W> <Plug>(easymotion-bd-w)
 let g:EasyMotion_keys = "qwertasdfgpoiulkjhQWERTASDFGPOIUYLKJHMNVvcbnm"
+"""" vim-signature
+let g:SignatureIncludeMarks = "qwertasdfgzxcvb"
+nmap <leader>m :SignatureToggleSigns<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """" Interesting words, taken from https://github.com/nicknisi/dotfiles
 function! HiInterestingWord(n)
@@ -204,8 +209,10 @@ hi def InterestingWord4 ctermfg=16 ctermbg=137
 hi def InterestingWord5 ctermfg=16 ctermbg=211
 hi def InterestingWord6 ctermfg=16 ctermbg=195
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Training
+"""" Abbreviation
+abbr torando tornado
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Training
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>

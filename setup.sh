@@ -14,4 +14,4 @@ if [ ! -e vundle ]; then
     ln -s ../ext-repo/vundle vundle
 fi
 cd ..
-cp available_plugins plugins
+cp available_plugins.vim installed_plugins.vim
