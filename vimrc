@@ -108,6 +108,13 @@ nmap <leader>vn :tabedit $vim_home/new_commands<CR>
 nmap <C-W>t :tab split<CR>
 " close all tab except active
 nmap <C-W>r :tabonly<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Windows
+" resize windows
+noremap <Up> :resize +2<cr>
+noremap <Down> :resize -2<cr>
+noremap <Left> :vertical resize -2<cr>
+noremap <Right> :vertical resize +2<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -213,10 +220,6 @@ hi def InterestingWord6 ctermfg=16 ctermbg=195
 abbr torando tornado
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Training
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
 """" Unbind Stuffs
 nnoremap Q <nop>
 nnoremap <C-H> <NOP>
