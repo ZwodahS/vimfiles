@@ -2,8 +2,7 @@
 ?i and ?a motion
 <C-[>       replace escape
 
-vim-signature
-
+== vim-signature ==
 mx          Toggle mark 'x' and display it in the leftmost column
 dmx         Remove mark 'x' where x is a-zA-Z
 m,          Place the next available mark
@@ -27,3 +26,15 @@ m<S-[0-9]>  Remove all markers of the same type
 [=          Jump to prev line having a marker of any type
 m?          Open location list and display markers from current buffer
 m<BS>       Remove all markers
+
+== Ag ==
+e    to open file and close the quickfix window
+o    to open (same as enter)
+go   to preview file (open but maintain focus on ag.vim results)
+t    to open in new tab
+T    to open in new tab silently
+h    to open in horizontal split
+H    to open in horizontal split silently
+v    to open in vertical split
+gv   to open in vertical split silently
+q    to close the quickfix window

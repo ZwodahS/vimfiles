@@ -13,6 +13,8 @@ syn match todo_question '\[?\].*'
 
 syn match title '^_.\{-}_$'
 syn match remark '^\s*#.*'
+syn match bullet '^\s*\*.*'
+syn match dot '^\s*\. .*'
 
 hi def link todo_done Todo_Done
 hi def link todo_lowpriority Todo_LowPriority
@@ -23,6 +25,8 @@ hi def link todo_moved Todo_Moved
 hi def link todo_question Todo_Question
 hi def link title Title
 hi def link remark Remark
+hi def link bullet Bullet
+hi def link dot Dot
 
 hi Todo_NormalPriority ctermfg=34
 hi Todo_Done ctermfg=88 cterm=reverse
@@ -34,3 +38,5 @@ hi Todo_Question ctermfg=12
 
 hi Title ctermfg=13 cterm=underline
 hi Remark ctermfg=45
+hi Bullet ctermfg=7
+hi Dot ctermfg=46

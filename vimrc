@@ -17,7 +17,7 @@ source $vim_home/installed_plugins.vim
 call vundle#end()            " required
 filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set colorcolumn=100,120
+set colorcolumn=79,100,120
 colorscheme jellybeans
 """" Generic setup
 set t_Co=256                                                        " Set terminal color
@@ -97,11 +97,11 @@ nmap <silent> <leader>i :set paste! <CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Edit important files
 " open vimrc
-nmap <leader>vv :tabedit $vim_home/vimrc<CR>
+nmap <leader>vfv :view $vim_home/vimrc<CR>
 " open plugins
-nmap <leader>vp :tabedit $vim_home/installed_plugins.vim<CR>
+nmap <leader>vfp :view $vim_home/installed_plugins.vim<CR>
 " open new_commands
-nmap <leader>vn :tabedit $vim_home/new_commands<CR>
+nmap <leader>vfn :view $vim_home/new_commands<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Tabs
 " open current buffer in new tab
@@ -224,5 +224,4 @@ abbr torando tornado
 nnoremap Q <nop>
 nnoremap <C-H> <NOP>
 nnoremap <C-Q> <NOP>
-inoremap <C-J> <NOP>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
