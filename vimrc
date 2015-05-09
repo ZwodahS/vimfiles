@@ -135,6 +135,8 @@ nmap <leader>g :GundoToggle<CR>
 nmap <leader>f :NERDTreeToggle<CR>
 let g:NERDTreeWinPos="left"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Rainbow bracket
+nmap <silent> <leader>rainbow :RainbowParenthesesToggle<CR>
 """" YouCompleteMe Plugin
 set completeopt=menu,longest
 let g:ycm_add_preview_to_completeopt = 0

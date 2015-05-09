@@ -40,7 +40,8 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'lilydjwg/colorizer'
 "" Nice theme
 Plugin 'nanotech/jellybeans.vim'
-
+" Rainbow brackets
+Plugin 'kien/rainbow_parentheses.vim'
 """"""""""""""""""""""""Language plugins""""""""""""""""""""""""
 "" Python documentation
 " Plugin 'davidhalter/jedi-vim'
