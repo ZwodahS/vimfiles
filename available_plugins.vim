@@ -1,7 +1,7 @@
 """"""""""""""""""""""""Basic/Dependency Plugins""""""""""""""""""""""""
 "" Manage Vundle as well
 Plugin 'gmarik/Vundle.vim'
-"" Common vim library 
+"" Common vim library
 Plugin 'tomtom/tlib_vim'
 Plugin 'L9'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -29,8 +29,6 @@ Plugin 'wesQ3/vim-windowswap'
 Plugin 'SirVer/ultisnips'
 "" Autocomplete engine. Require compilation.
 Plugin 'Valloric/YouCompleteMe'
-"" Auto resize active window to a specific size
-Plugin 'justincampbell/vim-eighties'
 "" Nice way to use marks
 Plugin 'kshenoy/vim-signature'
 
@@ -47,5 +45,7 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'davidhalter/jedi-vim'
 "" Syntax checker
 Plugin 'scrooloose/syntastic'
+"" Jinja
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
