@@ -34,6 +34,7 @@ set smartindent                                                     " Autoindent
 set nowrap                                                          " Disable line wrap
 " map ; to :
 nnoremap ; :
+vnoremap ; :
 " map ! to :! to start running bash command
 nnoremap ! :!
 " https://coderwall.com/p/sdhfug/vim-swap-backup-and-undo-files
@@ -49,15 +50,15 @@ nnoremap <silent> <leader>l :set list!<CR>
 set number                                                          " line number
 set relativenumber                                                  " relative line number
 " Toggle for showing line number
-nmap <silent> <leader>n :set number!<CR>
+nmap <silent> <leader>nn :set number!<CR>
 " Toggle for showing jelative number
-nmap <silent> <leader>r :set relativenumber!<CR>
+nmap <silent> <leader>nr :set relativenumber!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" For Folding
-set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
-set foldlevel=0
+set foldmethod=syntax
+" set foldnestmax=10
+" set nofoldenable
+" set foldlevel=0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" For tabbing (default tabbing)
 set softtabstop=4
@@ -184,22 +185,25 @@ nmap <M-W> <Plug>(easymotion-bd-w)
 let g:EasyMotion_keys = "qwertasdfgpoiulkjhQWERTASDFGPOIUYLKJHMNVvcbnm"
 """" vim-signature
 let g:SignatureIncludeMarks = "qwertasdfgzxcvb"
-nmap <leader>m :SignatureToggleSigns<CR>
+nmap <leader>nm :SignatureToggleSigns<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """" Interesting words, taken from https://github.com/nicknisi/dotfiles
+function Match(word, color)
+    " Calculate an arbitrary match ID.  Hopefully nothing else is using it.
+    let mid = 86750 + a:color
+    " Clear existing matches, but don't worry if they don't exist.
+    silent! call matchdelete(mid)
+    " Construct a literal pattern that has to match at boundaries.
+    let pat = '\V\<' . escape(a:word, '\') . '\>'
+    " Actually match the words.
+    call matchadd("InterestingWord" . a:color, pat, 1, mid)
+endfunction
 function! HiInterestingWord(n)
     " Save our location.
     normal! mz
     " Yank the current word into the z register.
     normal! "zyiw
-    " Calculate an arbitrary match ID.  Hopefully nothing else is using it.
-    let mid = 86750 + a:n
-    " Clear existing matches, but don't worry if they don't exist.
-    silent! call matchdelete(mid)
-    " Construct a literal pattern that has to match at boundaries.
-    let pat = '\V\<' . escape(@z, '\') . '\>'
-    " Actually match the words.
-    call matchadd("InterestingWord" . a:n, pat, 1, mid)
+    :call Match(@z, a:n)
     " Move back to our original location.
     normal! `z
 endfunction
