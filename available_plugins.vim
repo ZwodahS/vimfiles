@@ -42,7 +42,7 @@ Plugin 'nanotech/jellybeans.vim'
 
 """"""""""""""""""""""""Language plugins""""""""""""""""""""""""
 "" Python documentation
-Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'
 "" Syntax checker
 Plugin 'scrooloose/syntastic'
 "" Jinja

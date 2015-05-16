@@ -54,8 +54,8 @@ nmap <silent> <leader>nn :set number!<CR>
 " Toggle for showing jelative number
 nmap <silent> <leader>nr :set relativenumber!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" For Folding
-set foldmethod=syntax
+"""" For Folding disable for now until i find a good way to do folding.
+" set foldmethod=syntax
 " set foldnestmax=10
 " set nofoldenable
 " set foldlevel=0
@@ -111,11 +111,12 @@ nmap <C-W>t :tab split<CR>
 nmap <C-W>r :tabonly<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Windows
-" resize windows
+" resize splits
 noremap <Up> :resize +2<cr>
 noremap <Down> :resize -2<cr>
 noremap <Left> :vertical resize -2<cr>
 noremap <Right> :vertical resize +2<cr>
+nmap \| :vertical resize 105<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -142,16 +143,6 @@ let g:UltiSnipsExpandTrigger="<C-T>"
 let g:UltiSnipsJumpForwardTrigger="<C-T>"
 let g:UltiSnipsJumpBackwardTrigger="<C-K>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Jedi Plugin
-let g:jedi#popup_on_dot = 0
-let g:jedi#goto_assignments_command = "<leader>gp"
-let g:jedi#goto_definitions_command = "<leader>gd"
-let g:jedi#documentation_command = ""
-let g:jedi#usages_command = ""
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#rename_command = ""
-let g:jedi#show_call_signatures = "0"
-let g:jedi#auto_vim_configuration = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """" Eighties plugin
 let g:eighties_minimum_width = 101
