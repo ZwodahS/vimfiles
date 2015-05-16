@@ -47,5 +47,6 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'scrooloose/syntastic'
 "" Jinja
 Plugin 'Glench/Vim-Jinja2-Syntax'
-
+"" Html/css
+Plugin 'mattn/emmet-vim'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""

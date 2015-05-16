@@ -74,6 +74,8 @@ set noshowmode                                                      " Hide the d
 """" set file type for some stuffs
 autocmd BufRead,BufNewFile .gitignore set filetype=conf.gitignore
 autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+autocmd BufNewFile,BufReadPost *.js setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
+autocmd BufNewFile,BufReadPost *.html setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
 autocmd BufRead,BufNewFile VagrantFile set filetype=ruby
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.todo set filetype=todo
@@ -166,13 +168,18 @@ let g:windowswap_map_keys = 0 "prevent default bindings
 nnoremap <C-W>y :call WindowSwap#MarkWindowSwap()<CR>
 nnoremap <C-W>p :call WindowSwap#DoWindowSwap()<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Syntastic
+let g:syntastic_mode_map = {
+    \ "mode": "passive",
+    \ "active_filetypes": [ "python" ],
+    \ "passive_filetypes": [] }
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Easy Motion Plugin
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 nmap J <Plug>(easymotion-j)
 nmap K <Plug>(easymotion-k)
 nmap - <Plug>(easymotion-prefix)
-nmap <M-W> <Plug>(easymotion-bd-w)
 let g:EasyMotion_keys = "qwertasdfgpoiulkjhQWERTASDFGPOIUYLKJHMNVvcbnm"
 """" vim-signature
 let g:SignatureIncludeMarks = "qwertasdfgzxcvb"
@@ -220,3 +227,7 @@ nnoremap Q <nop>
 nnoremap <C-H> <NOP>
 nnoremap <C-Q> <NOP>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key='<C-L>'
