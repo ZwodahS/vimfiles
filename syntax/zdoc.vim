@@ -30,99 +30,99 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-hi Title ctermfg=10 cterm=underline
-hi Bullet ctermfg=7
-hi Priority ctermfg=87 cterm=bold
-hi LowPriority ctermfg=52 ctermbg=1
-hi Key ctermfg=11
-hi Underline cterm=underline ctermfg=164
-hi ThoughtProcess ctermfg=27
-hi Todo_NotDone ctermfg=9
-hi Todo_Done ctermfg=10
-hi Todo_Semi ctermfg=142
-hi Todo_Redirect ctermfg=39
-hi Todo_Cancel ctermfg=8
-hi Todo_Irrelevant ctermfg=2
-hi Dot ctermfg=46
-hi Anchor ctermfg=11
+hi ZDOC_Title ctermfg=10 cterm=underline
+hi ZDOC_Bullet ctermfg=7
+hi ZDOC_Priority ctermfg=87 cterm=bold
+hi ZDOC_LowPriority ctermfg=52 ctermbg=1
+hi ZDOC_Key ctermfg=11
+hi ZDOC_Underline cterm=underline ctermfg=164
+hi ZDOC_ThoughtProcess ctermfg=27
+hi ZDOC_Todo_NotDone ctermfg=9
+hi ZDOC_Todo_Done ctermfg=10
+hi ZDOC_Todo_Semi ctermfg=142
+hi ZDOC_Todo_Redirect ctermfg=39
+hi ZDOC_Todo_Cancel ctermfg=8
+hi ZDOC_Todo_Irrelevant ctermfg=2
+hi ZDOC_Dot ctermfg=46
+hi ZDOC_Anchor ctermfg=11
 
-hi BlueText ctermfg=39
-hi RedText ctermfg=9
-hi YellowText ctermfg=11
-hi GreenText ctermfg=40
-hi WhiteText ctermfg=15
-hi CyanText ctermfg=14
-hi PinkText ctermfg=13
+hi ZDOC_BlueText ctermfg=39
+hi ZDOC_RedText ctermfg=9
+hi ZDOC_YellowText ctermfg=11
+hi ZDOC_GreenText ctermfg=40
+hi ZDOC_WhiteText ctermfg=15
+hi ZDOC_CyanText ctermfg=14
+hi ZDOC_PinkText ctermfg=13
 " ignore case for matching
 syn case ignore
 
 " == xxxxx ==
-syn match category '==.\{-}=='
+syn match zdoc_category '==.\{-}=='
 " # xxxxx
-syn match bullet '^\s*#.*'
+syn match zdoc_bullet '^\s*#.*'
 " .1 xxxxx
 "contains=redtext contains=bluetext contains=greentext contains=yellowtext contains=whitetext contains=cyantext contains=pinktext
-syn match numbering '^\s*\.\d\+\s.*' contains=underline contains=key contains=bar contains=dot
+syn match zdoc_numbering '^\s*\.\d\+\s.*' contains=underline contains=key contains=bar contains=dot
 " (1)
-syn match numbering2 '(\d\+)'
+syn match zdoc_numbering2 '(\d\+)'
 " + xxxxx
-syn match priority '^\s*+.*'
-syn match bluelist '^\s*>.*'
+syn match zdoc_priority '^\s*+.*'
+syn match zdoc_bluelist '^\s*>.*'
 " ! xxxxx
-syn match lowpriority '^\s*!.*'
+syn match zdoc_lowpriority '^\s*!.*'
 " {xxxx}
-syn match key '{.\{-}}'
+syn match zdoc_key '{.\{-}}'
 " _xxxx_
-syn match title '^_.\{-}_$'
-syn match underline '__.\{-}__'
+syn match zdoc_title '^_.\{-}_$'
+syn match zdoc_underline '__.\{-}__'
 " |xxxx|
-syn match bar '|.\{-}|'
+syn match zdoc_bar '|.\{-}|'
 " ? xxxxx
-syn match thoughtprocess '^\s*?.\{-}?'
+syn match zdoc_thoughtprocess '^\s*?.\{-}?'
 " [ ] [-] [X] [+] [!] [#]
-syn match todo_notdone '\[ \].*' contains=underline contains=bar
-syn match todo_semi '\[-\].*' contains=underline contains=bar
-syn match todo_done '\[X\].*' contains=underline contains=bar
-syn match todo_redirect '\[+\].*' contains=underline contains=bar
-syn match todo_cancel '\[!\].*' contains=underline contains=bar
-syn match todo_irrelevant '\[#\].*' contains=underline contains=bar
+syn match zdoc_todo_notdone '\[ \].*' contains=underline contains=bar
+syn match zdoc_todo_semi '\[-\].*' contains=underline contains=bar
+syn match zdoc_todo_done '\[X\].*' contains=underline contains=bar
+syn match zdoc_todo_redirect '\[+\].*' contains=underline contains=bar
+syn match zdoc_todo_cancel '\[!\].*' contains=underline contains=bar
+syn match zdoc_todo_irrelevant '\[#\].*' contains=underline contains=bar
 " .xxxxx.
-syn match dot '\.[^ ]\{-}\.'
+syn match zdoc_dot '\.[^ ]\{-}\.'
 " <xxxx>
-syn match anchor "<.\{-}>"
+syn match zdoc_anchor "<.\{-}>"
 " coloring basic
-syn match bluetext ':b.\{-}:'
-syn match greentext ':g.\{-}:'
-syn match redtext ':r.\{-}:'
-syn match yellowtext ':y.\{-}:'
-syn match whitetext ':w.\{-}:'
-syn match cyantext ':c.\{-}:'
-syn match pinktext ':p.\{-}:'
+syn match zdoc_bluetext ':b.\{-}:'
+syn match zdoc_greentext ':g.\{-}:'
+syn match zdoc_redtext ':r.\{-}:'
+syn match zdoc_yellowtext ':y.\{-}:'
+syn match zdoc_whitetext ':w.\{-}:'
+syn match zdoc_cyantext ':c.\{-}:'
+syn match zdoc_pinktext ':p.\{-}:'
 
-hi def link category Title
-hi def link bullet Bullet
-hi def link numbering Bullet
-hi def link numbering2 Bullet
-hi def link priority Priority
-hi def link lowpriority LowPriority
-hi def link key Key
-hi def link underline Underline
-hi def link title Underline
-hi def link bar Underline
-hi def link thoughtprocess ThoughtProcess
-hi def link todo_notdone Todo_NotDone
-hi def link todo_done Todo_Done
-hi def link todo_semi Todo_Semi
-hi def link todo_redirect Todo_Redirect
-hi def link todo_cancel Todo_Cancel
-hi def link todo_irrelevant Todo_Irrelevant
-hi def link dot Dot
-hi def link anchor Anchor
-hi def link bluetext BlueText
-hi def link bluelist BlueText
-hi def link greentext GreenText
-hi def link redtext RedText
-hi def link yellowtext YellowTxt
-hi def link whitetext WhiteTExt
-hi def link cyantext CyanText
-hi def link pinktext PinkText
+hi def link zdoc_category ZDOC_Title
+hi def link zdoc_bullet ZDOC_Bullet
+hi def link zdoc_numbering ZDOC_Bullet
+hi def link zdoc_numbering2 ZDOC_Bullet
+hi def link zdoc_priority ZDOC_Priority
+hi def link zdoc_lowpriority ZDOC_LowPriority
+hi def link zdoc_key ZDOC_Key
+hi def link zdoc_underline ZDOC_Underline
+hi def link zdoc_title ZDOC_Underline
+hi def link zdoc_bar ZDOC_Underline
+hi def link zdoc_thoughtprocess ZDOC_ThoughtProcess
+hi def link zdoc_todo_notdone ZDOC_Todo_NotDone
+hi def link zdoc_todo_done ZDOC_Todo_Done
+hi def link zdoc_todo_semi ZDOC_Todo_Semi
+hi def link zdoc_todo_redirect ZDOC_Todo_Redirect
+hi def link zdoc_todo_cancel ZDOC_Todo_Cancel
+hi def link zdoc_todo_irrelevant ZDOC_Todo_Irrelevant
+hi def link zdoc_dot ZDOC_Dot
+hi def link zdoc_anchor ZDOC_Anchor
+hi def link zdoc_bluetext ZDOC_BlueText
+hi def link zdoc_bluelist ZDOC_BlueText
+hi def link zdoc_greentext ZDOC_GreenText
+hi def link zdoc_redtext ZDOC_RedText
+hi def link zdoc_yellowtext ZDOC_YellowTxt
+hi def link zdoc_whitetext ZDOC_WhiteTExt
+hi def link zdoc_cyantext ZDOC_CyanText
+hi def link zdoc_pinktext ZDOC_PinkText
