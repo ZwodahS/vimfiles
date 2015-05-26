@@ -40,6 +40,9 @@ nnoremap ! :!
 " https://coderwall.com/p/sdhfug/vim-swap-backup-and-undo-files
 " set directory to store swp
 set directory=~/.vim/.swp//
+set noshowmode                                                      " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set laststatus=2                                                    " Always display the statusline in all windows
+set showtabline=2                                                   " Always display the tabline, even if there is only one tab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Special EOL char
 set listchars=tab:¬\ ,eol:↵                                         " set the character for special char
@@ -66,10 +69,11 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" For Airline
-set laststatus=2                                                    " Always display the statusline in all windows
-set showtabline=2                                                   " Always display the tabline, even if there is only one tab
-set noshowmode                                                      " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+"""" For airline
+"""" For lightline
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" set file type for some stuffs
 autocmd BufRead,BufNewFile .gitignore set filetype=conf.gitignore
@@ -146,8 +150,9 @@ let g:UltiSnipsJumpForwardTrigger="<C-T>"
 let g:UltiSnipsJumpBackwardTrigger="<C-K>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Eighties plugin
-let g:eighties_minimum_width = 101
+"""" CtrlP
+"""" CtrlP-Funky
+nmap <C-J> :CtrlPFunky<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" CtrlSpace Plugin
 let g:ctrlspace_ignored_files = "[venv3|venv]"

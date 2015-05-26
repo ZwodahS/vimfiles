@@ -34,7 +34,8 @@ Plugin 'kshenoy/vim-signature'
 
 """"""""""""""""""""""""Visual Plugins""""""""""""""""""""""""
 "" Nice status line at the bottom
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
 "" color any hex color in vim
 Plugin 'lilydjwg/colorizer'
 "" Nice theme
