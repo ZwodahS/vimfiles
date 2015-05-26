@@ -31,7 +31,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
 "" Nice way to use marks
 Plugin 'kshenoy/vim-signature'
-
+"" Trailing whitespace
+Plugin 'bronson/vim-trailing-whitespace'
 """"""""""""""""""""""""Visual Plugins""""""""""""""""""""""""
 "" Nice status line at the bottom
 "Plugin 'bling/vim-airline'

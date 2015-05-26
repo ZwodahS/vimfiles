@@ -97,8 +97,8 @@ nmap <silent> <leader>w :set wrap!<CR>
 nmap <silent> <leader>uv :source $MYVIMRC<CR>
 " update syntax highlighting
 nmap <silent> <leader>uf :syntax sync fromstart<CR>
-" remove all trailing white space
-nmap <silent> <leader><space> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+" remove all trailing white space (replaced with trailing whitespace plugin)
+" nmap <silent> <leader><space> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Toggle paste mode, (aka turn off smart indent)
 nmap <silent> <leader>i :set paste! <CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -126,6 +126,9 @@ nmap \| :vertical resize 105<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Trailing whitespace
+nmap <silent> <leader><space> :FixWhitespace<CR>
+vmap <silent> <leader><space> :FixWhitespace<CR>
 """" Gundo Plugin
 " gundo (undo tree)
 nmap <leader>g :GundoToggle<CR>
