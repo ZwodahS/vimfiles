@@ -51,7 +51,9 @@ nnoremap <silent> <leader>l :set list!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" line number and relative line number
 set number                                                          " line number
-set relativenumber                                                  " relative line number
+
+" relative number disabled due to lag
+" set relativenumber                                                  " relative line number
 " Toggle for showing line number
 nmap <silent> <leader>nn :set number!<CR>
 " Toggle for showing jelative number
