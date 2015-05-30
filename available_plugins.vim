@@ -33,6 +33,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'kshenoy/vim-signature'
 "" Trailing whitespace
 Plugin 'bronson/vim-trailing-whitespace'
+"" Quick modification of date
+Plugin 'tpope/vim-speeddating'
 """"""""""""""""""""""""Visual Plugins""""""""""""""""""""""""
 "" Nice status line at the bottom
 "Plugin 'bling/vim-airline'
