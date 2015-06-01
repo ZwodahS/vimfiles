@@ -36,11 +36,13 @@ syn match zdoc_checkbox_undone "\v\[ ][^\[]*"
 syn match zdoc_checkbox_done "\v\[[Xx]][^\[]*"
 syn match zdoc_checkbox_lowpriority "\v\[[\.]][^\[]*"
 syn match zdoc_checkbox_cancel "\v\[][^\[]*"
+syn match zdoc_checkbox_moved "\v\[-][^\[]*"
 
 hi def link zdoc_checkbox_undone ZDocCheckboxUndone
 hi def link zdoc_checkbox_done ZDocCheckboxDone
 hi def link zdoc_checkbox_cancel ZDocCheckboxCancel
 hi def link zdoc_checkbox_lowpriority ZDocCheckboxLowPriority
+hi def link zdoc_checkbox_moved ZDocCheckboxMoved
 
 hi def link zdoc_title ZDocTitle
 hi def link zdoc_bullet ZDocBullet
@@ -54,6 +56,7 @@ hi ZDocTestRegex ctermbg=15 ctermfg=0
 hi ZDocCheckboxUndone ctermfg=160
 hi ZDocCheckboxDone ctermfg=46
 hi ZDocCheckboxLowPriority ctermfg=190
+hi ZDocCheckboxMoved ctermfg=21
 hi ZDocCheckboxCancel ctermfg=88 cterm=reverse
 
 hi ZDocTitle ctermfg=178
