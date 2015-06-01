@@ -35,6 +35,8 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'bronson/vim-trailing-whitespace'
 "" Quick modification of date
 Plugin 'tpope/vim-speeddating'
+"" Calendar vim
+Plugin 'mattn/calendar-vim'
 """"""""""""""""""""""""Visual Plugins""""""""""""""""""""""""
 "" Nice status line at the bottom
 "Plugin 'bling/vim-airline'
