@@ -26,11 +26,11 @@ if exists('b:current_syntax')
     finish
 endif
 
-syn match zdoc_title "\v^#.*"
+syn match zdoc_title "\v^\s*#.*"
 syn match zdoc_bullet '\v^\s*\*'
 syn match zdoc_question '\v^\s*\?.*'
 syn match zdoc_exclaimation '\v^\s*\!.*'
-syn match zdoc_dot '\v\.[^\.]*\.'
+syn match zdoc_dot '\v^\s*\.[^\.]*\.\s*$'
 
 syn match zdoc_checkbox_undone "\v\[ ][^\[]*"
 syn match zdoc_checkbox_done "\v\[[Xx]][^\[]*"
