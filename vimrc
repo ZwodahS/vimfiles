@@ -158,8 +158,11 @@ let g:UltiSnipsJumpBackwardTrigger="<C-K>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """" CtrlP
+" nmap :CtrlPClearCache
 """" CtrlP-Funky
-nmap <C-J> :CtrlPFunky<CR>
+" nmap <C-J> :CtrlPFunky<CR>
+"""" CTRLP CMD
+nmap <C-J> :CtrlPCmdPalette<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" CtrlSpace Plugin
 let g:ctrlspace_ignored_files = "[venv3|venv]"

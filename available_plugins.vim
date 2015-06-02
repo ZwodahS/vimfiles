@@ -11,6 +11,8 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'Align'
 "" Fuzzy File finder
 Plugin 'kien/ctrlp.vim'
+"" Fuzzy command finder
+Plugin 'fisadev/vim-ctrlp-cmdpalette'
 "" Super Session management, buffer explorer etc
 Plugin 'szw/vim-ctrlspace'
 "" Undo tree visualization
