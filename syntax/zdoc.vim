@@ -33,11 +33,13 @@ syn match zdoc_exclaimation '\v^\s*\!.*'
 syn match zdoc_dot '\v^\s*\.[^\.]*\.\s*$'
 
 syn match zdoc_checkbox_undone "\v\[ ][^\[]*"
-syn match zdoc_checkbox_done "\v\[[Xx]][^\[]*"
-syn match zdoc_checkbox_lowpriority "\v\[[\.]][^\[]*"
+syn match zdoc_checkbox_highpriority "\v\+\[ ][^\[]*"
+syn match zdoc_checkbox_done "\v.?\[[Xx]][^\[]*"
+syn match zdoc_checkbox_lowpriority "\v-\[ ][^\[]*"
 syn match zdoc_checkbox_cancel "\v\[][^\[]*"
-syn match zdoc_checkbox_moved "\v\[-][^\[]*"
+syn match zdoc_checkbox_moved "\v.?\[-][^\[]*"
 
+hi def link zdoc_checkbox_highpriority ZDocCheckboxHighPriority
 hi def link zdoc_checkbox_undone ZDocCheckboxUndone
 hi def link zdoc_checkbox_done ZDocCheckboxDone
 hi def link zdoc_checkbox_cancel ZDocCheckboxCancel
@@ -53,9 +55,10 @@ hi def link zdoc_dot ZDocDotTitle
 """""" Actual colors
 hi ZDocTestRegex ctermbg=15 ctermfg=0
 
-hi ZDocCheckboxUndone ctermfg=160
 hi ZDocCheckboxDone ctermfg=46
-hi ZDocCheckboxLowPriority ctermfg=190
+hi ZDocCheckboxHighPriority ctermfg=184
+hi ZDocCheckboxUndone ctermfg=124
+hi ZDocCheckboxLowPriority ctermfg=126
 hi ZDocCheckboxMoved ctermfg=21
 hi ZDocCheckboxCancel ctermfg=88 cterm=reverse
 
