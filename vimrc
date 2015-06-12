@@ -50,9 +50,8 @@ set listchars=tab:¬\ ,eol:↵                                         " set the
 nnoremap <silent> <leader>l :set list!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" line number and relative line number
-set number                                                          " line number
-
-" relative number disabled due to lag
+" set number                                                          " line number
+" relative number - disabled due to lag
 " set relativenumber                                                  " relative line number
 " Toggle for showing line number
 nmap <silent> <leader>nn :set number!<CR>
@@ -100,7 +99,7 @@ nmap <silent> <leader>uv :source $MYVIMRC<CR>
 " update syntax highlighting
 nmap <silent> <leader>uf :syntax sync fromstart<CR>
 " remove all trailing white space (replaced with trailing whitespace plugin)
-" nmap <silent> <leader><space> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+"nmap <silent> <leader><space> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Toggle paste mode, (aka turn off smart indent)
 nmap <silent> <leader>i :set paste! <CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -120,10 +119,10 @@ nmap <C-W>r :tabonly<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Windows
 " resize splits
-noremap <Up> :resize +2<cr>
-noremap <Down> :resize -2<cr>
-noremap <Left> :vertical resize -2<cr>
-noremap <Right> :vertical resize +2<cr>
+noremap <Up> :resize +3<cr>
+noremap <Down> :resize -3<cr>
+noremap <Left> :vertical resize -3<cr>
+noremap <Right> :vertical resize +3<cr>
 nmap \| :vertical resize 105<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Plugins
@@ -200,6 +199,11 @@ let g:EasyMotion_keys = "qwertasdfgpoiulkjhQWERTASDFGPOIUYLKJHMNVvcbnm"
 let g:SignatureIncludeMarks = "qwertasdfgzxcvb"
 nmap <leader>nm :SignatureToggleSigns<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key='<C-L>'
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Interesting words, taken from https://github.com/nicknisi/dotfiles
 function Match(word, color)
     " Calculate an arbitrary match ID.  Hopefully nothing else is using it.
@@ -219,6 +223,7 @@ function! HiInterestingWord(n)
     :call Match(@z, a:n)
     " Move back to our original location.
     normal! `z
+    :delmarks z
 endfunction
 nnoremap <silent> <leader>1 :call HiInterestingWord(1)<cr>
 nnoremap <silent> <leader>2 :call HiInterestingWord(2)<cr>
@@ -233,6 +238,9 @@ hi def InterestingWord4 ctermfg=16 ctermbg=137
 hi def InterestingWord5 ctermfg=16 ctermbg=211
 hi def InterestingWord6 ctermfg=16 ctermbg=195
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Misc
+noremap ,time a<C-R>=strftime("%c")<CR><Esc>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Abbreviation
 abbr torando tornado
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -241,8 +249,3 @@ abbr torando tornado
 nnoremap Q <nop>
 nnoremap <C-H> <NOP>
 nnoremap <C-Q> <NOP>
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Emmet
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-let g:user_emmet_leader_key='<C-L>'

@@ -3,3 +3,5 @@
 .netrwhist
 installed_plugins.vim
 .swp
+.tmp
+tmp
