@@ -63,6 +63,9 @@ nmap <silent> <leader>nr :set relativenumber!<CR>
 " set foldnestmax=10
 " set nofoldenable
 " set foldlevel=0
+set viewoptions-=options
+autocmd BufWinLeave *.* mkview!
+autocmd BufWinEnter *.* silent loadview
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" For tabbing (default tabbing)
 set softtabstop=4
