@@ -33,8 +33,8 @@ set ruler
 set smartindent                                                     " Autoindent
 set nowrap                                                          " Disable line wrap
 " map ; to :
-nnoremap ; :
-vnoremap ; :
+" nnoremap ; :
+" vnoremap ; :
 " map ! to :! to start running bash command
 nnoremap ! :!
 " https://coderwall.com/p/sdhfug/vim-swap-backup-and-undo-files
