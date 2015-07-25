@@ -24,7 +24,7 @@ set t_Co=256                                                        " Set termin
 syntax on                                                           " Syntax highlighting on
 set title                                                           " Display path at top
 set backspace=2                                                     " Allow backspace to delete other keys
-set wildignore+=*.swp,*.zip,*.o,*.class,*.jar,*.pyc,venv,venv3      " set wild ignore for ctrlp
+set wildignore+=*.swp,*.zip,*.o,*.class,*.jar,*.pyc,venv,venv3,node_modules      " set wild ignore for ctrlp
 set scroll=15                                                       " Set scroll for ctrl-U ctrl-D
 set autoread
 set hlsearch                                                        " highlight search term
@@ -82,8 +82,6 @@ let g:lightline = {
 """" set file type for some stuffs
 autocmd BufRead,BufNewFile .gitignore set filetype=conf.gitignore
 autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
-autocmd BufNewFile,BufReadPost *.js setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
-autocmd BufNewFile,BufReadPost *.html setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
 autocmd BufRead,BufNewFile VagrantFile set filetype=ruby
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.todo set filetype=todo
@@ -206,6 +204,8 @@ nmap <leader>nm :SignatureToggleSigns<CR>
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key='<C-L>'
+""" JSX
+let g:jsx_ext_required = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """" Interesting words, taken from https://github.com/nicknisi/dotfiles
 function Match(word, color)

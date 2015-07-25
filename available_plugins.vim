@@ -5,7 +5,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tomtom/tlib_vim'
 Plugin 'L9'
 Plugin 'MarcWeber/vim-addon-mw-utils'
-
 """"""""""""""""""""""""Functional Plugins""""""""""""""""""""""""
 "" Align text
 Plugin 'Align'
@@ -39,6 +38,8 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tpope/vim-speeddating'
 "" Calendar vim
 Plugin 'mattn/calendar-vim'
+"" Commenter
+Plugin 'ddollar/nerdcommenter'
 """"""""""""""""""""""""Visual Plugins""""""""""""""""""""""""
 "" Nice status line at the bottom
 "Plugin 'bling/vim-airline'
@@ -58,4 +59,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 "" Html/css
 Plugin 'mattn/emmet-vim'
+"" JSX (React)
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
