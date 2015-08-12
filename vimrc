@@ -24,7 +24,6 @@ set t_Co=256                                                        " Set termin
 syntax on                                                           " Syntax highlighting on
 set title                                                           " Display path at top
 set backspace=2                                                     " Allow backspace to delete other keys
-set wildignore+=*.swp,*.zip,*.o,*.class,*.jar,*.pyc,venv,venv3,node_modules      " set wild ignore for ctrlp
 set scroll=15                                                       " Set scroll for ctrl-U ctrl-D
 set autoread
 set hlsearch                                                        " highlight search term
@@ -81,8 +80,6 @@ let g:lightline = {
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" set file type for some stuffs
 autocmd BufRead,BufNewFile .gitignore set filetype=conf.gitignore
-autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
-autocmd BufRead,BufNewFile VagrantFile set filetype=ruby
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.todo set filetype=todo
 autocmd BufRead,BufNewFile *.zdoc set filetype=zdoc
@@ -158,11 +155,18 @@ let g:UltiSnipsJumpBackwardTrigger="<C-K>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """" CtrlP
+" CtrlP ignore
+set wildignore+=*.swp " ignore swp files
+set wildignore+=*.zip,*.jar,*.tar " ignore archive file types
+set wildignore+=venv,venv3,__pycache__,*.pyc " ignore python virtual env and compiled
+set wildignore+=node_modules " ignore npm
+set wildignore+=*.class " ignore java classes
 " nmap :CtrlPClearCache
+let g:ctrlp_switch_buffer=""
 """" CtrlP-Funky
 " nmap <C-J> :CtrlPFunky<CR>
 """" CTRLP CMD
-nmap <C-J> :CtrlPCmdPalette<CR>
+" nmap <C-J> :CtrlPCmdPalette<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" CtrlSpace Plugin
 let g:ctrlspace_ignored_files = "[venv3|venv]"
@@ -252,3 +256,9 @@ abbr torando tornado
 nnoremap Q <nop>
 nnoremap <C-H> <NOP>
 nnoremap <C-Q> <NOP>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Nice Register
+" for folding
+let @f = "Vk$h%kzf"
+
