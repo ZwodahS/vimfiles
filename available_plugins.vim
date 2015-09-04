@@ -40,6 +40,8 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'mattn/calendar-vim'
 "" Commenter
 Plugin 'ddollar/nerdcommenter'
+"" Automatically save view
+Plugin 'restore_view.vim'
 """"""""""""""""""""""""Visual Plugins""""""""""""""""""""""""
 "" Nice status line at the bottom
 "Plugin 'bling/vim-airline'
