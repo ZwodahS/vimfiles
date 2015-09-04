@@ -62,7 +62,7 @@ nmap <silent> <leader>nr :set relativenumber!<CR>
 " set foldnestmax=10
 " set nofoldenable
 " set foldlevel=0
-set viewoptions-=options
+set viewoptions=cursor,folds,slash,unix
 autocmd BufWinLeave *.* mkview!
 autocmd BufWinEnter *.* silent loadview
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -261,4 +261,10 @@ nnoremap <C-Q> <NOP>
 """" Nice Register
 " for folding
 let @f = "Vk$h%kzf"
-
+let @g = "V$h%zf"
+vnoremap - zf
+nnoremap - zc
+nnoremap = zo
+let g:BASH_Ctrl_j = 'off'
+nnoremap <C-j> zj
+nnoremap <C-k> zk
