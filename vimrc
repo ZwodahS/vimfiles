@@ -244,6 +244,8 @@ hi def InterestingWord3 ctermfg=16 ctermbg=121
 hi def InterestingWord4 ctermfg=16 ctermbg=137
 hi def InterestingWord5 ctermfg=16 ctermbg=211
 hi def InterestingWord6 ctermfg=16 ctermbg=195
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:python_highlight_all = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Misc
 noremap ,time a<C-R>=strftime("%c")<CR><Esc>
@@ -262,9 +264,12 @@ nnoremap <C-Q> <NOP>
 " for folding
 let @f = "Vk$h%kzf"
 let @g = "V$h%zf"
+
 vnoremap - zf
 nnoremap - zc
 nnoremap = zo
+nnoremap + zO
 let g:BASH_Ctrl_j = 'off'
 nnoremap <C-j> zj
 nnoremap <C-k> zk
+nnoremap <silent> zz :set foldmethod=syntax<CR>:set foldmethod=manual<CR>

@@ -65,3 +65,4 @@ Plugin 'mattn/emmet-vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
+Plugin 'ZwodahS/Python-Syntax-Folding'
