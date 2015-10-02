@@ -27,7 +27,9 @@ if exists('b:current_syntax')
 endif
 
 syn match zdoc_title "\v^\s*#.*"
-syn match zdoc_bullet '\v^\s*\*'
+syn match zdoc_bullet1 '\v^\s*\*'
+syn match zdoc_bullet2 '\v^\s*\>'
+syn match zdoc_bullet3 '\v^\s*\.'
 syn match zdoc_question '\v^\s*\?.*'
 syn match zdoc_exclaimation '\v^\s*\!.*'
 syn match zdoc_dot '\v^\s*\.[^\.]*\.\s*$'
@@ -47,7 +49,9 @@ hi def link zdoc_checkbox_lowpriority ZDocCheckboxLowPriority
 hi def link zdoc_checkbox_moved ZDocCheckboxMoved
 
 hi def link zdoc_title ZDocTitle
-hi def link zdoc_bullet ZDocBullet
+hi def link zdoc_bullet1 ZDocBullet1
+hi def link zdoc_bullet2 ZDocBullet2
+hi def link zdoc_bullet3 ZDocBullet3
 hi def link zdoc_question ZDocQuestion
 hi def link zdoc_exclaimation ZDocExclaimation
 hi def link zdoc_dot ZDocDotTitle
@@ -63,7 +67,9 @@ hi ZDocCheckboxMoved ctermfg=21
 hi ZDocCheckboxCancel ctermfg=88 cterm=reverse
 
 hi ZDocTitle ctermfg=178
-hi ZDocBullet ctermfg=11
+hi ZDocBullet1 ctermfg=11
+hi ZDocBullet2 ctermfg=10
+hi ZDocBullet3 ctermfg=50
 hi ZDocQuestion ctermfg=45
 hi ZDocDotTitle ctermfg=12
 hi ZDocExclaimation ctermfg=9

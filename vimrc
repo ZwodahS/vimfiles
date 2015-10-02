@@ -65,6 +65,17 @@ nmap <silent> <leader>nr :set relativenumber!<CR>
 set viewoptions=cursor,folds,slash,unix
 autocmd BufWinLeave *.* mkview!
 autocmd BufWinEnter *.* silent loadview
+" nice register for folding
+let @f = "Vk$h%kzf"
+let @g = "V$h%zf"
+vnoremap - zf
+nnoremap - zc
+nnoremap = zo
+nnoremap + zO
+let g:BASH_Ctrl_j = 'off'
+nnoremap <C-j> zj
+nnoremap <C-k> zk
+nnoremap <silent> zz :set foldmethod=syntax<CR>:set foldmethod=manual<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" For tabbing (default tabbing)
 set softtabstop=4
@@ -122,6 +133,11 @@ noremap <Down> :resize -3<cr>
 noremap <Left> :vertical resize -3<cr>
 noremap <Right> :vertical resize +3<cr>
 nmap \| :vertical resize 105<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Additional Quality of life bindings
+nnoremap <Space> f<Space>
+set cursorline
+set cursorcolumn
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -260,16 +276,4 @@ nnoremap <C-H> <NOP>
 nnoremap <C-Q> <NOP>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Nice Register
-" for folding
-let @f = "Vk$h%kzf"
-let @g = "V$h%zf"
-
-vnoremap - zf
 nnoremap - zc
-nnoremap = zo
-nnoremap + zO
-let g:BASH_Ctrl_j = 'off'
-nnoremap <C-j> zj
-nnoremap <C-k> zk
-nnoremap <silent> zz :set foldmethod=syntax<CR>:set foldmethod=manual<CR>
