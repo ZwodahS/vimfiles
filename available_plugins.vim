@@ -55,6 +55,8 @@ Plugin 'kien/rainbow_parentheses.vim'
 """"""""""""""""""""""""Language plugins""""""""""""""""""""""""
 "" Python documentation
 " Plugin 'davidhalter/jedi-vim'
+"" Python movment
+Plugin 'python_match.vim'
 "" Syntax checker
 Plugin 'scrooloose/syntastic'
 "" Jinja

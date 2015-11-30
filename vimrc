@@ -214,7 +214,7 @@ map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 nmap J <Plug>(easymotion-j)
 nmap K <Plug>(easymotion-k)
-nmap - <Plug>(easymotion-prefix)
+nmap _ <Plug>(easymotion-prefix)
 let g:EasyMotion_keys = "qwertasdfgpoiulkjhQWERTASDFGPOIUYLKJHMNVvcbnm"
 """" vim-signature
 let g:SignatureIncludeMarks = "qwertasdfgzxcvb"
