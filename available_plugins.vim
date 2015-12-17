@@ -68,3 +68,4 @@ Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
 Plugin 'ZwodahS/Python-Syntax-Folding'
+Plugin 'fatih/vim-go'
