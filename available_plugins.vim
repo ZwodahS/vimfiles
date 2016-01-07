@@ -52,6 +52,8 @@ Plugin 'lilydjwg/colorizer'
 Plugin 'nanotech/jellybeans.vim'
 " Rainbow brackets
 Plugin 'kien/rainbow_parentheses.vim'
+" Auto highlight when cursor stop moving
+Plugin 'ZwodahS/autohighlight.vim'
 """"""""""""""""""""""""Language plugins""""""""""""""""""""""""
 "" Python documentation
 " Plugin 'davidhalter/jedi-vim'
@@ -65,7 +67,10 @@ Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'mattn/emmet-vim'
 "" JSX (React)
 Plugin 'mxw/vim-jsx'
+"" Javascript
 Plugin 'pangloss/vim-javascript'
-""""""""""""""""""""""""Testing""""""""""""""""""""""""
+"" Python folding
 Plugin 'ZwodahS/Python-Syntax-Folding'
+"" Golang
 Plugin 'fatih/vim-go'
+""""""""""""""""""""""""Testing""""""""""""""""""""""""

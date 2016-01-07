@@ -261,6 +261,13 @@ hi def InterestingWord4 ctermfg=16 ctermbg=137
 hi def InterestingWord5 ctermfg=16 ctermbg=211
 hi def InterestingWord6 ctermfg=16 ctermbg=195
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Auto highlight
+:highlight CursorAutoHighlight ctermfg=87
+set updatetime=500
+let g:AutoHighlight_ClearOnCursorMoved = 1
+let g:AutoHighlight_ClearOnWindowExit = 1
+let g:AutoHighlight_DisabledBuffers = "ControlP"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:python_highlight_all = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Misc
