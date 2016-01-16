@@ -228,9 +228,9 @@ let g:user_emmet_leader_key='<C-L>'
 let g:jsx_ext_required = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """" Interesting words, taken from https://github.com/nicknisi/dotfiles
-function Match(word, color)
+function! Match(word, color)
     " Calculate an arbitrary match ID.  Hopefully nothing else is using it.
-    let mid = 86750 + a:color
+    let mid = 171959 + a:color
     " Clear existing matches, but don't worry if they don't exist.
     silent! call matchdelete(mid)
     " Construct a literal pattern that has to match at boundaries.
@@ -239,14 +239,8 @@ function Match(word, color)
     call matchadd("InterestingWord" . a:color, pat, 1, mid)
 endfunction
 function! HiInterestingWord(n)
-    " Save our location.
-    normal! mz
-    " Yank the current word into the z register.
-    normal! "zyiw
-    :call Match(@z, a:n)
-    " Move back to our original location.
-    normal! `z
-    :delmarks z
+    let word = expand('<cword>')
+    call Match(word, a:n)
 endfunction
 nnoremap <silent> <leader>1 :call HiInterestingWord(1)<cr>
 nnoremap <silent> <leader>2 :call HiInterestingWord(2)<cr>
@@ -261,9 +255,10 @@ hi def InterestingWord4 ctermfg=16 ctermbg=137
 hi def InterestingWord5 ctermfg=16 ctermbg=211
 hi def InterestingWord6 ctermfg=16 ctermbg=195
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Auto highlight
-:highlight CursorAutoHighlight ctermfg=87
-set updatetime=500
+:highlight CursorAutoHighlight ctermfg=127
+set updatetime=1250
 let g:AutoHighlight_ClearOnCursorMoved = 1
 let g:AutoHighlight_ClearOnWindowExit = 1
 let g:AutoHighlight_DisabledBuffers = "ControlP"

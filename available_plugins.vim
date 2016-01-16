@@ -73,4 +73,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'ZwodahS/Python-Syntax-Folding'
 "" Golang
 Plugin 'fatih/vim-go'
+"" Auto highlight
+Plugin 'ZwodahS/autohighlight.vim'
+"" Silver Searcher
+Plugin 'rking/ag.vim'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
