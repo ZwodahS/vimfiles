@@ -75,8 +75,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'ZwodahS/Python-Syntax-Folding'
 "" Golang
 Plugin 'fatih/vim-go'
-"" Auto highlight
-Plugin 'ZwodahS/autohighlight.vim'
 " Cython
 Plugin 'tshirtman/vim-cython'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
