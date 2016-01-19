@@ -42,6 +42,8 @@ Plugin 'mattn/calendar-vim'
 Plugin 'ddollar/nerdcommenter'
 "" Automatically save view
 Plugin 'restore_view.vim'
+"" Silver Searcher
+Plugin 'rking/ag.vim'
 """"""""""""""""""""""""Visual Plugins""""""""""""""""""""""""
 "" Nice status line at the bottom
 "Plugin 'bling/vim-airline'
@@ -75,6 +77,6 @@ Plugin 'ZwodahS/Python-Syntax-Folding'
 Plugin 'fatih/vim-go'
 "" Auto highlight
 Plugin 'ZwodahS/autohighlight.vim'
-"" Silver Searcher
-Plugin 'rking/ag.vim'
+" Cython
+Plugin 'tshirtman/vim-cython'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
