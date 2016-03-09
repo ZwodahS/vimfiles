@@ -44,6 +44,8 @@ Plugin 'ddollar/nerdcommenter'
 Plugin 'restore_view.vim'
 "" Silver Searcher
 Plugin 'rking/ag.vim'
+"" Git gutter for displaying changes
+Plugin 'airblade/vim-gitgutter'
 """"""""""""""""""""""""Visual Plugins""""""""""""""""""""""""
 "" Nice status line at the bottom
 "Plugin 'bling/vim-airline'

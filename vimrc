@@ -132,8 +132,8 @@ noremap <Up> :resize +3<cr>
 noremap <Down> :resize -3<cr>
 noremap <Left> :vertical resize -3<cr>
 noremap <Right> :vertical resize +3<cr>
-nmap \| :vertical resize 105<cr>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <C-W>- :vertical resize 160<cr>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Additional Quality of life bindings
 nnoremap <Space> f<Space>
 set cursorline
@@ -219,6 +219,8 @@ let g:EasyMotion_keys = "qwertasdfgpoiulkjhQWERTASDFGPOIUYLKJHMNVvcbnm"
 """" vim-signature
 let g:SignatureIncludeMarks = "qwertasdfgzxcvb"
 nmap <leader>nm :SignatureToggleSigns<CR>
+"""" git-gutter
+nmap <leader>hg :GitGutterToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """" Emmet
 let g:user_emmet_install_global = 0
