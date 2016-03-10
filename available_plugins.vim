@@ -74,9 +74,10 @@ Plugin 'mxw/vim-jsx'
 "" Javascript
 Plugin 'pangloss/vim-javascript'
 "" Python folding
-Plugin 'ZwodahS/Python-Syntax-Folding'
+" Plugin 'ZwodahS/Python-Syntax-Folding'
 "" Golang
 Plugin 'fatih/vim-go'
 " Cython
 Plugin 'tshirtman/vim-cython'
+Plugin 'tmhedberg/SimpylFold'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""

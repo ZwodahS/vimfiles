@@ -75,7 +75,6 @@ nnoremap + zO
 let g:BASH_Ctrl_j = 'off'
 nnoremap <C-j> zj
 nnoremap <C-k> zk
-nnoremap <silent> zz :set foldmethod=syntax<CR>:set foldmethod=manual<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" For tabbing (default tabbing)
 set softtabstop=4
