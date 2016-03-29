@@ -258,7 +258,7 @@ hi def InterestingWord6 ctermfg=16 ctermbg=195
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Auto highlight
-:highlight CursorAutoHighlight ctermfg=127
+highlight CursorAutoHighlight ctermfg=127
 set updatetime=1250
 let g:AutoHighlight_ClearOnCursorMoved = 1
 let g:AutoHighlight_ClearOnWindowExit = 1
@@ -280,4 +280,4 @@ nnoremap <C-Q> <NOP>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap - zc
-hi Comment ctermfg=32
+" hi Comment ctermfg=32
