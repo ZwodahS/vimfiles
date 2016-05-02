@@ -20,7 +20,9 @@ filetype plugin indent on    " required
 set colorcolumn=79,100,120
 colorscheme jellybeans
 """" Generic setup
-set t_Co=256                                                        " Set terminal color
+if has('nvim') == 0
+    set t_Co=256                                                        " Set terminal color
+endif
 syntax on                                                           " Syntax highlighting on
 set title                                                           " Display path at top
 set backspace=2                                                     " Allow backspace to delete other keys
@@ -65,9 +67,6 @@ nmap <silent> <leader>nr :set relativenumber!<CR>
 set viewoptions=cursor,folds,slash,unix
 autocmd BufWinLeave *.* mkview!
 autocmd BufWinEnter *.* silent loadview
-" nice register for folding
-let @f = "Vk$h%kzf"
-let @g = "V$h%zf"
 vnoremap - zf
 nnoremap - zc
 nnoremap = zo

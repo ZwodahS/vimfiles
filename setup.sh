@@ -15,3 +15,8 @@ if [ ! -e vundle ]; then
 fi
 cd ..
 cp available_plugins.vim installed_plugins.vim
+
+mkdir -p ~/.ssh/.config
+ln -s vimrc init.vim
+pushd ~/.ssh/.config
+ln -s ~/.vim nvim
