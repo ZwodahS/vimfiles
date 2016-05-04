@@ -1,4 +1,6 @@
-set encoding=utf-8
+if has('nvim') == 0
+    set encoding=utf-8
+endif
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " @ZwodahS
 " github/zwodahs
@@ -65,8 +67,8 @@ nmap <silent> <leader>nr :set relativenumber!<CR>
 " set nofoldenable
 " set foldlevel=0
 set viewoptions=cursor,folds,slash,unix
-autocmd BufWinLeave *.* mkview!
-autocmd BufWinEnter *.* silent loadview
+" autocmd BufWinLeave *.* mkview!
+" autocmd BufWinEnter *.* silent loadview
 vnoremap - zf
 nnoremap - zc
 nnoremap = zo
@@ -279,4 +281,4 @@ nnoremap <C-Q> <NOP>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap - zc
-hi Folded ctermbg=17 ctermfg=8
+hi Folded ctermbg=0 ctermfg=124
