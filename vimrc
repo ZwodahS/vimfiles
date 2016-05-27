@@ -19,7 +19,7 @@ source $vim_home/installed_plugins.vim
 call vundle#end()            " required
 filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set colorcolumn=79,100,120
+set colorcolumn=20,40,60,80,100,120
 colorscheme jellybeans
 """" Generic setup
 if has('nvim') == 0
