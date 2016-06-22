@@ -40,8 +40,6 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'mattn/calendar-vim'
 "" Commenter
 Plugin 'ddollar/nerdcommenter'
-"" Automatically save view
-Plugin 'restore_view.vim'
 "" Silver Searcher
 Plugin 'rking/ag.vim'
 "" Git gutter for displaying changes
@@ -50,17 +48,11 @@ Plugin 'airblade/vim-gitgutter'
 "" Nice status line at the bottom
 "Plugin 'bling/vim-airline'
 Plugin 'itchyny/lightline.vim'
-"" color any hex color in vim
-Plugin 'lilydjwg/colorizer'
 "" Nice theme
 Plugin 'nanotech/jellybeans.vim'
-" Rainbow brackets
-Plugin 'kien/rainbow_parentheses.vim'
 " Auto highlight when cursor stop moving
 Plugin 'ZwodahS/autohighlight.vim'
 """"""""""""""""""""""""Language plugins""""""""""""""""""""""""
-"" Python documentation
-" Plugin 'davidhalter/jedi-vim'
 "" Python movment
 Plugin 'python_match.vim'
 "" Syntax checker
@@ -73,8 +65,6 @@ Plugin 'mattn/emmet-vim'
 Plugin 'mxw/vim-jsx'
 "" Javascript
 Plugin 'pangloss/vim-javascript'
-"" Python folding
-" Plugin 'ZwodahS/Python-Syntax-Folding'
 "" Golang
 Plugin 'fatih/vim-go'
 " Cython
