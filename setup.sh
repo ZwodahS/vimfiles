@@ -16,7 +16,8 @@ fi
 cd ..
 cp available_plugins.vim installed_plugins.vim
 
-mkdir -p ~/.ssh/.config
+CONFIG_FDR="~/.config"
+mkdir -p ${CONFIG_FDR}
 ln -s vimrc init.vim
-pushd ~/.ssh/.config
+pushd ${CONFIG_FDR}
 ln -s ~/.vim nvim

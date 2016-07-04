@@ -10,7 +10,9 @@ endif
 let $vim_home='~/.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" For Vundle
-set nocompatible
+if has('nvim') == 0
+    set nocompatible
+endif
 filetype off
 set rtp+=$vim_home/bundle/vundle
 call vundle#begin($vim_home."/vundle")
