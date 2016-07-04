@@ -16,8 +16,8 @@ fi
 cd ..
 cp available_plugins.vim installed_plugins.vim
 
-CONFIG_FDR="~/.config"
-mkdir -p ${CONFIG_FDR}
+CONFIG_FDR="$HOME/.config"
+mkdir -p "${CONFIG_FDR}"
 ln -s vimrc init.vim
 pushd ${CONFIG_FDR}
 ln -s ~/.vim nvim
