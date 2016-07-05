@@ -69,3 +69,5 @@ Plug 'tshirtman/vim-cython'
 Plug 'Zwodahs/SimpylFold'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
 Plug 'ervandew/supertab'
+Plug 'tpope/vim-fugitive'
+Plug 'neomake/neomake'

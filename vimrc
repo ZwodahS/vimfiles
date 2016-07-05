@@ -147,6 +147,7 @@ source $vim_home/sources/lightline.vim
 source $vim_home/sources/nerdtree.vim
 source $vim_home/sources/signature.vim
 source $vim_home/sources/git-gutter.vim
+source $vim_home/sources/neomake.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:python_highlight_all = 1
