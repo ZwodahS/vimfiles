@@ -9,17 +9,22 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let $vim_home='~/.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" For Vundle
-if has('nvim') == 0
-    set nocompatible
-endif
-filetype off
-set rtp+=$vim_home/bundle/vundle
-call vundle#begin($vim_home."/vundle")
-" Plugins
-source $vim_home/installed_plugins.vim
-call vundle#end()            " required
-filetype plugin indent on    " required
+" """" For Vundle
+" if has('nvim') == 0
+"     set nocompatible
+" endif
+" filetype off
+" set rtp+=$vim_home/bundle/vundle
+" call vundle#begin($vim_home."/vundle")
+" " Plugins
+" source $vim_home/installed_plugins.vim
+" call vundle#end()            " required
+" filetype plugin indent on    " required
+"
+" """" For vim-plug
+call plug#begin($vim_home."/installed_plugins")
+source $vim_home/vim-plug.plugins.vim
+call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set colorcolumn=20,40,60,80,100,120
 colorscheme jellybeans

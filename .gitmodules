@@ -1,3 +1,6 @@
 [submodule "ext-repo/vundle"]
 	path = ext-repo/vundle
 	url = https://github.com/gmarik/Vundle.vim
+[submodule "ext-repo/vim-plug"]
+	path = ext-repo/vim-plug
+	url = https://github.com/junegunn/vim-plug
