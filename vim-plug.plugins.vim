@@ -42,6 +42,8 @@ Plug 'ddollar/nerdcommenter'
 Plug 'rking/ag.vim'
 "" Git gutter for displaying changes
 Plug 'airblade/vim-gitgutter'
+" Unite
+Plug 'Shougo/unite.vim'
 """"""""""""""""""""""""Visual Plugs""""""""""""""""""""""""
 "" Nice status line at the bottom
 Plug 'itchyny/lightline.vim'
@@ -53,7 +55,7 @@ Plug 'ZwodahS/autohighlight.vim'
 "" Python movment
 Plug 'python_match.vim'
 "" Syntax checker
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 "" Jinja
 Plug 'Glench/Vim-Jinja2-Syntax'
 "" Html/css
@@ -66,6 +68,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'fatih/vim-go'
 " Cython
 Plug 'tshirtman/vim-cython'
-Plug 'tmhedberg/SimpylFold'
+Plug 'Zwodahs/SimpylFold'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
 

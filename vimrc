@@ -74,8 +74,6 @@ nmap <silent> <leader>nr :set relativenumber!<CR>
 " set nofoldenable
 " set foldlevel=0
 set viewoptions=cursor,folds,slash,unix
-" autocmd BufWinLeave *.* mkview!
-" autocmd BufWinEnter *.* silent loadview
 vnoremap - zf
 nnoremap - zc
 nnoremap = zo
@@ -123,7 +121,7 @@ nmap <silent> <leader>i :set paste! <CR>
 " open vimrc
 nmap <leader>vfv :view $vim_home/vimrc<CR>
 " open plugins
-nmap <leader>vfp :view $vim_home/installed_plugins.vim<CR>
+nmap <leader>vfp :view $vim_home/vim-plug.plugins.vim<CR>
 " open new_commands
 nmap <leader>vfn :view $vim_home/new_commands<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -280,7 +278,6 @@ noremap ,time a<C-R>=strftime("%c")<CR><Esc>
 """" Abbreviation
 abbr torando tornado
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Training
 """" Unbind Stuffs
 nnoremap Q <nop>
 nnoremap <C-H> <NOP>

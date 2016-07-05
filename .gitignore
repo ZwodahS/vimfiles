@@ -6,3 +6,5 @@ installed_plugins.vim
 .tmp
 tmp
 view
+init.vim
+installed_plugins
