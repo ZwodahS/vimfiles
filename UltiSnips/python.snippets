@@ -1,8 +1,4 @@
 ############################## Basic Python stuffs ##############################
-snippet #!
-#!/usr/bin/env python
-endsnippet
-
 snippet pdb
 import pdb; pdb.set_trace()
 endsnippet
@@ -10,76 +6,5 @@ endsnippet
 snippet tbp
 import traceback; traceback.print_exc()
 endsnippet
-
-snippet definit
-def __init__(self, $1):
-	$2
-endsnippet
-
-snippet ifmain:
-if __name__ == "__main__":
-	$1
-endsnippet
-
 ############################## ##############################
-
-############################## Tornado stuffs ##############################
-
-snippet tornhttperror
-tornado.httpclient.HTTPError
-endsnippet
-
-snippet tornoptdefine
-tornado.options.define($1, type=$2, default=$0)
-endsnippet
-
-snippet torncoroutine
-@tornado.gen.coroutine
-endsnippet
-
-snippet tornimport
-import tornado.ioloop
-import tornado.log
-import tornado.web
-import tornado.gen
-import tornado.httpclient
-import tornado.options
-import tornado.httputil
-endsnippet
-
-############################## HTTP stuffs ##############################
-snippet t_content_type_appjson
-"Content-Type":"application/json"
-endsnippet
-
-############################## Random class ##############################
-snippet class:BatchPrinter
-import sys
-class BatchPrinter:
-	def __init__(self, line_max=100, char=None, max_count=None):
-		self.count = 0
-		self.line_max = line_max
-		self.char = char or '.'
-		self.max_count = max_count
-
-	def p(self, char=None, outfile=None):
-		outfile=outfile or sys.stdout
-		char = char or self.char
-		self.count+=1
-		if self.count % self.line_max != 0:
-			print(char, end ='', file=outfile)
-		else:
-			if self.max_count is None:
-				print(' '.join([char,str(self.count)]), file=outfile)
-			else:
-				print(''.join([char, ' ', str(self.count), '/', str(self.max_count)]), file=outfile)
-		sys.stdout.flush()
-
-	def finish(self, outfile=None):
-		outfile=outfile or sys.stdout
-		print(self.count, file=outfile)
-
-	def reset(self):
-		self.count = 0
-endsnippet
 
