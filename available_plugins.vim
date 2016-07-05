@@ -29,7 +29,9 @@ Plugin 'wesQ3/vim-windowswap'
 "" Snippet that works with YouCompleteMe
 Plugin 'SirVer/ultisnips'
 "" Autocomplete engine. Require compilation.
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'Konfekt/FastFold'
 "" Nice way to use marks
 Plugin 'kshenoy/vim-signature'
 "" Trailing whitespace
