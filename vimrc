@@ -293,5 +293,4 @@ hi Folded ctermbg=0 ctermfg=94
 """" neovim
 if has('nvim') != 0
     let g:deoplete#enable_at_startup = 1
-    let g:python_host_prog = '/usr/bin/python3.4'
 endif

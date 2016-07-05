@@ -1,6 +1,4 @@
 """"""""""""""""""""""""Basic/Dependency Plugs""""""""""""""""""""""""
-"" Manage Vundle as well
-Plug 'gmarik/Vundle.vim'
 "" Common vim library
 Plug 'tomtom/tlib_vim'
 Plug 'L9'
@@ -10,8 +8,6 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'Align'
 "" Fuzzy File finder
 Plug 'kien/ctrlp.vim'
-"" Fuzzy command finder
-Plug 'fisadev/vim-ctrlp-cmdpalette'
 "" Undo tree visualization
 Plug 'sjl/gundo.vim'
 "" Super motion plugin
@@ -28,8 +24,10 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'SirVer/ultisnips'
 "" Autocomplete engine. Require compilation.
 "Plug 'Valloric/YouCompleteMe'
-Plug 'Shougo/deoplete.nvim'
-Plug 'Konfekt/FastFold'
+if has('nvim') != 0
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'Konfekt/FastFold'
+endif
 "" Nice way to use marks
 Plug 'kshenoy/vim-signature'
 "" Trailing whitespace
@@ -46,7 +44,6 @@ Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
 """"""""""""""""""""""""Visual Plugs""""""""""""""""""""""""
 "" Nice status line at the bottom
-"Plug 'bling/vim-airline'
 Plug 'itchyny/lightline.vim'
 "" Nice theme
 Plug 'nanotech/jellybeans.vim'

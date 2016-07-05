@@ -19,7 +19,7 @@ popd
 
 if [ "${PLUGIN_MANAGER}" == "vim-plug" ]; then
     pushd autoload
-    ln -s ../ext-repo/vim-plug vim-plug/plug.vim .
+    ln -s ../ext-repo/vim-plug/plug.vim .
     popd
 fi
 
