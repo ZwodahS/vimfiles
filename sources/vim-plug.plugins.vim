@@ -7,7 +7,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 "" Align text
 Plug 'Align'
 "" Fuzzy File finder
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 "" Undo tree visualization
 Plug 'sjl/gundo.vim'
 "" Super motion plugin
@@ -15,7 +15,7 @@ Plug 'Lokaltog/vim-easymotion'
 "" Surround text with something + add 's' motion
 Plug 'tpope/vim-surround'
 "" File browser
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 "" A simple way of switching windows
 Plug 'wesQ3/vim-windowswap'
 "" Snippet that works with YouCompleteMe
@@ -68,4 +68,4 @@ Plug 'fatih/vim-go'
 Plug 'tshirtman/vim-cython'
 Plug 'Zwodahs/SimpylFold'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
-
+Plug 'ervandew/supertab'

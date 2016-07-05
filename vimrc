@@ -170,3 +170,5 @@ hi Folded ctermbg=0 ctermfg=94
 if has('nvim') != 0
     let g:deoplete#enable_at_startup = 1
 endif
+
+let g:SuperTabDefaultCompletionType = "<c-n>"
