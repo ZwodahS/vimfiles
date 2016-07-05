@@ -4,16 +4,12 @@ if [ -z "${PLUGIN_MANAGER}" ]; then
     PLUGIN_MANAGER="vim-plug"
 fi
 
-if [ ! -e .swp ]; then
-    mkdir .swp
-fi
-if [ ! -e vundle ]; then
-    mkdir vundle
-fi
-
-if [ ! -e bundle ]; then
-    mkdir bundle
-fi
+for FOLDER in .swp installed_plugins bundle autoload;
+do
+    if [ ! -e "${FOLDER}" ]; then
+        mkdir ${FOLDER}
+    fi
+done
 
 pushd bundle
 if [ ! -e vundle -a "${PLUGIN_MANAGER}" == "vundle" ]; then
@@ -26,9 +22,6 @@ if [ "${PLUGIN_MANAGER}" == "vim-plug" ]; then
     ln -s ../ext-repo/vim-plug vim-plug/plug.vim .
     popd
 fi
-
-cd ..
-cp available_plugins.vim installed_plugins.vim
 
 CONFIG_FDR="$HOME/.config"
 mkdir -p "${CONFIG_FDR}"
