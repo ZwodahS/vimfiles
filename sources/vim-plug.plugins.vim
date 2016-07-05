@@ -16,8 +16,6 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-surround'
 "" File browser
 Plug 'scrooloose/nerdtree'
-"" Merge tabs into previous window
-Plug 'Tabmerge'
 "" A simple way of switching windows
 Plug 'wesQ3/vim-windowswap'
 "" Snippet that works with YouCompleteMe
