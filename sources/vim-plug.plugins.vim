@@ -25,6 +25,8 @@ Plug 'SirVer/ultisnips'
 if has('nvim') != 0
     Plug 'Shougo/deoplete.nvim'
     Plug 'Konfekt/FastFold'
+    Plug 'ervandew/supertab'
+    Plug 'neomake/neomake'
 endif
 "" Nice way to use marks
 Plug 'kshenoy/vim-signature'
@@ -42,6 +44,8 @@ Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
 " Unite
 Plug 'Shougo/unite.vim'
+" GitWrapper
+Plug 'tpope/vim-fugitive'
 """"""""""""""""""""""""Visual Plugs""""""""""""""""""""""""
 "" Nice status line at the bottom
 Plug 'itchyny/lightline.vim'
@@ -68,6 +72,3 @@ Plug 'fatih/vim-go'
 Plug 'tshirtman/vim-cython'
 Plug 'Zwodahs/SimpylFold'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
-Plug 'ervandew/supertab'
-Plug 'tpope/vim-fugitive'
-Plug 'neomake/neomake'
