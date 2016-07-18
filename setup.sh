@@ -20,11 +20,18 @@ for PENV in venv2 venv3; do
 done
 
 pushd autoload
-ln -s ../ext-repo/vim-plug/plug.vim .
+if [ ! -e "plug.vim" ]; then
+    ln -s ../ext-repo/vim-plug/plug.vim .
+fi
 popd
+
+if [ ! -e "init.vim" ]; then
+    ln -s vimrc init.vim
+fi
 
 CONFIG_FDR="$HOME/.config"
 mkdir -p "${CONFIG_FDR}"
-ln -s vimrc init.vim
 pushd ${CONFIG_FDR}
-ln -s ~/.vim nvim
+if [ ! -e "nvim" ]; then
+    ln -s ~/.vim nvim
+fi
