@@ -11,7 +11,7 @@ if [ ! -e venv2 ]; then
     virtualenv -p python venv2
 fi
 if [ ! -e venv3 ]; then
-    virtualenv -p python venv3
+    virtualenv -p python3 venv3
 fi
 
 for PENV in venv2 venv3; do
