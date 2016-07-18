@@ -56,8 +56,8 @@ Plug 'ZwodahS/autohighlight.vim'
 """"""""""""""""""""""""Language plugins""""""""""""""""""""""""
 "" Python movment
 Plug 'python_match.vim'
+Plug 'zchee/deoplete-jedi'
 "" Syntax checker
-" Plug 'scrooloose/syntastic'
 "" Jinja
 Plug 'Glench/Vim-Jinja2-Syntax'
 "" Html/css

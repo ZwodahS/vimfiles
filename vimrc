@@ -170,6 +170,7 @@ hi Folded ctermbg=0 ctermfg=94
 """" neovim
 if has('nvim') != 0
     let g:deoplete#enable_at_startup = 1
+    let g:python_host_prog = "/home/eric/.vimfiles/venv2/bin/python"
+    let g:python3_host_prog = "/home/eric/.vimfiles/venv3/bin/python"
 endif
-
 let g:SuperTabDefaultCompletionType = "<c-n>"
