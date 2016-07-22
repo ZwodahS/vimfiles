@@ -1,5 +1,6 @@
 if has('nvim') == 0
     set encoding=utf-8
+    set t_Co=256                                                        " Set terminal color
 endif
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " @ZwodahS
@@ -19,9 +20,6 @@ call plug#end()
 set colorcolumn=20,40,60,80,100,120
 colorscheme jellybeans
 """" Generic setup
-if has('nvim') == 0
-    set t_Co=256                                                        " Set terminal color
-endif
 syntax on                                                           " Syntax highlighting on
 set title                                                           " Display path at top
 set backspace=2                                                     " Allow backspace to delete other keys
@@ -32,10 +30,6 @@ set hidden                                                          " allow buff
 set ruler
 set smartindent                                                     " Autoindent
 set nowrap                                                          " Disable line wrap
-" map ; to :
-" nnoremap ; :
-" vnoremap ; :
-" map ! to :! to start running bash command
 nnoremap ! :!
 " https://coderwall.com/p/sdhfug/vim-swap-backup-and-undo-files
 " set directory to store swp
@@ -50,20 +44,12 @@ set listchars=tab:¬\ ,eol:↵                                         " set the
 nnoremap <silent> <leader>l :set list!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" line number and relative line number
-" set number                                                          " line number
-" relative number - disabled due to lag
-" set relativenumber                                                  " relative line number
-" Toggle for showing line number
+" Toggle showing of line number
 nmap <silent> <leader>nn :set number!<CR>
-" Toggle for showing jelative number
+" Toggle showing of relative number
 nmap <silent> <leader>nr :set relativenumber!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" For Folding disable for now until i find a good way to do folding.
-" set foldmethod=syntax
-" set foldnestmax=10
-" set nofoldenable
-" set foldlevel=0
-set viewoptions=cursor,folds,slash,unix
+"""" remap folding to - and +/=
 vnoremap - zf
 nnoremap - zc
 nnoremap = zo
