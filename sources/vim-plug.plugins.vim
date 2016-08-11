@@ -39,7 +39,8 @@ Plug 'mattn/calendar-vim'
 "" Commenter
 Plug 'ddollar/nerdcommenter'
 "" Silver Searcher
-Plug 'rking/ag.vim'
+" Plug 'rking/ag.vim' # sorry that you got replace, but you get to stay here
+Plug 'mileszs/ack.vim'
 "" Git gutter for displaying changes
 Plug 'airblade/vim-gitgutter'
 " Unite
