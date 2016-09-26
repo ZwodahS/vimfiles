@@ -72,4 +72,5 @@ Plug 'fatih/vim-go'
 " Cython
 Plug 'tshirtman/vim-cython'
 Plug 'Zwodahs/SimpylFold'
+Plug 'cespare/vim-toml', { 'for': 'toml' }
 """"""""""""""""""""""""Testing""""""""""""""""""""""""

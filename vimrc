@@ -8,7 +8,7 @@ endif
 "
 " vimfile source : https://github.com/ZwodahS/vimfiles
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let $vim_home='~/.vim'
+let $vim_home=expand('~/.vim')
 let $vim_plug_file=$vim_home."/sources/vim-plug.plugins.vim"
 let $vim_rc=$vim_home."/vimrc"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -158,9 +158,8 @@ hi Folded ctermbg=0 ctermfg=94
 if has('nvim') != 0
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#auto_complete_delay = 50
-    let g:python_host_prog = "/home/eric/.vimfiles/venv2/bin/python"
-    let g:python3_host_prog = "/home/eric/.vimfiles/venv3/bin/python"
-    set relativenumber
+    let g:python_host_prog=$vim_home."/venv2/bin/python"
+    let g:python3_host_prog=$vim_home."/venv3/bin/python"
 endif
 let g:SuperTabDefaultCompletionType = "<c-n>"
 set mouse=
