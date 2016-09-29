@@ -109,8 +109,9 @@ nnoremap <C-W>- :vertical resize 160<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Additional Quality of life bindings
 nnoremap <Space> f<Space>
-set cursorline
-set cursorcolumn
+"" these are laggy =( but i would love to use them. Not sure how yet
+" set cursorline
+" set cursorcolumn
 """" Trailing whitespace
 nmap <silent> <leader><space> :FixWhitespace<CR>
 vmap <silent> <leader><space> :FixWhitespace<CR>
@@ -153,6 +154,8 @@ nnoremap <C-Q> <NOP>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap - zc
 hi Folded ctermbg=0 ctermfg=94
+
+let @g = "cf'merge(f'2xcw->lx$a)^" " convert the Merge message of git to merge(X->Y)
 
 """" neovim
 if has('nvim') != 0

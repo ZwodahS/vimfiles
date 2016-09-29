@@ -56,8 +56,8 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'ZwodahS/autohighlight.vim'
 """"""""""""""""""""""""Language plugins""""""""""""""""""""""""
 "" Python movment
-Plug 'python_match.vim'
-Plug 'zchee/deoplete-jedi'
+"Plug 'python_match.vim'
+"Plug 'zchee/deoplete-jedi'
 "" Syntax checker
 "" Jinja
 Plug 'Glench/Vim-Jinja2-Syntax'
