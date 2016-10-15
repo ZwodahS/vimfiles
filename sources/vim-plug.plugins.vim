@@ -55,10 +55,8 @@ Plug 'nanotech/jellybeans.vim'
 " Auto highlight when cursor stop moving
 Plug 'ZwodahS/autohighlight.vim'
 """"""""""""""""""""""""Language plugins""""""""""""""""""""""""
-"" Python movment
+"" Python
 "Plug 'python_match.vim'
-"Plug 'zchee/deoplete-jedi'
-"" Syntax checker
 "" Jinja
 Plug 'Glench/Vim-Jinja2-Syntax'
 "" Html/css
@@ -68,9 +66,11 @@ Plug 'mxw/vim-jsx'
 "" Javascript
 Plug 'pangloss/vim-javascript'
 "" Golang
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'zchee/deoplete-go', { 'for': 'go' }
 " Cython
 Plug 'tshirtman/vim-cython'
-Plug 'Zwodahs/SimpylFold'
+Plug 'Zwodahs/SimpylFold', { 'for': 'python' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 """"""""""""""""""""""""Testing""""""""""""""""""""""""

@@ -136,6 +136,7 @@ source $vim_home/sources/signature.vim
 source $vim_home/sources/git-gutter.vim
 source $vim_home/sources/neomake.vim
 source $vim_home/sources/ack.vim
+source $vim_home/sources/go.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:python_highlight_all = 1
