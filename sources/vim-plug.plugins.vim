@@ -56,7 +56,11 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'ZwodahS/autohighlight.vim'
 """"""""""""""""""""""""Language plugins""""""""""""""""""""""""
 "" Python
-"Plug 'python_match.vim'
+"" Python movment
+Plug 'python_match.vim'
+Plug 'zchee/deoplete-jedi'
+"Plug 'davidhalter/jedi-vim'
+"" Syntax checker
 "" Jinja
 Plug 'Glench/Vim-Jinja2-Syntax'
 "" Html/css
@@ -69,7 +73,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'zchee/deoplete-go', { 'for': 'go' }
 " Cython
-Plug 'tshirtman/vim-cython'
+"Plug 'tshirtman/vim-cython'
 Plug 'Zwodahs/SimpylFold', { 'for': 'python' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }

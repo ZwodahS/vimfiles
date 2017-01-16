@@ -23,7 +23,7 @@ colorscheme jellybeans
 syntax on                                                           " Syntax highlighting on
 set title                                                           " Display path at top
 set backspace=2                                                     " Allow backspace to delete other keys
-set scroll=15                                                       " Set scroll for ctrl-U ctrl-D
+set scroll=3                                                       " Set scroll for ctrl-U ctrl-D
 set autoread
 set hlsearch                                                        " highlight search term
 set hidden                                                          " allow buffer to switch when not saved
@@ -69,6 +69,8 @@ autocmd BufRead,BufNewFile .gitignore set filetype=conf.gitignore
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.todo set filetype=todo
 autocmd BufRead,BufNewFile *.zdoc set filetype=zdoc
+autocmd BufRead,BufNewFile *.js set foldmethod=syntax
+autocmd BufRead,BufNewFile *.jsx set foldmethod=syntax
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Python stuffs
 nnoremap <silent> <F9> :!clear; python %<CR>
@@ -82,6 +84,8 @@ nmap <silent> <leader>w :set wrap!<CR>
 nmap <silent> <leader>uv :source $MYVIMRC<CR>
 " update syntax highlighting
 nmap <silent> <leader>uf :syntax sync fromstart<CR>
+" remove syntax for this file
+nmap <silent> <leader>sf :setlocal syntax=text<CR>
 " remove all trailing white space (replaced with trailing whitespace plugin)
 "nmap <silent> <leader><space> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Toggle paste mode, (aka turn off smart indent)
@@ -110,8 +114,8 @@ nnoremap <C-W>- :vertical resize 160<cr>
 """" Additional Quality of life bindings
 nnoremap <Space> f<Space>
 "" these are laggy =( but i would love to use them. Not sure how yet
-" set cursorline
-" set cursorcolumn
+set cursorline
+set cursorcolumn
 """" Trailing whitespace
 nmap <silent> <leader><space> :FixWhitespace<CR>
 vmap <silent> <leader><space> :FixWhitespace<CR>
@@ -154,9 +158,10 @@ nnoremap <C-Q> <NOP>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap - zc
-hi Folded ctermbg=0 ctermfg=94
+hi Folded ctermbg=0 ctermfg=7
 
-let @g = "cf'merge(f'2xcw->lx$a)^" " convert the Merge message of git to merge(X->Y)
+cnoreabbrev du diffupdate
+nnoremap <leader>du diffupdate
 
 """" neovim
 if has('nvim') != 0
