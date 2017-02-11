@@ -2,6 +2,9 @@ if has('nvim') == 0
     set encoding=utf-8
     set t_Co=256                                                        " Set terminal color
 endif
+" if has('termguicolors')
+"     set termguicolors
+" endif
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " @ZwodahS
 " github/zwodahs

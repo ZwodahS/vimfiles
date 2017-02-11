@@ -19,9 +19,9 @@ nnoremap <silent> <leader>3 :call HiInterestingWord(3)<cr>
 nnoremap <silent> <leader>4 :call HiInterestingWord(4)<cr>
 nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
 nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
-hi def InterestingWord1 ctermfg=16 ctermbg=214
-hi def InterestingWord2 ctermfg=16 ctermbg=154
-hi def InterestingWord3 ctermfg=16 ctermbg=121
-hi def InterestingWord4 ctermfg=16 ctermbg=137
-hi def InterestingWord5 ctermfg=16 ctermbg=211
-hi def InterestingWord6 ctermfg=16 ctermbg=195
+hi def InterestingWord1 ctermfg=16 ctermbg=214 guifg=#000000 guibg=#ffaf00
+hi def InterestingWord2 ctermfg=16 ctermbg=154 guifg=#000000 guibg=#afff00
+hi def InterestingWord3 ctermfg=16 ctermbg=121 guifg=#000000 guibg=#87ffaf
+hi def InterestingWord4 ctermfg=16 ctermbg=137 guifg=#000000 guibg=#af875f
+hi def InterestingWord5 ctermfg=16 ctermbg=211 guifg=#000000 guibg=#ff87af
+hi def InterestingWord6 ctermfg=16 ctermbg=195 guifg=#000000 guibg=#d7ffff
