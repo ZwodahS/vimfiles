@@ -57,19 +57,19 @@ hi def link zdoc_exclaimation ZDocExclaimation
 hi def link zdoc_dot ZDocDotTitle
 
 """""" Actual colors
-hi ZDocTestRegex ctermbg=15 ctermfg=0
+hi ZDocTestRegex ctermbg=15 ctermfg=0 guibg=#ffffff guifg=#000000
 
-hi ZDocCheckboxDone ctermfg=46
-hi ZDocCheckboxHighPriority ctermfg=184
-hi ZDocCheckboxUndone ctermfg=124
-hi ZDocCheckboxLowPriority ctermfg=126
-hi ZDocCheckboxMoved ctermfg=21
-hi ZDocCheckboxCancel ctermfg=88 cterm=reverse
+hi ZDocCheckboxDone ctermfg=46 guifg=#00af00
+hi ZDocCheckboxHighPriority ctermfg=184 guifg=#d7d700
+hi ZDocCheckboxUndone ctermfg=124 guifg=#af0000
+hi ZDocCheckboxLowPriority ctermfg=126 guifg=#af0087
+hi ZDocCheckboxMoved ctermfg=21 guifg=#0000ff
+hi ZDocCheckboxCancel ctermfg=88 cterm=reverse guifg=#870000
 
-hi ZDocTitle ctermfg=178
-hi ZDocBullet1 ctermfg=11
-hi ZDocBullet2 ctermfg=10
-hi ZDocBullet3 ctermfg=50
-hi ZDocQuestion ctermfg=45
-hi ZDocDotTitle ctermfg=12
-hi ZDocExclaimation ctermfg=9
+hi ZDocTitle ctermfg=178 guifg=#d7af00
+hi ZDocBullet1 ctermfg=11 guifg=#ffff00
+hi ZDocBullet2 ctermfg=10 guifg=#00ff00
+hi ZDocBullet3 ctermfg=50 guifg=#00ffd7
+hi ZDocQuestion ctermfg=45 guifg=#00d7ff
+hi ZDocDotTitle ctermfg=12 guifg=#0000ff
+hi ZDocExclaimation ctermfg=9 guifg=#ff0000
