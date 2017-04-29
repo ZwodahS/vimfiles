@@ -113,6 +113,8 @@ noremap <Down> :resize -3<cr>
 noremap <Left> :vertical resize -3<cr>
 noremap <Right> :vertical resize +3<cr>
 nnoremap <C-W>- :vertical resize 160<cr>
+set splitbelow
+set splitright
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Additional Quality of life bindings
 nnoremap <Space> f<Space>
@@ -154,10 +156,11 @@ noremap ,time a<C-R>=strftime("%c")<CR><Esc>
 """" Abbreviation
 abbr torando tornado
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Unbind Stuffs
+"""" Unbind Stuffs that I am not using
 nnoremap Q <nop>
 nnoremap <C-H> <NOP>
 nnoremap <C-Q> <NOP>
+nnoremap <C-T> <NOP>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap - zc
@@ -175,3 +178,7 @@ if has('nvim') != 0
 endif
 let g:SuperTabDefaultCompletionType = "<c-n>"
 set mouse=
+
+"""" Macros
+" replace return with tornado.gen.Return
+let @t = 'cwraise tornado.gen.Retr€kburn(lxA)^'
