@@ -1,11 +1,11 @@
-""""""""""""""""""""""""Basic/Dependency Plugs""""""""""""""""""""""""
+"""""""""""""""""""""""Basic/Dependency Plugs""""""""""""""""""""""""
 "" Common vim library
 Plug 'tomtom/tlib_vim'
-Plug 'L9'
+Plug 'vim-scripts/L9'
 Plug 'MarcWeber/vim-addon-mw-utils'
 """"""""""""""""""""""""Functional Plugs""""""""""""""""""""""""
 "" Align text
-Plug 'Align'
+Plug 'vim-script/Align'
 "" Fuzzy File finder
 Plug 'ctrlpvim/ctrlp.vim'
 "" Undo tree visualization
@@ -57,7 +57,7 @@ Plug 'ZwodahS/autohighlight.vim'
 """"""""""""""""""""""""Language plugins""""""""""""""""""""""""
 "" Python
 "" Python movment
-Plug 'python_match.vim'
+Plug 'vim-scripts/python_match.vim'
 Plug 'zchee/deoplete-jedi'
 "Plug 'davidhalter/jedi-vim'
 "" Syntax checker

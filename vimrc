@@ -163,6 +163,7 @@ nnoremap <C-Q> <NOP>
 nnoremap <C-T> <NOP>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Map - to folding
 nnoremap - zc
 hi Folded ctermbg=0 ctermfg=7
 
@@ -182,3 +183,5 @@ set mouse=
 """" Macros
 " replace return with tornado.gen.Return
 let @t = 'cwraise tornado.gen.Retr€kburn(lxA)^'
+" fold by brackets
+let @f = 'v%zf'
