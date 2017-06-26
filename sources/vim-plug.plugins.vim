@@ -5,7 +5,7 @@ Plug 'vim-scripts/L9'
 Plug 'MarcWeber/vim-addon-mw-utils'
 """"""""""""""""""""""""Functional Plugs""""""""""""""""""""""""
 "" Align text
-Plug 'vim-script/Align'
+Plug 'vim-scripts/Align'
 "" Fuzzy File finder
 Plug 'ctrlpvim/ctrlp.vim'
 "" Undo tree visualization
@@ -64,7 +64,7 @@ Plug 'zchee/deoplete-jedi'
 "" Jinja
 Plug 'Glench/Vim-Jinja2-Syntax'
 "" Html/css
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim', {
 "" JSX (React)
 Plug 'mxw/vim-jsx'
 "" Javascript
@@ -74,7 +74,8 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'zchee/deoplete-go', { 'for': 'go' }
 " Cython
 "Plug 'tshirtman/vim-cython'
-Plug 'Zwodahs/SimpylFold', { 'for': 'python' }
+Plug 'ZwodahS/SimpylFold', { 'for': 'python' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
+Plug 'jeetsukumaran/vim-buffergator'
