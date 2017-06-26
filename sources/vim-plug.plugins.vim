@@ -23,7 +23,7 @@ Plug 'SirVer/ultisnips'
 "" Autocomplete engine. Require compilation.
 "Plug 'Valloric/YouCompleteMe'
 if has('nvim') != 0
-    Plug 'Shougo/deoplete.nvim'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'Konfekt/FastFold'
     Plug 'ervandew/supertab'
     Plug 'neomake/neomake'
@@ -79,3 +79,4 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
 Plug 'jeetsukumaran/vim-buffergator'
+Plug 'majutsushi/tagbar'
