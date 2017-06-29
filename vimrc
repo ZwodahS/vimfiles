@@ -22,7 +22,7 @@ call plug#begin($vim_home."/installed_plugins")
 source $vim_plug_file
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set colorcolumn=20,40,60,80,100,120
+set colorcolumn=20,40,60,80,100,110,120
 colorscheme jellybeans
 """" Generic setup
 syntax on                                           " Syntax highlighting on

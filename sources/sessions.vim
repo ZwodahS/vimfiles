@@ -3,4 +3,4 @@ function! s:loadSession()
     source .session
     echo "Session Loaded!"
 endfunction
-command LoadSession call s:loadSession()
+command! LoadSession call s:loadSession()
