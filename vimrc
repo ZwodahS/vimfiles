@@ -22,7 +22,7 @@ call plug#begin($vim_home."/installed_plugins")
 source $vim_plug_file
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set colorcolumn=20,40,60,80,100,110,120
+set colorcolumn=60,80,100,110,120
 colorscheme jellybeans
 """" Generic setup
 syntax on                                           " Syntax highlighting on
@@ -61,8 +61,6 @@ vnoremap - zf
 nnoremap - zc
 nnoremap = zo
 nnoremap + zO
-" disable bash control J short cut
-let g:BASH_Ctrl_j = 'off'
 " map C-j C-k for moving by fold
 nnoremap <C-j> zj
 nnoremap <C-k> zk
@@ -80,9 +78,6 @@ autocmd BufRead,BufNewFile *.todo set filetype=todo
 autocmd BufRead,BufNewFile *.zdoc set filetype=zdoc
 autocmd BufRead,BufNewFile *.js set foldmethod=syntax
 autocmd BufRead,BufNewFile *.jsx set foldmethod=syntax
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Python stuffs
-nnoremap <silent> <F9> :!clear; python %<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Common Binding
 " clear search

@@ -21,7 +21,6 @@ Plug 'wesQ3/vim-windowswap'
 "" Snippet that works with YouCompleteMe
 Plug 'SirVer/ultisnips'
 "" Autocomplete engine. Require compilation.
-"Plug 'Valloric/YouCompleteMe'
 if has('nvim') != 0
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'Konfekt/FastFold'
@@ -43,10 +42,10 @@ Plug 'ddollar/nerdcommenter'
 Plug 'mileszs/ack.vim'
 "" Git gutter for displaying changes
 Plug 'airblade/vim-gitgutter'
-" Unite
-Plug 'Shougo/unite.vim'
 " GitWrapper
 Plug 'tpope/vim-fugitive'
+" Buffer viewer
+Plug 'jeetsukumaran/vim-buffergator'
 """"""""""""""""""""""""Visual Plugs""""""""""""""""""""""""
 "" Nice status line at the bottom
 Plug 'itchyny/lightline.vim'
@@ -78,5 +77,7 @@ Plug 'ZwodahS/SimpylFold', { 'for': 'python' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
+" Unite
+" Haven't got to play with this yet
+" Plug 'Shougo/unite.vim'
