@@ -1,4 +1,9 @@
-nnoremap <C-S> :mks! .session<CR> :echo "Session Saved!"<CR>
+function! s:saveSession()
+    mks! .session
+    echo "Session Saved!"
+endfunction
+command! SaveSession call s:saveSession()
+
 function! s:loadSession()
     source .session
     echo "Session Loaded!"
