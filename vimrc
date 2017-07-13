@@ -163,7 +163,7 @@ nnoremap <C-H> <NOP>
 nnoremap <C-Q> <NOP>
 nnoremap <C-T> <NOP>
 vnoremap <C-K> <NOP>
-nnoremap <leader>hh :read !gen h 100 4
+nnoremap <leader>hh :read !header h 100 4
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" neovim deoplete
 if has('nvim') != 0
