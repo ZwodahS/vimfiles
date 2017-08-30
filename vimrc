@@ -56,7 +56,7 @@ nmap <silent> <leader>nr :set relativenumber!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Folding remap
 " - to fold/close +/= to open
-hi Folded ctermbg=0 ctermfg=7
+hi Folded ctermbg=0 ctermfg=7 guifg=#0087af guibg=#1c1c1c
 vnoremap - zf
 nnoremap - zc
 nnoremap = zo
@@ -70,6 +70,9 @@ set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 set expandtab
+nmap <silent> <leader> :let @/= ""<CR>
+nmap <silent> <leader>tt2 :set softtabstop=2<CR> :set tabstop=2<CR> :set shiftwidth=2 <CR>
+nmap <silent> <leader>tt4 :set softtabstop=4<CR> :set tabstop=4<CR> :set shiftwidth=4 <CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" set file type for some stuffs
 autocmd BufRead,BufNewFile .gitignore set filetype=conf.gitignore
