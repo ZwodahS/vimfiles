@@ -71,8 +71,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 nmap <silent> <leader> :let @/= ""<CR>
-nmap <silent> <leader>tt2 :set softtabstop=2<CR> :set tabstop=2<CR> :set shiftwidth=2 <CR>
-nmap <silent> <leader>tt4 :set softtabstop=4<CR> :set tabstop=4<CR> :set shiftwidth=4 <CR>
+nmap <silent> <leader>tt2 :set softtabstop=2<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>:echo "Tab set to 2"<CR>
+nmap <silent> <leader>tt4 :set softtabstop=4<CR>:set tabstop=4<CR>:set shiftwidth=4<CR>:echo "Tab set to 4"<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" set file type for some stuffs
 autocmd BufRead,BufNewFile .gitignore set filetype=conf.gitignore
