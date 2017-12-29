@@ -57,6 +57,8 @@ nmap <silent> <leader>nr :set relativenumber!<CR>
 """" Folding remap
 " - to fold/close +/= to open
 hi Folded ctermbg=0 ctermfg=7 guifg=#0087af guibg=#1c1c1c
+" disable italics for comment.
+hi Comment gui=None
 vnoremap - zf
 nnoremap - zc
 nnoremap = zo
