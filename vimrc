@@ -1,12 +1,9 @@
-if has('termguicolors')
-    set termguicolors
-endif
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " @ZwodahS
 " github/zwodahs
 "
 " vimfile source : https://github.com/ZwodahS/vimfiles
-" vim tips : https://www.reddit.com/r/vim/wiki/vimrctips#wiki_do_not_use_smartindent
+" vim tips : https://www.reddit.com/r/vim/wiki/vimrctips
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set variables
 let $vim_home=expand('~/.vim')
@@ -64,7 +61,6 @@ set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 set expandtab
-nnoremap <silent> <leader> :let @/= ""<CR>
 nnoremap <silent> <leader>tt2 :set softtabstop=2<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>:echo "Tab set to 2"<CR>
 nnoremap <silent> <leader>tt4 :set softtabstop=4<CR>:set tabstop=4<CR>:set shiftwidth=4<CR>:echo "Tab set to 4"<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
