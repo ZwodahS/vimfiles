@@ -1,7 +1,3 @@
-if has('nvim') == 0
-    set encoding=utf-8
-    set t_Co=256                                                        " Set terminal color
-endif
 if has('termguicolors')
     set termguicolors
 endif
@@ -10,6 +6,7 @@ endif
 " github/zwodahs
 "
 " vimfile source : https://github.com/ZwodahS/vimfiles
+" vim tips : https://www.reddit.com/r/vim/wiki/vimrctips#wiki_do_not_use_smartindent
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set variables
 let $vim_home=expand('~/.vim')
@@ -19,20 +16,19 @@ let $vim_plug_file=$vim_home."/sources/vim-plug.plugins.vim"
 """" For vim-plug
 call plug#begin($vim_home."/installed_plugins")
 " source all the plugins
-source $vim_plug_file
+runtime /sources/vim-plug.plugins.vim
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set colorcolumn=60,80,100,110,120
 colorscheme jellybeans
 """" Generic setup
-syntax on                                           " Syntax highlighting on
+if !has('g:syntax_on')|syntax enable|endif
 set title                                           " Display path at top
 set backspace=2                                     " Allow backspace to delete other keys
 set scroll=3                                        " Set scroll for ctrl-U ctrl-D
 set autoread                                        " Auto read file if it has been changed outside but not in vim
 set hlsearch                                        " highlight search term
 set hidden                                          " allow buffer to switch when not saved
-set smartindent                                     " Autoindent
 set nowrap                                          " Disable line wrap
 " https://coderwall.com/p/sdhfug/vim-swap-backup-and-undo-files
 " set directory to store swp
@@ -40,7 +36,6 @@ set directory=~/.vim/.swp//
 set noshowmode                                      " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set laststatus=2                                    " Always display the statusline in all windows
 set showtabline=2                                   " Always display the tabline, even if there is only one tab
-set mouse=                                          " Disable Mouse
 nnoremap ! :!
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Special EOL char and tabs
@@ -50,17 +45,13 @@ nnoremap <silent> <leader>l :set list!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" line number and relative line number
 " Toggle showing of line number
-nmap <silent> <leader>nn :set number!<CR>
+nnoremap <silent> <leader>nn :set number!<CR>
 " Toggle showing of relative number
-nmap <silent> <leader>nr :set relativenumber!<CR>
+nnoremap <silent> <leader>nr :set relativenumber!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Folding remap
 " - to fold/close +/= to open
-hi Folded ctermbg=0 ctermfg=7 guifg=#ffd7ff guibg=#121212
-" disable italics for comment if necessary, when the machine does not allow
-" for italics
-" hi Comment gui=None
-vnoremap - zf
+xnoremap - zf
 nnoremap - zc
 nnoremap = zo
 nnoremap + zO
@@ -73,43 +64,45 @@ set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 set expandtab
-nmap <silent> <leader> :let @/= ""<CR>
-nmap <silent> <leader>tt2 :set softtabstop=2<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>:echo "Tab set to 2"<CR>
-nmap <silent> <leader>tt4 :set softtabstop=4<CR>:set tabstop=4<CR>:set shiftwidth=4<CR>:echo "Tab set to 4"<CR>
+nnoremap <silent> <leader> :let @/= ""<CR>
+nnoremap <silent> <leader>tt2 :set softtabstop=2<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>:echo "Tab set to 2"<CR>
+nnoremap <silent> <leader>tt4 :set softtabstop=4<CR>:set tabstop=4<CR>:set shiftwidth=4<CR>:echo "Tab set to 4"<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" set file type for some stuffs
-autocmd BufRead,BufNewFile .gitignore set filetype=conf.gitignore
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile *.todo set filetype=todo
-autocmd BufRead,BufNewFile *.zdoc set filetype=zdoc
-autocmd BufRead,BufNewFile *.js set foldmethod=syntax
-autocmd BufRead,BufNewFile *.jsx set foldmethod=syntax
+augroup filetypedetect
+    autocmd BufRead,BufNewFile .gitignore set filetype=conf.gitignore
+    autocmd BufRead,BufNewFile *.md set filetype=markdown
+    autocmd BufRead,BufNewFile *.todo set filetype=todo
+    autocmd BufRead,BufNewFile *.zdoc set filetype=zdoc
+    autocmd BufRead,BufNewFile *.js set foldmethod=syntax
+    autocmd BufRead,BufNewFile *.jsx set foldmethod=syntax
+augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Common Binding
 " clear search
-nmap <silent> <leader>c :let @/= ""<CR>
+nnoremap <silent> <leader>c :let @/= ""<CR>
 " toggle wrap
-nmap <silent> <leader>w :set wrap!<CR>
+nnoremap <silent> <leader>w :set wrap!<CR>
 " update vimrc
-nmap <silent> <leader>uv :source $MYVIMRC<CR>
+nnoremap <silent> <leader>uv :source $MYVIMRC<CR>
 " update syntax highlighting
-nmap <silent> <leader>uf :syntax sync fromstart<CR>
+nnoremap <silent> <leader>uf :syntax sync fromstart<CR>
 " remove syntax for this file
-nmap <silent> <leader>sf :setlocal syntax=text<CR>
+nnoremap <silent> <leader>sf :setlocal syntax=text<CR>
 " Toggle paste mode, (aka turn off smart indent)
-nmap <silent> <leader>i :set paste! <CR>
+nnoremap <silent> <leader>i :set paste! <CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Edit important files
 " open vimrc
-nmap <leader>vfv :view $vim_rc<CR>
+nnoremap <leader>vfv :view $vim_rc<CR>
 " open plugins
-nmap <leader>vfp :view $vim_plug_file<CR>
+nnoremap <leader>vfp :view $vim_plug_file<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Tabs
 " open current buffer in new tab
-nmap <C-W>t :tab split<CR>
+nnoremap <C-W>t :tab split<CR>
 " close all tab except active
-nmap <C-W>r :tabonly<CR>
+nnoremap <C-W>r :tabonly<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Windows
 " resize splits
@@ -130,30 +123,36 @@ nnoremap <Space> f<Space>
 set cursorline
 set cursorcolumn
 """" Remove Trailing whitespace
-nmap <silent> <leader><space> :FixWhitespace<CR>
-vmap <silent> <leader><space> :FixWhitespace<CR>
+nnoremap <silent> <leader><space> :FixWhitespace<CR>
+xnoremap <silent> <leader><space> :FixWhitespace<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins configurations
-source $vim_home/sources/gundo.vim
-source $vim_home/sources/autohighlight.vim
-source $vim_home/sources/ultisnips.vim
-source $vim_home/sources/ctrlp.vim
-source $vim_home/sources/windowswap.vim
-source $vim_home/sources/easymotion.vim
-source $vim_home/sources/lightline.vim
-source $vim_home/sources/nerdtree.vim
-source $vim_home/sources/signature.vim
-source $vim_home/sources/git-gutter.vim
-source $vim_home/sources/neomake.vim
-source $vim_home/sources/ack.vim
-source $vim_home/sources/go.vim
-source $vim_home/sources/jsx.vim
+runtime sources/gundo.vim
+runtime sources/autohighlight.vim
+runtime sources/ultisnips.vim
+runtime sources/ctrlp.vim
+runtime sources/windowswap.vim
+runtime sources/easymotion.vim
+runtime sources/lightline.vim
+runtime sources/nerdtree.vim
+runtime sources/signature.vim
+runtime sources/git-gutter.vim
+runtime sources/neomake.vim
+runtime sources/ack.vim
+runtime sources/go.vim
+runtime sources/jsx.vim
 " Non-plugin
-source $vim_home/sources/interesting_words.vim
-source $vim_home/sources/sessions.vim
+runtime sources/interesting_words.vim
+runtime sources/sessions.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme * highlight Folded ctermbg=0 ctermfg=7 guifg=#ffd7ff guibg=#121212
+augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Misc
 noremap ,time a<C-R>=strftime("%c")<CR><Esc>
@@ -168,7 +167,7 @@ nnoremap Q <NOP>
 nnoremap <C-H> <NOP>
 nnoremap <C-Q> <NOP>
 nnoremap <C-T> <NOP>
-vnoremap <C-K> <NOP>
+xnoremap <C-K> <NOP>
 nnoremap <leader>hh :read !header h 100 4
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" neovim deoplete
