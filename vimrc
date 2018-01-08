@@ -6,6 +6,10 @@
 " vim tips : https://www.reddit.com/r/vim/wiki/vimrctips
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set variables
+
+" for some reason has("termguicolors") was wrongly detected in server, need to
+" figure out why
+if $TERMGUI=="1"|set termguicolors|endif
 let $vim_home=expand('~/.vim')
 let $vim_rc=$vim_home."/vimrc"
 let $vim_plug_file=$vim_home."/sources/vim-plug.plugins.vim"
