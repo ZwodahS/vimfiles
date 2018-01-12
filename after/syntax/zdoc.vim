@@ -59,12 +59,13 @@ hi def link zdoc_dot ZDocDotTitle
 """""" Actual colors
 hi ZDocTestRegex ctermbg=15 ctermfg=0 guibg=#ffffff guifg=#000000
 
-hi ZDocCheckboxDone ctermfg=46 guifg=#00af00
-hi ZDocCheckboxHighPriority ctermfg=184 guifg=#d7d700
-hi ZDocCheckboxUndone ctermfg=124 guifg=#af0000
-hi ZDocCheckboxLowPriority ctermfg=126 guifg=#af0087
-hi ZDocCheckboxMoved ctermfg=21 guifg=#0000ff
-hi ZDocCheckboxCancel ctermfg=88 cterm=reverse guifg=#870000
+hi ZDocCheckboxDone ctermfg=243 guifg=#767676 gui=italic
+hi ZDocCheckboxLowPriority ctermfg=248 guifg=#a8a8a8
+hi ZDocCheckboxUndone ctermfg=251 guifg=#c6c6c6
+hi ZDocCheckboxHighPriority ctermfg=15 guifg=#ffffff
+
+hi ZDocCheckboxMoved ctermfg=21 guifg=#8787ff
+hi ZDocCheckboxCancel ctermfg=238 guifg=#444444
 
 hi ZDocTitle ctermfg=178 guifg=#d7af00
 hi ZDocBullet1 ctermfg=11 guifg=#ffff00
