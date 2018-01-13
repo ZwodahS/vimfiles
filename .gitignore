@@ -8,3 +8,4 @@ tmp
 view
 init.vim
 installed_plugins
+sources/.local
