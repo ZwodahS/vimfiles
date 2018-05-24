@@ -37,6 +37,8 @@ set directory=~/.vim/.swp//
 set noshowmode                                      " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set laststatus=2                                    " Always display the statusline in all windows
 set showtabline=2                                   " Always display the tabline, even if there is only one tab
+set mouse=                                          " disable mouse, mainly for macvim
+set autoindent
 nnoremap ! :!
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Special EOL char and tabs
