@@ -83,6 +83,7 @@ augroup END
 """" Common Binding
 " clear search
 nnoremap <silent> <leader>c :let @/= ""<CR>
+nnoremap <silent> <leader>ca :let @/= ""<CR>
 " toggle wrap
 nnoremap <silent> <leader>w :set wrap!<CR>
 " update vimrc
