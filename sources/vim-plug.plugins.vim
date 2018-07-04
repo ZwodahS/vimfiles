@@ -69,7 +69,7 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 "" Golang
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'zchee/deoplete-go', { 'for': 'go' }
+" Plug 'zchee/deoplete-go', { 'for': 'go' }
 " Cython
 "Plug 'tshirtman/vim-cython'
 Plug 'ZwodahS/SimpylFold', { 'for': 'python' }
