@@ -80,3 +80,4 @@ Plug 'majutsushi/tagbar'
 " Unite
 " Haven't got to play with this yet
 " Plug 'Shougo/unite.vim'
+Plug 'ryanoasis/vim-devicons'

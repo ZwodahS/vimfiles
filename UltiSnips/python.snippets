@@ -10,5 +10,13 @@ endsnippet
 snippet pprint
 import pprint; pprint.pprint(${0})
 endsnippet
+
+snippet tstart
+start = __import__("time").time()
+endsnippet
+
+snippet tend
+end = __import__("time").time(); print("${0}: ", end - start)
+endsnippet
 ############################## ##############################
 
