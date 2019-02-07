@@ -59,6 +59,7 @@ Plug 'ZwodahS/autohighlight.vim'
 Plug 'vim-scripts/python_match.vim'
 " Plug 'davidhalter/jedi-vim'
 "" Syntax checker
+Plug 'nvie/vim-flake8'
 "" Jinja
 Plug 'Glench/Vim-Jinja2-Syntax'
 "" Html/css
