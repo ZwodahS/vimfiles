@@ -1,5 +1,6 @@
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " @ZwodahS
+"
 " github/zwodahs
 "
 " vimfile source : https://github.com/ZwodahS/vimfiles
@@ -83,7 +84,7 @@ augroup END
 """" Common Binding
 " clear search
 nnoremap <silent> <leader>c :let @/= ""<CR>
-nnoremap <silent> <leader>ca :let @/= ""<CR>
+nnoremap <silent> <leader>gc :let @/= ""<CR>
 " toggle wrap
 nnoremap <silent> <leader>w :set wrap!<CR>
 " update vimrc
@@ -122,6 +123,7 @@ set splitright
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Additional Quality of life bindings
 nnoremap <Space> f<Space>
+vnoremap <Space> f<Space>
 " show cursor line and column
 set cursorline
 set cursorcolumn
@@ -154,11 +156,13 @@ runtime sources/flake8-gutter.vim
 " https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
 augroup MyColors
     autocmd!
-    autocmd ColorScheme * highlight Folded ctermbg=0 ctermfg=7 guifg=#ffd7ff guibg=#121212
+    "autocmd ColorScheme * highlight Folded ctermbg=0 ctermfg=7 guifg=#ffd7ff guibg=#121212
 augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Misc
 noremap ,time a<C-R>=strftime("%c")<CR><Esc>
+" generate a random sha and put into buffer
+nnoremap <silent> <leader>rs :let @"=system('echo -n $(date 2>/dev/null\|shasum 2>/dev/null\|cut -d " " -f 1)') <CR>
 """" Git
 nnoremap <C-S> :!git save<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

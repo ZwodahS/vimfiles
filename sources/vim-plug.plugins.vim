@@ -76,6 +76,8 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'ZwodahS/SimpylFold', { 'for': 'python' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
+Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
+Plug 'pedrohdz/vim-yaml-folds', { 'for': 'yaml' }
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
 Plug 'majutsushi/tagbar'
 " Unite
