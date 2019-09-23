@@ -24,6 +24,7 @@ call plug#end()
 set colorcolumn=60,80,100,110,120
 """ color scheme selection
 colorscheme gruvbox
+set background=dark
 "colorscheme jellybeans
 """
 "use light bg if the env var is there.
