@@ -60,7 +60,10 @@ Plug 'ZwodahS/autohighlight.vim'
 Plug 'vim-scripts/python_match.vim'
 " Plug 'davidhalter/jedi-vim'
 "" Syntax checker
-Plug 'nvie/vim-flake8'
+" only enable flake8 if the file exists in the current directory
+if filereadable(".flake8")
+    Plug 'nvie/vim-flake8'
+endif
 "" Jinja
 Plug 'Glench/Vim-Jinja2-Syntax'
 "" Html/css
