@@ -22,9 +22,13 @@ runtime /sources/vim-plug.plugins.vim
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set colorcolumn=60,80,100,110,120
-"colorscheme gruvbox
-colorscheme jellybeans
-"""" Generic setup
+""" color scheme selection
+colorscheme gruvbox
+"colorscheme jellybeans
+"""
+"use light bg if the env var is there.
+if $LIGHT == "1"|set bg=light|endif
+""" Generic setup
 if !has('g:syntax_on')|syntax enable|endif
 set title                                           " Display path at top
 set backspace=2                                     " Allow backspace to delete other keys
