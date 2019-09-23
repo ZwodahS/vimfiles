@@ -22,6 +22,7 @@ runtime /sources/vim-plug.plugins.vim
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set colorcolumn=60,80,100,110,120
+"colorscheme gruvbox
 colorscheme jellybeans
 """" Generic setup
 if !has('g:syntax_on')|syntax enable|endif
@@ -186,12 +187,14 @@ if has('nvim') != 0
 endif
 """" Super Tab completion
 let g:SuperTabDefaultCompletionType = "<c-n>"
+" Let haxe use the build.hxml to build T . T
+let g:neomake_haxe_haxe_args = ['.lint.hxml']
 
 """" Macros
 " replace 'return' with 'tornado.gen.Return'
-let @t = 'cwraise tornado.gen.Retr€kburn(lxA)^'
+let @t = 'cwraise tornado.gen.Return(lxA)^'
 " fold by brackets
-let @f = 'v%zf'
+let @f = 'V$%zf'
 
 """" Unknown/TBC ????
 cnoreabbrev du diffupdate

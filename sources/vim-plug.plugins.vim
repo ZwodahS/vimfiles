@@ -51,6 +51,7 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'itchyny/lightline.vim'
 "" Nice theme
 Plug 'nanotech/jellybeans.vim'
+Plug 'morhetz/gruvbox'
 " Auto highlight when cursor stop moving
 Plug 'ZwodahS/autohighlight.vim'
 """"""""""""""""""""""""Language plugins""""""""""""""""""""""""
@@ -78,6 +79,8 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'pedrohdz/vim-yaml-folds', { 'for': 'yaml' }
+"Haxe
+Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
 Plug 'majutsushi/tagbar'
 " Unite
