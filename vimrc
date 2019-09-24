@@ -21,8 +21,9 @@ call plug#begin($vim_home."/installed_plugins")
 runtime /sources/vim-plug.plugins.vim
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set colorcolumn=60,80,100,110,120
+set colorcolumn=80,100,110,120
 """ color scheme selection
+let g:gruvbox_italic=1
 colorscheme gruvbox
 set background=dark
 "colorscheme jellybeans
