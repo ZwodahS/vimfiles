@@ -3,3 +3,28 @@ snippet comment
   ${0}
 **/
 endsnippet
+
+snippet set
+public function set_${1:var}($1: ${2: T}): $2 {
+	this.$1 = $1;
+	return this.$1;
+}
+endsnippet
+
+snippet get
+public function get_${1:var}(): $2 {
+	return this.$1;
+}
+endsnippet
+
+snippet variable
+public var ${1: var}(get, set): ${2: T};
+
+public function set_$1($1: $2): $2 {
+	this.$1 = $1;
+	return this.$1;
+}
+public function get_$1(): $2 {
+	return this.$1;
+}
+endsnippet

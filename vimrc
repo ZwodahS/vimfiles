@@ -21,7 +21,7 @@ call plug#begin($vim_home."/installed_plugins")
 runtime /sources/vim-plug.plugins.vim
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set colorcolumn=80,100,110,120
+set colorcolumn=80,110,120
 """ color scheme selection
 let g:gruvbox_italic=1
 colorscheme gruvbox
@@ -90,7 +90,6 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Common Binding
 " clear search
-nnoremap <silent> <leader>c :let @/= ""<CR>
 nnoremap <silent> <leader>gc :let @/= ""<CR>
 " toggle wrap
 nnoremap <silent> <leader>w :set wrap!<CR>
@@ -135,8 +134,8 @@ vnoremap <Space> f<Space>
 set cursorline
 set cursorcolumn
 """" Remove Trailing whitespace
-nnoremap <silent> <leader><space> :FixWhitespace<CR>
-xnoremap <silent> <leader><space> :FixWhitespace<CR>
+nnoremap <silent> <leader><Space> :FixWhitespace<CR>
+xnoremap <silent> <leader><Space> :FixWhitespace<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins configurations
@@ -161,10 +160,6 @@ runtime sources/flake8-gutter.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
-augroup MyColors
-    autocmd!
-    "autocmd ColorScheme * highlight Folded ctermbg=0 ctermfg=7 guifg=#ffd7ff guibg=#121212
-augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Misc
 noremap ,time a<C-R>=strftime("%c")<CR><Esc>

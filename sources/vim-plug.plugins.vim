@@ -62,12 +62,10 @@ Plug 'vim-scripts/python_match.vim'
 "" Syntax checker
 " only enable flake8 if the file exists in the current directory
 if filereadable(".flake8")
-    Plug 'nvie/vim-flake8'
+    Plug 'nvie/vim-flake8', { 'for': 'python' }
 endif
 "" Jinja
 Plug 'Glench/Vim-Jinja2-Syntax'
-"" Html/css
-" Plug 'mattn/emmet-vim', {
 "" JSX (React)
 Plug 'mxw/vim-jsx'
 "" Javascript
