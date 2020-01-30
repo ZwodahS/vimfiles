@@ -205,3 +205,5 @@ let g:python_highlight_all = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " for config that are machine specfic
 runtime sources/.local
+let g:float_preview#docked = 0
+

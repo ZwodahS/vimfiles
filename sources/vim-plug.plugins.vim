@@ -26,6 +26,7 @@ if has('nvim') != 0
     Plug 'Konfekt/FastFold'
     Plug 'ervandew/supertab'
     Plug 'neomake/neomake'
+    Plug 'ncm2/float-preview.nvim'
 endif
 "" Nice way to use marks
 Plug 'kshenoy/vim-signature'
@@ -61,7 +62,7 @@ Plug 'vim-scripts/python_match.vim'
 " Plug 'davidhalter/jedi-vim'
 "" Syntax checker
 " only enable flake8 if the file exists in the current directory
-if filereadable(".flake8")
+if filereadable(".flake8") != 0
     Plug 'nvie/vim-flake8', { 'for': 'python' }
 endif
 "" Jinja
