@@ -49,6 +49,7 @@ set mouse=                                          " disable mouse, mainly for 
 set autoindent
 nnoremap ! :!
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Special EOL char and tabs
 set listchars=tab:¬\ ,eol:↵                   " set the character for special char
 " toggle for showing eol and other char
@@ -190,6 +191,8 @@ endif
 let g:SuperTabDefaultCompletionType = "<c-n>"
 " Let haxe use the build.hxml to build T . T
 let g:neomake_haxe_haxe_args = ['.lint.hxml']
+" suppres buffergator
+let g:buffergator_suppress_keymaps = 1
 
 """" Macros
 " replace 'return' with 'tornado.gen.Return'
@@ -207,3 +210,6 @@ let g:python_highlight_all = 1
 runtime sources/.local
 let g:float_preview#docked = 0
 
+let g:user_emmet_leader_key='<C-J>'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall

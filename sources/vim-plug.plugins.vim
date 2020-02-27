@@ -83,9 +83,11 @@ Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'pedrohdz/vim-yaml-folds', { 'for': 'yaml' }
 "Haxe
 Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
+Plug 'majutsushi/tagbar'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
 Plug 'majutsushi/tagbar'
 " Unite
 " Haven't got to play with this yet
 " Plug 'Shougo/unite.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'mattn/emmet-vim'
