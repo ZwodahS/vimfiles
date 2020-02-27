@@ -154,6 +154,7 @@ runtime sources/neomake.vim
 runtime sources/ack.vim
 runtime sources/go.vim
 runtime sources/jsx.vim
+runtime sources/buffergator.vim
 " Non-plugin
 runtime sources/interesting_words.vim
 runtime sources/flake8-gutter.vim
@@ -192,7 +193,6 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " Let haxe use the build.hxml to build T . T
 let g:neomake_haxe_haxe_args = ['.lint.hxml']
 " suppres buffergator
-let g:buffergator_suppress_keymaps = 1
 
 """" Macros
 " replace 'return' with 'tornado.gen.Return'
