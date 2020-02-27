@@ -26,7 +26,6 @@ if has('nvim') != 0
     Plug 'Konfekt/FastFold'
     Plug 'ervandew/supertab'
     Plug 'neomake/neomake'
-    Plug 'ncm2/float-preview.nvim'
 endif
 "" Nice way to use marks
 Plug 'kshenoy/vim-signature'
@@ -83,7 +82,9 @@ Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'pedrohdz/vim-yaml-folds', { 'for': 'yaml' }
 "Haxe
 Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
-Plug 'majutsushi/tagbar'
+"Typescript
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
 Plug 'majutsushi/tagbar'
 " Unite

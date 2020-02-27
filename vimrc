@@ -87,7 +87,11 @@ augroup filetypedetect
     autocmd BufRead,BufNewFile *.zdoc set filetype=zdoc
     autocmd BufRead,BufNewFile *.js set foldmethod=syntax
     autocmd BufRead,BufNewFile *.jsx set foldmethod=syntax
+    " autocmd BufRead,BufNewFile *.tsx set filetype=javascript
 augroup END
+"""" Fold method forcing
+nnoremap <silent> zs :set foldmethod=syntax<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Common Binding
 " clear search
@@ -208,8 +212,3 @@ let g:python_highlight_all = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " for config that are machine specfic
 runtime sources/.local
-let g:float_preview#docked = 0
-
-let g:user_emmet_leader_key='<C-J>'
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
