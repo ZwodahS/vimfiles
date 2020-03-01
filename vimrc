@@ -85,8 +85,6 @@ augroup filetypedetect
     autocmd BufRead,BufNewFile *.md set filetype=markdown
     autocmd BufRead,BufNewFile *.todo set filetype=todo
     autocmd BufRead,BufNewFile *.zdoc set filetype=zdoc
-    autocmd BufRead,BufNewFile *.js set foldmethod=syntax
-    autocmd BufRead,BufNewFile *.jsx set foldmethod=syntax
     " autocmd BufRead,BufNewFile *.tsx set filetype=javascript
 augroup END
 """" Fold method forcing

@@ -16,7 +16,7 @@ fi
 
 for PENV in venv2 venv3; do
     . ${PENV}/bin/activate
-    pip install neovim jedi
+    pip install neovim jedi msgpack-python
 done
 
 pushd autoload
