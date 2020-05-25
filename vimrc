@@ -21,7 +21,7 @@ call plug#begin($vim_home."/installed_plugins")
 runtime /sources/vim-plug.plugins.vim
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set colorcolumn=80,110,120
+set colorcolumn=80,100,120
 """ color scheme selection
 let g:gruvbox_italic=1
 colorscheme gruvbox
@@ -70,6 +70,11 @@ nnoremap + zO
 " map C-j C-k for moving by fold
 nnoremap <C-j> zj
 nnoremap <C-k> zk
+
+"""" Global Clipboard
+vmap gy "+y
+nnoremap gp "+p
+vnoremap gp "+p
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" For tabbing (default tabbing)
 set softtabstop=4
@@ -85,7 +90,6 @@ augroup filetypedetect
     autocmd BufRead,BufNewFile *.md set filetype=markdown
     autocmd BufRead,BufNewFile *.todo set filetype=todo
     autocmd BufRead,BufNewFile *.zdoc set filetype=zdoc
-    " autocmd BufRead,BufNewFile *.tsx set filetype=javascript
 augroup END
 """" Fold method forcing
 nnoremap <silent> zs :set foldmethod=syntax<CR>
@@ -185,8 +189,12 @@ nnoremap <leader>hh :read !header h 100 4
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" neovim deoplete
 if has('nvim') != 0
+    " :help deoplete-options
     let g:deoplete#enable_at_startup = 1
-    let g:deoplete#auto_complete_delay = 50
+    call deoplete#custom#option('auto_complete_delay', 50)
+    call deoplete#custom#option('max_list', 15)
+	call deoplete#custom#option('smart_case', v:true)
+
     let g:python_host_prog=$vim_home."/venv2/bin/python"
     let g:python3_host_prog=$vim_home."/venv3/bin/python"
 endif
@@ -206,6 +214,7 @@ let @f = 'V$%zf'
 cnoreabbrev du diffupdate
 nnoremap <leader>du diffupdate
 let g:python_highlight_all = 1
+set completeopt=menu,noselect
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " for config that are machine specfic

@@ -27,12 +27,12 @@ if exists('b:current_syntax')
 endif
 
 syn match zdoc_title "\v^\s*#.*"
-syn match zdoc_bullet1 '\v^\s*\*'
-syn match zdoc_bullet2 '\v^\s*\>'
-syn match zdoc_bullet3 '\v^\s*\.'
 syn match zdoc_question '\v^\s*\?.*'
 syn match zdoc_exclaimation '\v^\s*\!.*'
 syn match zdoc_dot '\v^\s*\.[^\.]*\.\s*$'
+syn match zdoc_italic '\*.\{-}\*'
+syn match zdoc_bullet2 '\v^\s*\>'
+syn match zdoc_bullet3 '\v^\s*\.'
 
 syn match zdoc_checkbox_undone "\v\[ ][^\[]*"
 syn match zdoc_checkbox_highpriority "\v\+\[ ][^\[]*"
@@ -55,11 +55,13 @@ hi def link zdoc_bullet3 ZDocBullet3
 hi def link zdoc_question ZDocQuestion
 hi def link zdoc_exclaimation ZDocExclaimation
 hi def link zdoc_dot ZDocDotTitle
+hi def link zdoc_italic ZDocItalic
 
 """""" Actual colors
 hi ZDocTestRegex ctermbg=15 ctermfg=0 guibg=#ffffff guifg=#000000
+hi ZDocItalic gui=italic guifg=#FFFF88
 
-hi ZDocCheckboxDone ctermfg=238 guifg=#444444 gui=italic
+hi ZDocCheckboxDone ctermfg=238 guifg=#888888 gui=italic
 hi ZDocCheckboxLowPriority ctermfg=248 guifg=#a8a8a8
 hi ZDocCheckboxUndone ctermfg=251 guifg=#c6c6c6
 hi ZDocCheckboxHighPriority ctermfg=15 guifg=#ffffff

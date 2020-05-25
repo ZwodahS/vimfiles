@@ -1,6 +1,6 @@
 snippet comment
 /**
-  ${0}
+	${0}
 **/
 endsnippet
 
@@ -27,4 +27,56 @@ public function set_$1($1: $2): $2 {
 public function get_$1(): $2 {
 	return this.$1;
 }
+endsnippet
+
+snippet castComponent
+cast(${2:entity}.getComponent(${1:Component}.TYPE), $1);
+endsnippet
+
+snippet classComponent
+package ${1:world.components};
+import common.ecs.Component;
+
+class ${2:`!p snip.rv = snip.basename`} extends Component {
+	public static final TYPE = "$2";
+	override public function get_type(): String { return TYPE; }
+}
+endsnippet
+
+snippet classMessage
+package ${1:world.messages};
+
+import common.Message;
+
+class ${2:`!p snip.rv = snip.basename`} extends Message {
+	public static final TYPE = "$2";
+	override public function get_type(): String { return TYPE; }
+
+	public function new() {
+		super();
+	}
+}
+endsnippet
+
+snippet classSystem
+package ${1:world.systems};
+
+import common.ecs.System;
+import common.ecs.Entity;
+
+class ${2:`!p snip.rv = snip.basename`} extends System {
+	public function new() {
+		super();
+	}
+	override public function addEntity(entity: Entity) {}
+	override public function removeEntity(entity: Entity): Entity {
+		return entity;
+	}
+}
+endsnippet
+
+snippet mListen
+${1:mailbox}.listen(${2:Message}.TYPE, function(m: Message) {
+	var message = cast(m, $2);
+})
 endsnippet

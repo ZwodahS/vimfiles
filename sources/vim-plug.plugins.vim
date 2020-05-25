@@ -81,7 +81,7 @@ Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'pedrohdz/vim-yaml-folds', { 'for': 'yaml' }
 "Haxe
-Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
+Plug 'jdonaldson/vaxe'
 Plug 'marcweber/vim-haxe-syntax', { 'for': 'haxe' }
 "Typescript
 Plug 'leafgarland/typescript-vim'
@@ -94,4 +94,5 @@ Plug 'ludovicchabant/vim-gutentags'
 " Plug 'Shougo/unite.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mattn/emmet-vim'
+Plug 'laher/fuzzymenu.vim'
 
