@@ -46,11 +46,12 @@ endsnippet
 snippet classMessage
 package ${1:world.messages};
 
-import common.Message;
-
-class ${2:`!p snip.rv = snip.basename`} extends Message {
+class ${2:`!p snip.rv = snip.basename`} extends common.Message {
 	public static final TYPE = "$2";
-	override public function get_type(): String { return TYPE; }
+
+	override public function get_type(): String {
+		return TYPE;
+	}
 
 	public function new() {
 		super();
@@ -61,22 +62,16 @@ endsnippet
 snippet classSystem
 package ${1:world.systems};
 
-import common.ecs.System;
-import common.ecs.Entity;
+class ${2:`!p snip.rv = snip.basename`} extends common.ecs2d.System<${3:Entity}> {
 
-class ${2:`!p snip.rv = snip.basename`} extends System {
 	public function new() {
 		super();
-	}
-	override public function addEntity(entity: Entity) {}
-	override public function removeEntity(entity: Entity): Entity {
-		return entity;
 	}
 }
 endsnippet
 
 snippet mListen
-${1:mailbox}.listen(${2:Message}.TYPE, function(m: Message) {
-	var message = cast(m, $2);
-})
+${1:mailbox}.listen(${2:Message}.TYPE, function(message: Message) {
+	var m = cast(message, $2);
+});
 endsnippet

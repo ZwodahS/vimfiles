@@ -7,7 +7,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 "" Align text
 Plug 'vim-scripts/Align'
 "" Fuzzy File finder
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'ctrlpvim/ctrlp.vim'
 "" Undo tree visualization
 Plug 'sjl/gundo.vim'
 "" Super motion plugin
@@ -26,6 +26,7 @@ if has('nvim') != 0
     Plug 'Konfekt/FastFold'
     Plug 'ervandew/supertab'
     Plug 'neomake/neomake'
+    Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
 "" Nice way to use marks
 Plug 'kshenoy/vim-signature'

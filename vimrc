@@ -161,6 +161,7 @@ runtime sources/ack.vim
 runtime sources/go.vim
 runtime sources/jsx.vim
 runtime sources/buffergator.vim
+runtime sources/denite.vim
 " Non-plugin
 runtime sources/interesting_words.vim
 runtime sources/flake8-gutter.vim
