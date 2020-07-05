@@ -71,7 +71,7 @@ class ${2:`!p snip.rv = snip.basename`} extends common.ecs2d.System<${3:Entity}>
 endsnippet
 
 snippet mListen
-${1:mailbox}.listen(${2:Message}.TYPE, function(message: Message) {
+${1:mailbox}.listen(${2:Message}.TYPE, function(message: common.Message) {
 	var m = cast(message, $2);
 });
 endsnippet

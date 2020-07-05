@@ -15,6 +15,12 @@ let $vim_home=expand('~/.vim')
 let $vim_rc=$vim_home."/vimrc"
 let $vim_plug_file=$vim_home."/sources/vim-plug.plugins.vim"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Unbind Stuffs that I am not using
+nnoremap Q <NOP>
+nnoremap <C-H> <NOP>
+nnoremap <C-Q> <NOP>
+nnoremap <C-T> <NOP>
+xnoremap <C-K> <NOP>
 """" For vim-plug
 call plug#begin($vim_home."/installed_plugins")
 " source all the plugins
@@ -51,7 +57,7 @@ nnoremap ! :!
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Special EOL char and tabs
-set listchars=tab:¬\ ,eol:↵                   " set the character for special char
+set listchars=tab:¬\ ,eol:↵                         " set the character for special char
 " toggle for showing eol and other char
 nnoremap <silent> <leader>l :set list!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -142,14 +148,13 @@ set cursorline
 set cursorcolumn
 """" Remove Trailing whitespace
 nnoremap <silent> <leader><Space> :FixWhitespace<CR>
-xnoremap <silent> <leader><Space> :FixWhitespace<CR>
+xnoremap <silent> <leader><Space> :FixWhitespace<!-- <CR> -->
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins configurations
 runtime sources/gundo.vim
 runtime sources/autohighlight.vim
 runtime sources/ultisnips.vim
-runtime sources/ctrlp.vim
 runtime sources/windowswap.vim
 runtime sources/easymotion.vim
 runtime sources/lightline.vim
@@ -160,8 +165,20 @@ runtime sources/neomake.vim
 runtime sources/ack.vim
 runtime sources/go.vim
 runtime sources/jsx.vim
-runtime sources/buffergator.vim
-runtime sources/denite.vim
+runtime sources/tagbar.vim
+
+" nvim specific
+if has('nvim') != 0
+    runtime sources/denite.vim
+else
+    " this is untested, need to test.
+    if has('python3') != 0
+        runtime sources/denite.vim
+    else
+        runtime sources/ctrlp.vim
+        runtime sources/buffergator.vim
+    endif
+endif
 " Non-plugin
 runtime sources/interesting_words.vim
 runtime sources/flake8-gutter.vim
@@ -177,16 +194,6 @@ nnoremap <silent> <leader>rs :let @"=system('echo -n $(date 2>/dev/null\|shasum 
 """" Git
 nnoremap <C-S> :!git save<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Abbreviation
-abbr torando tornado
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Unbind Stuffs that I am not using
-nnoremap Q <NOP>
-nnoremap <C-H> <NOP>
-nnoremap <C-Q> <NOP>
-nnoremap <C-T> <NOP>
-xnoremap <C-K> <NOP>
-nnoremap <leader>hh :read !header h 100 4
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" neovim deoplete
 if has('nvim') != 0
@@ -206,16 +213,15 @@ let g:neomake_haxe_haxe_args = ['.lint.hxml']
 " suppres buffergator
 
 """" Macros
-" replace 'return' with 'tornado.gen.Return'
-let @t = 'cwraise tornado.gen.Return(lxA)^'
-" fold by brackets
+" fold by brackets, only works in manual fold
 let @f = 'V$%zf'
 
-"""" Unknown/TBC ????
+"""" Unknown/TBC/Deprecating ????
 cnoreabbrev du diffupdate
 nnoremap <leader>du diffupdate
 let g:python_highlight_all = 1
 set completeopt=menu,noselect
+nnoremap <leader>hh :read !header h 100 4
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " for config that are machine specfic
