@@ -4,8 +4,9 @@ Plug 'tomtom/tlib_vim'
 Plug 'vim-scripts/L9'
 Plug 'MarcWeber/vim-addon-mw-utils'
 """"""""""""""""""""""""Functional Plugs""""""""""""""""""""""""
-"" Align text
-Plug 'vim-scripts/Align'
+"" Align text - deprecating this because I seldom use it and it define
+"" A lot of mappings that I don't want
+" Plug 'vim-scripts/Align'
 "" Undo tree visualization
 Plug 'sjl/gundo.vim'
 "" Super motion plugin
@@ -17,9 +18,8 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 "" A simple way of switching windows
 Plug 'wesQ3/vim-windowswap'
 "" Snippet
-
-"" Fuzzy File finder / Buffer viewer / Denite
 Plug 'SirVer/ultisnips'
+"" Fuzzy File finder / Buffer viewer / Denite
 if has('nvim') != 0
     " use denite for fuzzy finder in neovim
     Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -45,8 +45,6 @@ else
 endif
 "" Trailing whitespace
 Plug 'bronson/vim-trailing-whitespace'
-"" Commenter
-Plug 'ddollar/nerdcommenter'
 "" Git gutter for displaying changes
 Plug 'airblade/vim-gitgutter'
 " GitWrapper
@@ -92,6 +90,7 @@ Plug 'marcweber/vim-haxe-syntax', { 'for': 'haxe' }
 "" Typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'ZwodahS/autohighlight.vim'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
 Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
@@ -101,8 +100,9 @@ Plug 'tpope/vim-speeddating'
 "" Calendar vim
 Plug 'mattn/calendar-vim'
 " Auto highlight when cursor stop moving - currently not working
-Plug 'ZwodahS/autohighlight.vim'
 " Haven't got to play with this yet
 Plug 'mattn/emmet-vim'
-"" Nice way to use marks - deprecating since I don't use marks a lot
-" Plug 'kshenoy/vim-signature'
+"" Nice way to use marks
+Plug 'kshenoy/vim-signature'
+"" Commenter
+Plug 'ddollar/nerdcommenter'
