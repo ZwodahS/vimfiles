@@ -1,0 +1,33 @@
+snippet classMessage
+package ${1:world.messages};
+
+class ${2:`!p snip.rv = snip.basename`} extends common.Message {
+	public static final TYPE = "$2";
+
+	override public function get_type(): String {
+		return TYPE;
+	}
+
+	public function new() {
+		super();
+	}
+}
+endsnippet
+
+snippet classSystem
+package ${1:world.systems};
+
+class ${2:`!p snip.rv = snip.basename`} extends common.ecs.System<${3:Entity}> {
+
+	public function new() {
+		super();
+	}
+}
+endsnippet
+
+snippet mListen
+${1:mailbox}.listen(${2:Message}.TYPE, function(message: common.Message) {
+	var m = cast(message, $2);
+});
+endsnippet
+

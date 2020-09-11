@@ -227,3 +227,11 @@ nnoremap <leader>hh :read !header h 100 4
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " for config that are machine specfic
 runtime sources/.local
+
+" source directory specific file. This is dangerous when opening new repo from
+" unknown origin
+if filereadable(getcwd()."/.local.vim") != 0
+    let $localfile=getcwd()."/.local.vim"
+    source $localfile
+    echo 'Local Script loaded!!!'
+endif

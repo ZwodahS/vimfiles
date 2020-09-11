@@ -103,6 +103,6 @@ Plug 'mattn/calendar-vim'
 " Haven't got to play with this yet
 Plug 'mattn/emmet-vim'
 "" Nice way to use marks
-Plug 'kshenoy/vim-signature'
+" Plug 'kshenoy/vim-signature'
 "" Commenter
 Plug 'ddollar/nerdcommenter'
