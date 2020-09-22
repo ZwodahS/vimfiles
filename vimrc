@@ -182,6 +182,7 @@ endif
 " Non-plugin
 runtime sources/interesting_words.vim
 runtime sources/flake8-gutter.vim
+runtime sources/startup.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -224,14 +225,25 @@ let g:python_highlight_all = 1
 set completeopt=preview
 nnoremap <leader>hh :read !header h 100 4
 
+"""" Insert mode goodies
+inoremap <C-e><C-e> <C-R>=expand("%:t:r")<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " for config that are machine specfic
-runtime sources/.local
 
-" source directory specific file. This is dangerous when opening new repo from
-" unknown origin
-if filereadable(getcwd()."/.local.vim") != 0
-    let $localfile=getcwd()."/.local.vim"
+" This hash is for project specific vim file.
+" In case some project accidentally have a file that is named in the same way
+" or someone trying to run this on my machine via a repo when i accidentally include it
+" this hash in theory prevents it
+let g:project_hash=''
+
+runtime sources/.local.vim
+
+" source directory specific file.
+" This is dangerous when opening new repo from unknown origin so we put a hash
+" that is local to the machine that is never committed.
+let $localfile=join([getcwd(), "/.project.", g:project_hash, ".vim"], '')
+if (g:project_hash != '' && filereadable($localfile))
     source $localfile
-    echo 'Local Script loaded!!!'
+    echom 'Project Script loaded!!!'
 endif
