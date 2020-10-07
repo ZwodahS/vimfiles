@@ -222,11 +222,14 @@ cnoreabbrev du diffupdate
 nnoremap <leader>du diffupdate
 let g:python_highlight_all = 1
 " set completeopt=menu,noselect
-set completeopt=preview
+set completeopt=menu,preview
 nnoremap <leader>hh :read !header h 100 4
 
 """" Insert mode goodies
 inoremap <C-e><C-e> <C-R>=expand("%:t:r")<CR>
+inoremap <C-e><C-i> <ESC>pa
+
+""""""""""""""""""""" TESTING STUFFS BEFORE PUTTING THEM IN SOURCE
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " for config that are machine specfic

@@ -27,6 +27,8 @@ if has('nvim') != 0
     Plug 'Konfekt/FastFold'
     Plug 'ervandew/supertab'
     Plug 'neomake/neomake'
+    " Plug 'Shougo/deoplete-lsp'
+    " Plug 'neovim/nvim-lspconfig'
 else
     " this is untested, need to test.
     if has('python3')
