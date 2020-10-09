@@ -228,6 +228,7 @@ nnoremap <leader>hh :read !header h 100 4
 """" Insert mode goodies
 inoremap <C-e><C-e> <C-R>=expand("%:t:r")<CR>
 inoremap <C-e><C-i> <ESC>pa
+inoremap <C-e><C-t> <C-R>=strftime("%c")<CR>
 
 """"""""""""""""""""" TESTING STUFFS BEFORE PUTTING THEM IN SOURCE
 
