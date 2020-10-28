@@ -189,7 +189,6 @@ runtime sources/startup.vim
 " https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Misc
-noremap ,datetime a<C-R>=strftime("%c")<CR><Esc>
 " generate a random sha and put into buffer
 nnoremap <silent> <leader>rs :let @"=system('echo -n $(date 2>/dev/null\|shasum 2>/dev/null\|cut -d " " -f 1)') <CR>
 """" Git
@@ -203,15 +202,13 @@ if has('nvim') != 0
     call deoplete#custom#option('auto_complete_delay', 50)
     call deoplete#custom#option('max_list', 15)
 	call deoplete#custom#option('smart_case', v:true)
-    let g:python_host_prog=$vim_home."/venv2/bin/python"
     let g:python3_host_prog=$vim_home."/venv3/bin/python"
     autocmd FileType markdown call deoplete#custom#buffer_option('auto_complete', v:false)
 endif
 """" Super Tab completion
 let g:SuperTabDefaultCompletionType = "<c-n>"
-" Let haxe use the build.hxml to build T . T
+" Let haxe use the build.hxml to build
 let g:neomake_haxe_haxe_args = ['.lint.hxml']
-" suppres buffergator
 
 """" Macros
 " fold by brackets, only works in manual fold
