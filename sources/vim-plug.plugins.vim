@@ -13,19 +13,18 @@ Plug 'sjl/gundo.vim'
 Plug 'Lokaltog/vim-easymotion'
 "" Surround text with something + add 's' motion
 Plug 'tpope/vim-surround'
-"" File browser
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 "" A simple way of switching windows
 Plug 'wesQ3/vim-windowswap'
 "" Snippet
 Plug 'SirVer/ultisnips'
 "" Fuzzy File finder / Buffer viewer / Denite
+Plug 'Konfekt/FastFold'
+Plug 'ervandew/supertab'
 if has('nvim') != 0
     " use denite for fuzzy finder in neovim
     Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'Konfekt/FastFold'
-    Plug 'ervandew/supertab'
     Plug 'neomake/neomake'
     " Plug 'Shougo/deoplete-lsp'
     " Plug 'neovim/nvim-lspconfig'
@@ -33,6 +32,7 @@ else
     " this is untested, need to test.
     if has('python3')
         Plug 'Shougo/denite.nvim'
+        Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
         Plug 'roxma/nvim-yarp'
         Plug 'roxma/vim-hug-neovim-rpc'
     else
@@ -43,10 +43,12 @@ else
         "" Silver Searcher
         " Plug 'rking/ag.vim' # sorry that you got replace, but you get to stay here
         Plug 'mileszs/ack.vim'
+        "" File browser (if defx is not enabled)
+        Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
     endif
 endif
 "" Trailing whitespace
-Plug 'bronson/vim-trailing-whitespace'
+Plug 'ZwodahS/vim-trailing-whitespace'
 "" Git gutter for displaying changes
 Plug 'airblade/vim-gitgutter'
 " GitWrapper
@@ -96,6 +98,7 @@ Plug 'ZwodahS/autohighlight.vim'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
 Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'mhinz/vim-startify'
 """""""""""""""""""""On the way out""""""""""""""""""""
 "" Quick modification of date
 Plug 'tpope/vim-speeddating'

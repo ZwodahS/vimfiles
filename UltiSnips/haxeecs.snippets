@@ -19,14 +19,19 @@ package ${1:world.systems};
 
 class ${2:`!p snip.rv = snip.basename`} extends common.ecs.System<${3:Entity}> {
 
+	var world: World;
 	public function new() {
 		super();
+	}
+
+	override public function init(world: common.ecs.World<Entity>) {
+		this.world = cast(world, World);
 	}
 }
 endsnippet
 
 snippet mListen
-${1:mailbox}.listen(${2:Message}.TYPE, function(message: common.Message) {
+${1:dispatcher}.listen(${2:Message}.TYPE, function(message: common.Message) {
 	var m = cast(message, $2);
 });
 endsnippet

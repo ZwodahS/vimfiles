@@ -73,10 +73,12 @@ xnoremap - zf
 nnoremap - zc
 nnoremap = zo
 nnoremap + zO
+"""" Fold method forcing
+nnoremap <silent> zs :set foldmethod=syntax<CR>
 " map C-j C-k for moving by fold
 nnoremap <C-j> zj
 nnoremap <C-k> zk
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Global Clipboard
 vmap gy "+y
 nnoremap gp "+p
@@ -97,11 +99,9 @@ augroup filetypedetect
     autocmd BufRead,BufNewFile *.todo set filetype=todo
     autocmd BufRead,BufNewFile *.zdoc set filetype=zdoc
 augroup END
-"""" Fold method forcing
-nnoremap <silent> zs :set foldmethod=syntax<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Common Binding
 " clear search
 nnoremap <silent> <leader>gc :let @/= ""<CR>
 " toggle wrap
@@ -148,88 +148,75 @@ set cursorline
 set cursorcolumn
 """" Remove Trailing whitespace
 nnoremap <silent> <leader><Space> :FixWhitespace<CR>
-xnoremap <silent> <leader><Space> :FixWhitespace<!-- <CR> -->
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins configurations
+xnoremap <silent> <leader><Space> :FixWhitespace<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" complete opt
+" set completeopt=menu,noselect
+set completeopt=menu,preview
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Misc
+" generate a random sha and put into buffer
+nnoremap <silent> <leader>rs :let @"=system('echo -n $(date 2>/dev/null\|shasum 2>/dev/null\|cut -d " " -f 1)') <CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Git
+nnoremap <C-S> :!git save<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Macros
+" fold by brackets, only works in manual fold
+let @f = 'V$%zf'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Insert mode goodies
+inoremap <C-e><C-e> <C-R>=expand("%:t:r")<CR>
+inoremap <C-e><C-i> <ESC>pa
+inoremap <C-e><C-t> <C-R>=strftime("%c")<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""" Plugins configurations
 runtime sources/gundo.vim
 runtime sources/autohighlight.vim
 runtime sources/ultisnips.vim
 runtime sources/windowswap.vim
 runtime sources/easymotion.vim
 runtime sources/lightline.vim
-runtime sources/nerdtree.vim
-" runtime sources/signature.vim
+"runtime sources/signature.vim
 runtime sources/git-gutter.vim
 runtime sources/ack.vim
 runtime sources/go.vim
 runtime sources/jsx.vim
 runtime sources/tagbar.vim
-
+runtime sources/startify.vim
+runtime sources/trailing-whitespace.vim
+runtime sources/supertab.vim
 " nvim specific
 if has('nvim') != 0
+    runtime sources/deoplete.vim
     runtime sources/denite.vim
+    runtime sources/defx.vim
     runtime sources/neomake.vim
 else
     " this is untested, need to test.
     if has('python3') != 0
+        runtime sources/deoplete.vim
         runtime sources/denite.vim
+        runtime sources/defx.vim
     else
         runtime sources/ctrlp.vim
         runtime sources/buffergator.vim
+        runtime sources/nerdtree.vim
     endif
 endif
 " Non-plugin
 runtime sources/interesting_words.vim
 runtime sources/flake8-gutter.vim
-runtime sources/startup.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Misc
-" generate a random sha and put into buffer
-nnoremap <silent> <leader>rs :let @"=system('echo -n $(date 2>/dev/null\|shasum 2>/dev/null\|cut -d " " -f 1)') <CR>
-"""" Git
-nnoremap <C-S> :!git save<CR>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" neovim deoplete
-if has('nvim') != 0
-    " :help deoplete-options
-    let g:deoplete#enable_at_startup = 1
-    call deoplete#custom#option('auto_complete_delay', 50)
-    call deoplete#custom#option('max_list', 15)
-	call deoplete#custom#option('smart_case', v:true)
-    let g:python3_host_prog=$vim_home."/venv3/bin/python"
-    autocmd FileType markdown call deoplete#custom#buffer_option('auto_complete', v:false)
-endif
-"""" Super Tab completion
-let g:SuperTabDefaultCompletionType = "<c-n>"
-" Let haxe use the build.hxml to build
-let g:neomake_haxe_haxe_args = ['.lint.hxml']
 
-"""" Macros
-" fold by brackets, only works in manual fold
-let @f = 'V$%zf'
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Unknown/TBC/Deprecating ????
-cnoreabbrev du diffupdate
-nnoremap <leader>du diffupdate
 let g:python_highlight_all = 1
-" set completeopt=menu,noselect
-set completeopt=menu,preview
-nnoremap <leader>hh :read !header h 100 4
-
-"""" Insert mode goodies
-inoremap <C-e><C-e> <C-R>=expand("%:t:r")<CR>
-inoremap <C-e><C-i> <ESC>pa
-inoremap <C-e><C-t> <C-R>=strftime("%c")<CR>
-
 """"""""""""""""""""" TESTING STUFFS BEFORE PUTTING THEM IN SOURCE
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Machine Specific Configuration
 " for config that are machine specfic
 
 " This hash is for project specific vim file.
@@ -248,3 +235,4 @@ if (g:project_hash != '' && filereadable($localfile))
     source $localfile
     echom 'Project Script loaded!!!'
 endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
