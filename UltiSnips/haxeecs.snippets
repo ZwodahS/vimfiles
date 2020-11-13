@@ -2,10 +2,10 @@ snippet classMessage
 package ${1:world.messages};
 
 class ${2:`!p snip.rv = snip.basename`} extends common.Message {
-	public static final TYPE = "$2";
+	public static final Type = "$2";
 
 	override public function get_type(): String {
-		return TYPE;
+		return Type;
 	}
 
 	public function new() {
@@ -33,6 +33,6 @@ endsnippet
 snippet mListen
 ${1:dispatcher}.listen(${2:Message}.TYPE, function(message: common.Message) {
 	var m = cast(message, $2);
-});
+}, ${3:0});
 endsnippet
 

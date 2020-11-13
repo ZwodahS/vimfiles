@@ -27,7 +27,7 @@ call plug#begin($vim_home."/installed_plugins")
 runtime /sources/vim-plug.plugins.vim
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set colorcolumn=80,100,120
+set colorcolumn=80,100,119,120
 """ color scheme selection
 let g:gruvbox_italic=1
 colorscheme gruvbox
@@ -187,6 +187,9 @@ runtime sources/tagbar.vim
 runtime sources/startify.vim
 runtime sources/trailing-whitespace.vim
 runtime sources/supertab.vim
+" Note: using ctrlp together with denite.
+" Ctrlp is slightly faster when dealing with super big repo
+runtime sources/ctrlp.vim
 " nvim specific
 if has('nvim') != 0
     runtime sources/deoplete.vim
@@ -200,7 +203,6 @@ else
         runtime sources/denite.vim
         runtime sources/defx.vim
     else
-        runtime sources/ctrlp.vim
         runtime sources/buffergator.vim
         runtime sources/nerdtree.vim
     endif

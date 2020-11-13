@@ -20,6 +20,14 @@ Plug 'SirVer/ultisnips'
 "" Fuzzy File finder / Buffer viewer / Denite
 Plug 'Konfekt/FastFold'
 Plug 'ervandew/supertab'
+"" Fuzzy File finder
+" Note: using ctrlp as backup for cases where the repo is big
+Plug 'ctrlpvim/ctrlp.vim'
+" Note: Similarly, even tho I could use denite for searching, ack is slightly
+" faster for really big repo.
+"" Silver Searcher
+" Plug 'rking/ag.vim' # sorry that you got replace, but you get to stay here
+Plug 'mileszs/ack.vim'
 if has('nvim') != 0
     " use denite for fuzzy finder in neovim
     Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -36,13 +44,8 @@ else
         Plug 'roxma/nvim-yarp'
         Plug 'roxma/vim-hug-neovim-rpc'
     else
-        "" Fuzzy File finder
-        Plug 'ctrlpvim/ctrlp.vim'
         " Buffer viewer
         Plug 'jeetsukumaran/vim-buffergator'
-        "" Silver Searcher
-        " Plug 'rking/ag.vim' # sorry that you got replace, but you get to stay here
-        Plug 'mileszs/ack.vim'
         "" File browser (if defx is not enabled)
         Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
     endif

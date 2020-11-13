@@ -7,6 +7,7 @@ set wildignore+=node_modules " ignore npm
 set wildignore+=*.class " ignore java classes
 " nmap :CtrlPClearCache
 let g:ctrlp_switch_buffer=""
+let g:ctrlp_map=''
 
 if executable('ag')
 " Use Ag over Grep

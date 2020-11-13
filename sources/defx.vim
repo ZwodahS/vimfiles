@@ -34,6 +34,7 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> K
   \ defx#do_action('cd', ['..'])
   nnoremap <silent><buffer><expr> J
-  \ defx#do_action('cd')
+  \ defx#do_action('change_vim_cwd')
 endfunction
 nmap <leader>f :Defx .<CR>
+nmap <leader>F :Defx `expand('%:p:h')` -search=`expand('%:p')`<CR>
