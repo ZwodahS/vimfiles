@@ -63,6 +63,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
+Plug 'guns/xterm-color-table.vim'
 """"""""""""""""""""""""Language plugins""""""""""""""""""""""""
 "" Syntax checker
 "" Jinja

@@ -98,6 +98,7 @@ augroup filetypedetect
     autocmd BufRead,BufNewFile *.md set filetype=markdown
     autocmd BufRead,BufNewFile *.todo set filetype=todo
     autocmd BufRead,BufNewFile *.zdoc set filetype=zdoc
+    autocmd BufRead,BufNewFile * set filetype+=.allft
 augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
