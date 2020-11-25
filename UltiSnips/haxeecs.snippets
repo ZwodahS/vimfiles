@@ -1,7 +1,7 @@
 snippet classMessage
 package ${1:world.messages};
 
-class ${2:`!p snip.rv = snip.basename`} extends common.Message {
+class ${2:`!p snip.rv = snip.basename`} extends zf.Message {
 	public static final Type = "$2";
 
 	override public function get_type(): String {
@@ -17,22 +17,73 @@ endsnippet
 snippet classSystem
 package ${1:world.systems};
 
-class ${2:`!p snip.rv = snip.basename`} extends common.ecs.System<${3:Entity}> {
+class ${2:`!p snip.rv = snip.basename`} extends zf.ecs.System {
 
 	var world: World;
 	public function new() {
 		super();
 	}
 
-	override public function init(world: common.ecs.World<Entity>) {
+	override public function init(world: zf.ecs.World) {
 		this.world = cast(world, World);
 	}
 }
 endsnippet
 
+snippet classComponent
+class ${1:Component} extends zf.ecs.Component {
+	public static final Type = "$1";
+	override public function get_type(): String {
+		return Type;
+	}
+}
+endsnippet
+
 snippet mListen
-${1:dispatcher}.listen(${2:Message}.TYPE, function(message: common.Message) {
+${1:dispatcher}.listen(${2:Message}.Type, function(message: zf.Message) {
 	var m = cast(message, $2);
 }, ${3:0});
 endsnippet
 
+snippet varComponent
+public var ${1:varName}(default, set): ${2:Component};
+public function set_$1(c: $2): $2 {
+	if (this.$1 == c) return this.$1;
+	if (this.$1 != null && this.world != null) {
+		this.world.dispatcher.dispatch(new zf.ecs.messages.ComponentRemoved(this, this.$1));
+	}
+	this.$1 = c;
+	if (this.$1 != null && this.world != null) {
+		this.world.dispatcher.dispatch(new zf.ecs.messages.ComponentAttached(this, this.$1));
+	}
+	return this.$1;
+}
+endsnippet
+
+snippet listenComponentChange
+function setupComponentChangeListeners() {
+	this.world.dispatcher.listen(ComponentAttached.Type, function(message: zf.Message) {
+		var m = cast(message, ComponentAttached);
+		if (m.component.type == ${1:Component}.Type) {
+			this.registerEntity(cast(m.entity, Entity));
+		}
+	}, 100);
+	this.world.dispatcher.listen(ComponentRemoved.Type, function(message: zf.Message) {
+		var m = cast(message, ComponentRemoved);
+		if (m.component.type == $1.Type) {
+			this.unregisterEntity(cast(m.entity, Entity));
+		}
+	}, 100);
+}
+function registerEntity(entity: Entity) {
+}
+function unregisterEntity(entity: Entity) {
+}
+endsnippet
+
+snippet getComponent
+public static function getComponent(e: Entity): ${1:`!p snip.rv = snip.basename`} {
+	var c = e.getComponent(Type);
+	return c == null ? null : cast(c, $1);
+}
+endsnippet

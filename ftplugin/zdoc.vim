@@ -1,5 +1,8 @@
 "" taken from http://learnvimscriptthehardway.stevelosh.com/chapters/49.html
-" Might be modified
+
+setlocal softtabstop=2
+setlocal tabstop=2
+setlocal shiftwidth=2
 
 setlocal foldmethod=expr
 setlocal foldexpr=GetZdocFold(v:lnum)
@@ -39,6 +42,9 @@ function! NextNonBlankLine(lnum)
     return -2
 endfunction
 
-set softtabstop=2
-set tabstop=2
-set shiftwidth=2
+function MyFoldText()
+  let line = getline(v:foldstart)
+  let sub = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
+  return line . " ••••••••••• (" . (v:foldend - v:foldstart) . " lines) "
+endfunction
+setlocal foldtext=MyFoldText()

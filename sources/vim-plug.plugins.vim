@@ -41,6 +41,7 @@ else
     if has('python3')
         Plug 'Shougo/denite.nvim'
         Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
         Plug 'roxma/nvim-yarp'
         Plug 'roxma/vim-hug-neovim-rpc'
     else
@@ -52,6 +53,8 @@ else
 endif
 "" Trailing whitespace
 Plug 'ZwodahS/vim-trailing-whitespace'
+" Investigate this later
+" Plug 'ntpeters/vim-better-whitespace'
 "" Git gutter for displaying changes
 Plug 'airblade/vim-gitgutter'
 " GitWrapper

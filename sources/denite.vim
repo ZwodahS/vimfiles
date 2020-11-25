@@ -38,6 +38,7 @@ call denite#custom#source('file_rec', 'sorters', ['sorter_sublime'])
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs', [
       \ '.git/',
       \ '__pycache__/*', '*.pyc', 'venv*/',
+      \ 'bin/',
       \ 'node_modules/',
       \ '*.png'])
 
