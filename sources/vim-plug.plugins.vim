@@ -38,18 +38,18 @@ if has('nvim') != 0
     " Plug 'neovim/nvim-lspconfig'
 else
     " this is untested, need to test.
-    if has('python3')
-        Plug 'Shougo/denite.nvim'
-        Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-        Plug 'roxma/nvim-yarp'
-        Plug 'roxma/vim-hug-neovim-rpc'
-    else
-        " Buffer viewer
-        Plug 'jeetsukumaran/vim-buffergator'
-        "" File browser (if defx is not enabled)
-        Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-    endif
+    " if has('python3')
+    "    Plug 'Shougo/denite.nvim'
+    "    Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+    "    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    "    Plug 'roxma/nvim-yarp'
+    "    Plug 'roxma/vim-hug-neovim-rpc'
+    " else
+    " Buffer viewer
+    Plug 'jeetsukumaran/vim-buffergator'
+    "" File browser (if defx is not enabled)
+    Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+    " endif
 endif
 "" Trailing whitespace
 Plug 'ZwodahS/vim-trailing-whitespace'

@@ -199,14 +199,14 @@ if has('nvim') != 0
     runtime sources/neomake.vim
 else
     " this is untested, need to test.
-    if has('python3') != 0
-        runtime sources/deoplete.vim
-        runtime sources/denite.vim
-        runtime sources/defx.vim
-    else
-        runtime sources/buffergator.vim
-        runtime sources/nerdtree.vim
-    endif
+    " if has('python3') != 0
+    "     runtime sources/deoplete.vim
+    "     runtime sources/denite.vim
+    "     runtime sources/defx.vim
+    " else
+    runtime sources/buffergator.vim
+    runtime sources/nerdtree.vim
+    " endif
 endif
 " Non-plugin
 runtime sources/interesting_words.vim
