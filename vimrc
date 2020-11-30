@@ -98,7 +98,6 @@ augroup filetypedetect
     autocmd BufRead,BufNewFile *.md set filetype=markdown
     autocmd BufRead,BufNewFile *.todo set filetype=todo
     autocmd BufRead,BufNewFile *.zdoc set filetype=zdoc
-    autocmd BufRead,BufNewFile * set filetype+=.allft
 augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -218,6 +217,19 @@ runtime sources/flake8-gutter.vim
 """" Unknown/TBC/Deprecating ????
 let g:python_highlight_all = 1
 """"""""""""""""""""" TESTING STUFFS BEFORE PUTTING THEM IN SOURCE
+
+" Provide some syntax stuffs that is common to all language
+augroup syntaxchange
+    autocmd Syntax * syntax match Datetime "\(Mon\|Tue\|Wed\|Thu\|Fri\|Sat\|Sun\) \(Jan\|Feb\|Mar\|Apr\|May\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\) \d\+ \d\d:\d\d:\d\d \d\d\d\d"
+augroup END
+
+hi Datetime ctermfg=248 guifg=#a8a8a8
+
+hi CommentKeywordGreen ctermfg=28 guifg=#008700
+hi CommentKeywordBlue ctermfg=39 guifg=#00afff
+hi CommentKeywordRed ctermfg=197 guifg=#ff005f
+hi CommentNearInvisible ctermfg=240 guifg=#585858
+" add it to haxe
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Machine Specific Configuration
 " for config that are machine specfic
