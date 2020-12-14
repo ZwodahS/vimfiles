@@ -1,4 +1,3 @@
-
 This is my vimfiles. Let me emphasize this a once more. This is _MY_ vimfiles.
 
 Everyone have their own vimfiles. It serve their workflow. Cloning this serve no purpose for you.

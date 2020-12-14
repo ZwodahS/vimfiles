@@ -169,6 +169,7 @@ let @f = 'V$%zf'
 inoremap <C-e><C-e> <C-R>=expand("%:t:r")<CR>
 inoremap <C-e><C-i> <ESC>pa
 inoremap <C-e><C-t> <C-R>=strftime("%c")<CR>
+inoremap <C-e><C-j> <C-R>=strftime("%d/%m/%Y %H:%M")<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """" Plugins configurations
@@ -220,16 +221,20 @@ let g:python_highlight_all = 1
 
 " Provide some syntax stuffs that is common to all language
 augroup syntaxchange
-    autocmd Syntax * syntax match Datetime "\(Mon\|Tue\|Wed\|Thu\|Fri\|Sat\|Sun\) \(Jan\|Feb\|Mar\|Apr\|May\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\) \d\+ \d\d:\d\d:\d\d \d\d\d\d"
+    autocmd Syntax * syn match ZDatetime "\(Mon\|Tue\|Wed\|Thu\|Fri\|Sat\|Sun\) \(Jan\|Feb\|Mar\|Apr\|May\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\) \d\+ \d\d:\d\d:\d\d \d\d\d\d"
 augroup END
 
-hi Datetime ctermfg=248 guifg=#a8a8a8
+hi ZDatetime ctermfg=248 guifg=#a8a8a8
 
 hi CommentKeywordGreen ctermfg=28 guifg=#008700
 hi CommentKeywordBlue ctermfg=39 guifg=#00afff
 hi CommentKeywordRed ctermfg=197 guifg=#ff005f
 hi CommentNearInvisible ctermfg=240 guifg=#585858
-" add it to haxe
+" Table mode
+let g:table_mode_corner='|'
+
+" Mac Vim Default font
+set guifont=FiraCode\ Nerd\ Font\ Mono:h11
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Machine Specific Configuration
 " for config that are machine specfic

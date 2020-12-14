@@ -25,3 +25,5 @@ hi def InterestingWord3 ctermfg=16 ctermbg=121 guifg=#000000 guibg=#87ffaf
 hi def InterestingWord4 ctermfg=16 ctermbg=137 guifg=#000000 guibg=#af875f
 hi def InterestingWord5 ctermfg=16 ctermbg=211 guifg=#000000 guibg=#ff87af
 hi def InterestingWord6 ctermfg=16 ctermbg=195 guifg=#000000 guibg=#d7ffff
+
+" TODO: switch to https://github.com/lfv89/vim-interestingwords ?

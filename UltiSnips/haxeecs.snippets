@@ -82,7 +82,7 @@ function unregisterEntity(entity: Entity) {
 endsnippet
 
 snippet getComponent
-public static function getComponent(e: Entity): ${1:`!p snip.rv = snip.basename`} {
+public static function get(e: Entity): ${1:`!p snip.rv = snip.basename`} {
 	var c = e.getComponent(Type);
 	return c == null ? null : cast(c, $1);
 }

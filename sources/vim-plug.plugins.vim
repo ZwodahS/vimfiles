@@ -106,6 +106,8 @@ Plug 'ZwodahS/autohighlight.vim'
 Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mhinz/vim-startify'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'chrisbra/unicode.vim'
 """""""""""""""""""""On the way out""""""""""""""""""""
 "" Quick modification of date
 Plug 'tpope/vim-speeddating'
