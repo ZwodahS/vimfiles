@@ -168,7 +168,8 @@ let @f = 'V$%zf'
 """" Insert mode goodies
 inoremap <C-e><C-e> <C-R>=expand("%:t:r")<CR>
 inoremap <C-e><C-i> <ESC>pa
-inoremap <C-e><C-t> <C-R>=strftime("%c")<CR>
+inoremap <C-e><C-d> <C-R>=strftime("%a %b %d %Y")<CR>
+inoremap <C-e><C-t> <C-R>=strftime("%a %b %d %H:%M:%S %Y")<CR>
 inoremap <C-e><C-j> <C-R>=strftime("%d/%m/%Y %H:%M")<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -221,7 +222,7 @@ let g:python_highlight_all = 1
 
 " Provide some syntax stuffs that is common to all language
 augroup syntaxchange
-    autocmd Syntax * syn match ZDatetime "\(Mon\|Tue\|Wed\|Thu\|Fri\|Sat\|Sun\) \(Jan\|Feb\|Mar\|Apr\|May\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\) \d\+ \d\d:\d\d:\d\d \d\d\d\d"
+    autocmd Syntax * syn match ZDatetime "\(Mon\|Tue\|Wed\|Thu\|Fri\|Sat\|Sun\) \(Jan\|Feb\|Mar\|Apr\|May\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\) \d\+ \(\d\d:\d\d:\d\d \|\)\d\d\d\d"
 augroup END
 
 hi ZDatetime ctermfg=248 guifg=#a8a8a8

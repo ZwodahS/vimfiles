@@ -1,4 +1,4 @@
-syn keyword haxeTODO TODO FIXME TOFIX LOGS NOTE
+syn keyword haxeTODO TODO FIXME TOFIX LOGS NOTE QUESTION
 
 syn match haxeAt "@[^ ]\+" contained
 syn match formatterOff "@formatter:off"

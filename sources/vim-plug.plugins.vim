@@ -8,7 +8,9 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 "" A lot of mappings that I don't want
 " Plug 'vim-scripts/Align'
 "" Undo tree visualization
-Plug 'sjl/gundo.vim'
+" deprecated
+" Plug 'sjl/gundo.vim'
+Plug 'mbbill/undotree'
 "" Super motion plugin
 Plug 'Lokaltog/vim-easymotion'
 "" Surround text with something + add 's' motion
@@ -59,6 +61,7 @@ Plug 'ZwodahS/vim-trailing-whitespace'
 Plug 'airblade/vim-gitgutter'
 " GitWrapper
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 """"""""""""""""""""""""Visual Plugs""""""""""""""""""""""""
 "" Nice status line at the bottom
 Plug 'itchyny/lightline.vim'
@@ -108,6 +111,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'mhinz/vim-startify'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'chrisbra/unicode.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 """""""""""""""""""""On the way out""""""""""""""""""""
 "" Quick modification of date
 Plug 'tpope/vim-speeddating'

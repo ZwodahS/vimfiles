@@ -35,6 +35,10 @@ function! s:defx_my_settings() abort
   \ defx#do_action('cd', ['..'])
   nnoremap <silent><buffer><expr> J
   \ defx#do_action('change_vim_cwd')
+  nnoremap <silent><buffer><expr> s
+  \ defx#do_action('toggle_select')
+  vnoremap <silent><buffer><expr> s
+  \ defx#do_action('toggle_select_visual')
 endfunction
 nmap <leader>f :Defx .<CR>
 nmap <leader>F :Defx `expand('%:p:h')` -search=`expand('%:p')`<CR>

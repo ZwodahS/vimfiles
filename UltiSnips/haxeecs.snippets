@@ -31,6 +31,27 @@ class ${2:`!p snip.rv = snip.basename`} extends zf.ecs.System {
 endsnippet
 
 snippet classComponent
+package ${1:world.components};
+
+class ${2:`!p snip.rv = snip.basename`} extends zf.ecs.Component {
+	public static final Type = "$1.$2";
+	override public function get_type(): String {
+		return Type;
+	}
+
+	public static function get(e: ${3:zf.ecs.DynamicEntity}): $2 {
+		var c = e.getComponent(Type);
+		return c == null ? null : cast(c, $2);
+	}
+
+	public static function exists(e: $3): Bool {
+		return e.getComponent(Type) != null;
+	}
+}
+
+endsnippet
+
+snippet classInlineComponent
 class ${1:Component} extends zf.ecs.Component {
 	public static final Type = "$1";
 	override public function get_type(): String {
@@ -82,8 +103,11 @@ function unregisterEntity(entity: Entity) {
 endsnippet
 
 snippet getComponent
-public static function get(e: Entity): ${1:`!p snip.rv = snip.basename`} {
+public static function get(e: ${2:zf.ecs.DynamicEntity}): ${1:`!p snip.rv = snip.basename`} {
 	var c = e.getComponent(Type);
 	return c == null ? null : cast(c, $1);
+}
+public static function exists(e: $2): Bool {
+	return e.getComponent(Type) != null;
 }
 endsnippet
