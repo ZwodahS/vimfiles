@@ -32,7 +32,6 @@ set colorcolumn=80,100,119,120
 let g:gruvbox_italic=1
 colorscheme gruvbox
 set background=dark
-"colorscheme jellybeans
 """
 "use light bg if the env var is there.
 if $LIGHT == "1"|set bg=light|endif
@@ -45,19 +44,16 @@ set autoread                                        " Auto read file if it has b
 set hlsearch                                        " highlight search term
 set hidden                                          " allow buffer to switch when not saved
 set nowrap                                          " Disable line wrap
-" https://coderwall.com/p/sdhfug/vim-swap-backup-and-undo-files
-" set directory to store swp
-set directory=~/.vim/.swp//
+set directory=~/.vim/.swp//                         " set directory to store swp
 set noshowmode                                      " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set laststatus=2                                    " Always display the statusline in all windows
 set showtabline=2                                   " Always display the tabline, even if there is only one tab
 set mouse=                                          " disable mouse, mainly for macvim
 set autoindent
+""" easy way to run bash command
 nnoremap ! :!
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Special EOL char and tabs
-set listchars=tab:¬\ ,eol:↵                         " set the character for special char
+set listchars=tab:¬\ ,eol:↵                         " set the character for EOL and tabs
 " toggle for showing eol and other char
 nnoremap <silent> <leader>l :set list!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -66,6 +62,8 @@ nnoremap <silent> <leader>l :set list!<CR>
 nnoremap <silent> <leader>nn :set number!<CR>
 " Toggle showing of relative number
 nnoremap <silent> <leader>nr :set relativenumber!<CR>
+" enable relativenumber in visual mode
+vmap <C-I> <ESC>:set relativenumber!<CR>gv
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Folding remap
 " - to fold/close +/= to open
@@ -127,7 +125,7 @@ nnoremap <C-W>t :tab split<CR>
 " close all tab except active
 nnoremap <C-W>r :tabonly<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Windows
+"""" Windowing
 " resize splits
 noremap <Up> :resize +3<cr>
 noremap <Down> :resize -3<cr>
@@ -138,7 +136,6 @@ nnoremap <C-W>- :vertical resize 160<cr>
 " overwrite the default split direction
 set splitbelow
 set splitright
-"""" Sessions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Additional Quality of life bindings
 nnoremap <Space> f<Space>
@@ -172,7 +169,6 @@ inoremap <C-e><C-d> <C-R>=strftime("%a %b %d %Y")<CR>
 inoremap <C-e><C-t> <C-R>=strftime("%a %b %d %H:%M:%S %Y")<CR>
 inoremap <C-e><C-j> <C-R>=strftime("%d/%m/%Y %H:%M")<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 """" Plugins configurations
 runtime sources/gundo.vim
 runtime sources/autohighlight.vim
@@ -190,7 +186,8 @@ runtime sources/startify.vim
 runtime sources/trailing-whitespace.vim
 runtime sources/supertab.vim
 " Note: using ctrlp together with denite.
-" Ctrlp is slightly faster when dealing with super big repo
+" Ctrlp is slightly faster when dealing with super big repo.
+" CtrlP is mapped to <leader>p
 runtime sources/ctrlp.vim
 " nvim specific
 if has('nvim') != 0
@@ -212,42 +209,35 @@ endif
 " Non-plugin
 runtime sources/interesting_words.vim
 runtime sources/flake8-gutter.vim
-
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Unknown/TBC/Deprecating ????
-let g:python_highlight_all = 1
-""""""""""""""""""""" TESTING STUFFS BEFORE PUTTING THEM IN SOURCE
-
+"""" Custom date stuffs
 " Provide some syntax stuffs that is common to all language
 augroup syntaxchange
     autocmd Syntax * syn match ZDatetime "\(Mon\|Tue\|Wed\|Thu\|Fri\|Sat\|Sun\) \(Jan\|Feb\|Mar\|Apr\|May\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\) \d\+ \(\d\d:\d\d:\d\d \|\)\d\d\d\d"
 augroup END
-
 hi ZDatetime ctermfg=248 guifg=#a8a8a8
-
 hi CommentKeywordGreen ctermfg=28 guifg=#008700
 hi CommentKeywordBlue ctermfg=39 guifg=#00afff
 hi CommentKeywordRed ctermfg=197 guifg=#ff005f
 hi CommentNearInvisible ctermfg=240 guifg=#585858
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" Unknown/TBC/Deprecating
+let g:python_highlight_all = 1
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""" TESTING STUFFS BEFORE PUTTING THEM IN SOURCE
 " Table mode
 let g:table_mode_corner='|'
-
 " Mac Vim Default font
 set guifont=FiraCode\ Nerd\ Font\ Mono:h11
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Machine Specific Configuration
 " for config that are machine specfic
-
 " This hash is for project specific vim file.
 " In case some project accidentally have a file that is named in the same way
 " or someone trying to run this on my machine via a repo when i accidentally include it
 " this hash in theory prevents it
 let g:project_hash=''
-
 runtime sources/.local.vim
-
 " source directory specific file.
 " This is dangerous when opening new repo from unknown origin so we put a hash
 " that is local to the machine that is never committed.
