@@ -64,7 +64,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 """"""""""""""""""""""""Visual Plugs""""""""""""""""""""""""
 "" Nice status line at the bottom
-Plug 'itchyny/lightline.vim'
+"Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 "" Nice theme
 Plug 'nanotech/jellybeans.vim'
 Plug 'morhetz/gruvbox'

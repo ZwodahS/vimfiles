@@ -42,8 +42,7 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs', [
       \ 'node_modules/',
       \ '*.png'])
 
-" Using CtrlP For now due to performance
-nmap <C-p> :DeniteProjectDir -no-empty -split=floating -start-filter file/rec<CR>
+nnoremap <leader>p :DeniteProjectDir -no-empty -split=floating -start-filter file/rec<CR>
 nmap <C-Space> :Denite -split=floating grep<CR>
 nmap <C-t> :Denite -split=floating -start-filter tag<CR>
 nmap <leader>db :Denite -split=floating buffer<CR>

@@ -31,6 +31,7 @@ set colorcolumn=80,100,119,120
 """ color scheme selection
 let g:gruvbox_italic=1
 colorscheme gruvbox
+let g:airline_theme='base16_gruvbox_dark_hard'
 set background=dark
 """
 "use light bg if the env var is there.
@@ -124,6 +125,8 @@ nnoremap <leader>vfp :view $vim_plug_file<CR>
 nnoremap <C-W>t :tab split<CR>
 " close all tab except active
 nnoremap <C-W>r :tabonly<CR>
+" close current active
+nnoremap <C-W><C-R> :tabclose<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Windowing
 " resize splits
@@ -154,9 +157,6 @@ set completeopt=menu,preview
 """" Misc
 " generate a random sha and put into buffer
 nnoremap <silent> <leader>rs :let @"=system('echo -n $(date 2>/dev/null\|shasum 2>/dev/null\|cut -d " " -f 1)') <CR>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Git
-nnoremap <C-S> :!git save<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Macros
 " fold by brackets, only works in manual fold
@@ -229,6 +229,14 @@ let g:python_highlight_all = 1
 let g:table_mode_corner='|'
 " Mac Vim Default font
 set guifont=FiraCode\ Nerd\ Font\ Mono:h11
+
+" prefer a local sessions over global sessions
+let g:startify_session_dir = '.sessions'
+nmap <C-S><C-S> :SSave! vim.session<CR>
+nmap <C-S><C-L> :SLoad! vim.session<CR>
+
+"airline
+let g:airline_powerline_fonts = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Machine Specific Configuration
 " for config that are machine specfic
