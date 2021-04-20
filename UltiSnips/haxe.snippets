@@ -48,3 +48,23 @@ endsnippet
 snippet db
 Debug.b();
 endsnippet
+
+snippet enum
+enum $1Enum {
+}
+
+abstract ${1:`!p snip.rv = snip.basename`}($1Enum) from $1Enum to $1Enum {
+	public function new(type: $1Enum) {
+		this = type;
+	}
+
+	public var name(get, never): String;
+
+	public function get_name(): String {
+		switch(this) {
+			default:
+				return "";
+		}
+	}
+}
+endsnippet
