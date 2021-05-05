@@ -206,6 +206,7 @@ else
     runtime sources/nerdtree.vim
     " endif
 endif
+runtime sources/vaxe.vim
 " Non-plugin
 runtime sources/interesting_words.vim
 runtime sources/flake8-gutter.vim
