@@ -27,7 +27,7 @@ call plug#begin($vim_home."/installed_plugins")
 runtime /sources/vim-plug.plugins.vim
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set colorcolumn=80,100,119,120
+set colorcolumn=60,80,100,119,120
 """ color scheme selection
 let g:gruvbox_italic=1
 colorscheme gruvbox
@@ -51,6 +51,7 @@ set laststatus=2                                    " Always display the statusl
 set showtabline=2                                   " Always display the tabline, even if there is only one tab
 set mouse=                                          " disable mouse, mainly for macvim
 set autoindent
+set noequalalways
 """ easy way to run bash command
 nnoremap ! :!
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -174,7 +175,6 @@ runtime sources/gundo.vim
 runtime sources/autohighlight.vim
 runtime sources/ultisnips.vim
 runtime sources/windowswap.vim
-runtime sources/easymotion.vim
 runtime sources/lightline.vim
 "runtime sources/signature.vim
 runtime sources/git-gutter.vim
@@ -185,16 +185,20 @@ runtime sources/tagbar.vim
 runtime sources/startify.vim
 runtime sources/trailing-whitespace.vim
 runtime sources/supertab.vim
+runtime sources/easymotion.vim
 " Note: using ctrlp together with denite.
 " Ctrlp is slightly faster when dealing with super big repo.
 " CtrlP is mapped to <leader>p
 runtime sources/ctrlp.vim
 " nvim specific
 if has('nvim') != 0
+    let g:python3_host_prog=$vim_home."/venv3/bin/python"
+    runtime sources/deoppet.vim
     runtime sources/deoplete.vim
     runtime sources/denite.vim
     runtime sources/defx.vim
     runtime sources/neomake.vim
+    " runtime sources/shade.vim
 else
     " this is untested, need to test.
     " if has('python3') != 0
@@ -220,7 +224,7 @@ hi ZDatetime ctermfg=248 guifg=#a8a8a8
 hi CommentKeywordGreen ctermfg=28 guifg=#008700
 hi CommentKeywordBlue ctermfg=39 guifg=#00afff
 hi CommentKeywordRed ctermfg=197 guifg=#ff005f
-hi CommentNearInvisible ctermfg=240 guifg=#585858
+hi CommentNearInvisible ctermfg=237 guifg=#3a3a3a
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Unknown/TBC/Deprecating
 let g:python_highlight_all = 1
@@ -238,6 +242,8 @@ nmap <C-S><C-L> :SLoad! vim.session<CR>
 
 "airline
 let g:airline_powerline_fonts = 1
+
+nmap <leader>ct :ColorToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Machine Specific Configuration
 " for config that are machine specfic

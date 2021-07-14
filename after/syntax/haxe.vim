@@ -1,4 +1,4 @@
-syn keyword haxeTODO TODO FIXME TOFIX LOGS NOTE QUESTION
+syn keyword haxeTODO TODO FIXME TOFIX LOGS NOTE QUESTION IDEA
 
 syn match haxeAt "@[^ ]\+" contained
 syn match formatterOff "@formatter:off"
@@ -7,4 +7,3 @@ syn region haxeComment2 start=+/\*+ end=+\*/+ contains=haxeTODO,@Spell,ZDatetime
 
 hi def link formatterOff CommentNearInvisible
 hi def link haxeParam CommentKeywordBlue
-

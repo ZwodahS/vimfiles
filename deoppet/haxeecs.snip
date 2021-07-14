@@ -1,0 +1,16 @@
+snippet mListen
+	// @:listen `expand("%:t:r")` MESSAGECLASS PRIORITY
+	dispatcher.listen(MESSAGECLASS.MessageType, function(message: zf.Message) {
+		var m = cast(message, MESSAGECLASS);
+	}, PRIORITY);
+
+snippet classMessage
+	package ${1:world.messages};
+
+	class `expand("%:t:r")` extends zf.Message {
+		public static final MessageType = "`expand("%:t:r")`";
+
+		public function new() {
+			super(MessageType);
+		}
+	}

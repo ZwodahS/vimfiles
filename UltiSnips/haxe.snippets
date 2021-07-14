@@ -46,25 +46,10 @@ Assert.unreachable('TODO');
 endsnippet
 
 snippet db
-Debug.b();
+Debug.breakpoint();
 endsnippet
 
 snippet enum
-enum $1Enum {
-}
-
-abstract ${1:`!p snip.rv = snip.basename`}($1Enum) from $1Enum to $1Enum {
-	public function new(type: $1Enum) {
-		this = type;
-	}
-
-	public var name(get, never): String;
-
-	public function get_name(): String {
-		switch(this) {
-			default:
-				return "";
-		}
-	}
+enum abstract ${1:`!p snip.rv = snip.basename`}(${2:String}) from $2 to $2 {
 }
 endsnippet

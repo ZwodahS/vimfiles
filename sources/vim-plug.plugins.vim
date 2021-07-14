@@ -18,7 +18,7 @@ Plug 'tpope/vim-surround'
 "" A simple way of switching windows
 Plug 'wesQ3/vim-windowswap'
 "" Snippet
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 "" Fuzzy File finder / Buffer viewer / Denite
 Plug 'Konfekt/FastFold'
 Plug 'ervandew/supertab'
@@ -32,12 +32,15 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 if has('nvim') != 0
     " use denite for fuzzy finder in neovim
+    Plug 'Shougo/deoppet.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'deoplete-plugins/deoplete-tag'
     Plug 'neomake/neomake'
     " Plug 'Shougo/deoplete-lsp'
     " Plug 'neovim/nvim-lspconfig'
+    " Plug 'sunjon/shade.nvim'
 else
     " this is untested, need to test.
     " if has('python3')
@@ -114,6 +117,7 @@ Plug 'mhinz/vim-startify'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'chrisbra/unicode.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'chrisbra/colorizer'
 """""""""""""""""""""On the way out""""""""""""""""""""
 "" Quick modification of date
 Plug 'tpope/vim-speeddating'

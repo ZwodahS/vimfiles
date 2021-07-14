@@ -12,9 +12,10 @@ let g:ctrlp_map=''
 if executable('ag')
 " Use Ag over Grep
     set grepprg=ag\ --nogroup\ --nocolor
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_user_command = 'ag %s -l --nocolor --follow -g ""'
 endif
-nnoremap <C-P> :CtrlP<CR>
+nnoremap <C-P> :CtrlP .<CR>
+nnoremap <C-S-P> :CtrlP<CR>
 
-let g:ctrlp_working_path_mode = 'ar'
-let g:ctrlp_root_markers = ['.local', '.git']
+let g:ctrlp_working_path_mode = 'c'
+" let g:ctrlp_root_markers = ['.local', '.git']
