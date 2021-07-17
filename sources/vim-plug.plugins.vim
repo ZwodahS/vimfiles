@@ -25,31 +25,33 @@ Plug 'ervandew/supertab'
 "" Fuzzy File finder
 " Note: using ctrlp as backup for cases where the repo is big
 Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'vijaymarupudi/nvim-fzf'
 " Note: Similarly, even tho I could use denite for searching, ack is slightly
 " faster for really big repo.
 "" Silver Searcher
 " Plug 'rking/ag.vim' # sorry that you got replace, but you get to stay here
 Plug 'mileszs/ack.vim'
 if has('nvim') != 0
+    " lua core
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+
+    Plug 'nvim-telescope/telescope.nvim'
+
+    " completion engine
+    Plug 'hrsh7th/nvim-compe'
+    Plug 'hrsh7th/vim-vsnip'
     " use denite for fuzzy finder in neovim
-    Plug 'Shougo/deoppet.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+    "
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'deoplete-plugins/deoplete-tag'
     Plug 'neomake/neomake'
-    " Plug 'Shougo/deoplete-lsp'
-    " Plug 'neovim/nvim-lspconfig'
-    " Plug 'sunjon/shade.nvim'
+    "
+    " honorary entries as I have used them for a very long time
+    " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+    " Plug 'Shougo/deoppet.nvim', { 'do': ':UpdateRemotePlugins' }
+    " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    " Plug 'deoplete-plugins/deoplete-tag'
 else
-    " this is untested, need to test.
-    " if has('python3')
-    "    Plug 'Shougo/denite.nvim'
-    "    Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-    "    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    "    Plug 'roxma/nvim-yarp'
-    "    Plug 'roxma/vim-hug-neovim-rpc'
-    " else
     " Buffer viewer
     Plug 'jeetsukumaran/vim-buffergator'
     "" File browser (if defx is not enabled)
@@ -109,6 +111,7 @@ Plug 'marcweber/vim-haxe-syntax', { 'for': 'haxe' }
 "" Typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+" Auto highlight when cursor stop moving
 Plug 'ZwodahS/autohighlight.vim'
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
 " Plug 'majutsushi/tagbar'
@@ -123,7 +126,6 @@ Plug 'chrisbra/colorizer'
 Plug 'tpope/vim-speeddating'
 "" Calendar vim
 Plug 'mattn/calendar-vim'
-" Auto highlight when cursor stop moving - currently not working
 " Haven't got to play with this yet
 Plug 'mattn/emmet-vim'
 "" Nice way to use marks

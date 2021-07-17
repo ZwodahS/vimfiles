@@ -14,8 +14,13 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
     let g:ctrlp_user_command = 'ag %s -l --nocolor --follow -g ""'
 endif
-nnoremap <C-P> :CtrlP .<CR>
-nnoremap <C-S-P> :CtrlP<CR>
+if has('nvim') != 0
+    nnoremap <leader>p :CtrlP .<CR>
+    nnoremap <C-S-P> :CtrlP<CR>
+else
+    nnoremap <C-S-P> :CtrlP<CR>
+    nnoremap <C-P> :CtrlP .<CR>
+endif
 
 let g:ctrlp_working_path_mode = 'c'
 " let g:ctrlp_root_markers = ['.local', '.git']

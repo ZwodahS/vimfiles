@@ -14,6 +14,7 @@ set termguicolors
 let $vim_home=expand('~/.vim')
 let $vim_rc=$vim_home."/vimrc"
 let $vim_plug_file=$vim_home."/sources/vim-plug.plugins.vim"
+let $sources=$vim_home."/sources"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Unbind Stuffs that I am not using
 nnoremap Q <NOP>
@@ -24,7 +25,7 @@ xnoremap <C-K> <NOP>
 """" For vim-plug
 call plug#begin($vim_home."/installed_plugins")
 " source all the plugins
-runtime /sources/vim-plug.plugins.vim
+source $sources/vim-plug.plugins.vim
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set colorcolumn=60,80,100,119,120
@@ -153,7 +154,8 @@ xnoremap <silent> <leader><Space> :FixWhitespace<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" complete opt
 " set completeopt=menu,noselect
-set completeopt=menu,preview
+" set completeopt=menu,preview
+set completeopt=menuone,noselect
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Misc
 " generate a random sha and put into buffer
@@ -171,49 +173,51 @@ inoremap <C-e><C-t> <C-R>=strftime("%a %b %d %H:%M:%S %Y")<CR>
 inoremap <C-e><C-j> <C-R>=strftime("%d/%m/%Y %H:%M")<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Plugins configurations
-runtime sources/gundo.vim
-runtime sources/autohighlight.vim
-runtime sources/ultisnips.vim
-runtime sources/windowswap.vim
-runtime sources/lightline.vim
-"runtime sources/signature.vim
-runtime sources/git-gutter.vim
-runtime sources/ack.vim
-runtime sources/go.vim
-runtime sources/jsx.vim
-runtime sources/tagbar.vim
-runtime sources/startify.vim
-runtime sources/trailing-whitespace.vim
-runtime sources/supertab.vim
-runtime sources/easymotion.vim
-" Note: using ctrlp together with denite.
-" Ctrlp is slightly faster when dealing with super big repo.
-" CtrlP is mapped to <leader>p
-runtime sources/ctrlp.vim
+source $sources/gundo.vim
+source $sources/autohighlight.vim
+source $sources/ultisnips.vim
+source $sources/windowswap.vim
+source $sources/lightline.vim
+"source $sources/signature.vim
+source $sources/git-gutter.vim
+source $sources/ack.vim
+source $sources/go.vim
+source $sources/jsx.vim
+source $sources/tagbar.vim
+source $sources/startify.vim
+source $sources/trailing-whitespace.vim
+source $sources/supertab.vim
+source $sources/easymotion.vim
+" using both ctrlp and telescope, but mapping ctrlp to <leader>p instead
+" in the case where vim is use, then ctrlp is mapped to cltrp
+source $sources/ctrlp.vim
 " nvim specific
+let g:python3_host_prog=$vim_home."/venv3/bin/python"
 if has('nvim') != 0
-    let g:python3_host_prog=$vim_home."/venv3/bin/python"
-    runtime sources/deoppet.vim
-    runtime sources/deoplete.vim
-    runtime sources/denite.vim
-    runtime sources/defx.vim
-    runtime sources/neomake.vim
-    " runtime sources/shade.vim
+     "source $sources/deoppet.vim
+    " source $sources/deoplete.vim
+    " source $sources/denite.vim
+    source $sources/defx.vim
+    source $sources/neomake.vim
+    source $sources/nvim-compe.vim
+    source $sources/vsnip.vim
+    source $sources/telescope.vim
+    " source $sources/shade.vim
 else
     " this is untested, need to test.
     " if has('python3') != 0
-    "     runtime sources/deoplete.vim
-    "     runtime sources/denite.vim
-    "     runtime sources/defx.vim
+    "     source $sources/deoplete.vim
+    "     source $sources/denite.vim
+    "     source $sources/defx.vim
     " else
-    runtime sources/buffergator.vim
-    runtime sources/nerdtree.vim
+    source $sources/buffergator.vim
+    source $sources/nerdtree.vim
     " endif
 endif
-runtime sources/vaxe.vim
+source $sources/vaxe.vim
 " Non-plugin
-runtime sources/interesting_words.vim
-runtime sources/flake8-gutter.vim
+source $sources/interesting_words.vim
+source $sources/flake8-gutter.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Custom date stuffs
 " Provide some syntax stuffs that is common to all language
@@ -243,6 +247,7 @@ nmap <C-S><C-L> :SLoad! vim.session<CR>
 "airline
 let g:airline_powerline_fonts = 1
 
+"telescope
 nmap <leader>ct :ColorToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Machine Specific Configuration
@@ -252,7 +257,7 @@ nmap <leader>ct :ColorToggle<CR>
 " or someone trying to run this on my machine via a repo when i accidentally include it
 " this hash in theory prevents it
 let g:project_hash=''
-runtime sources/.local.vim
+source $sources/.local.vim
 " source directory specific file.
 " This is dangerous when opening new repo from unknown origin so we put a hash
 " that is local to the machine that is never committed.
