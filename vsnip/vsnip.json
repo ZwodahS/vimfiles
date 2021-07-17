@@ -1,0 +1,14 @@
+{
+  "SnipperTemplate": {
+    "prefix": ["snippet"],
+    "body": [
+      "\"${1}\": {",
+      "\t\"prefix\": [${2}],",
+      "\t\"body\": [",
+      "\t],",
+      "\t\"description\": \"${3}\"",
+      "}"
+    ],
+    "description": "Snippet template"
+  }
+}

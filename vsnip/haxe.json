@@ -1,5 +1,5 @@
 {
-  "Comment": {
+  "CommentBlock": {
     "prefix": ["commentblock", "**"],
     "body": [
       "/**",
@@ -7,5 +7,18 @@
       "**/"
     ],
     "description": "Comment block"
+  },
+  "CommentLine": {
+    "prefix": [ "commentline", "****"],
+    "body": [
+    ],
+    "description": "Comment line"
+  },
+  "Nolint": {
+    "prefix": ["nolint"],
+    "body": [
+      "// @formatter:off"
+    ],
+    "description": "Add no lint formatter comment"
   }
 }

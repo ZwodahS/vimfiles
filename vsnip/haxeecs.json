@@ -1,0 +1,47 @@
+{
+  "ClassMessage": {
+    "prefix": ["classMessage"],
+    "body": [
+      "package ${1:world.messages};",
+      "",
+      "class ${2:$TM_FILENAME_BASE} extends zf.Message {",
+      "  public static final MessageType = \"$2\";",
+      "",
+      "  public function new() {",
+      "    super(MessageType);",
+      "  }",
+      "}"
+    ],
+    "description": "Create a message class from template."
+  },
+  "ClassSystem": {
+    "prefix": ["classSystem"],
+    "body": [
+      "package ${1:world.systems};",
+      "",
+      "class ${2:`!p snip.rv = snip.basename`} extends zf.ecs.System {",
+      "",
+      "  var world: World;",
+      "  public function new() {",
+      "    super();",
+      "  }",
+      "",
+      "  override public function init(world: zf.ecs.World) {",
+      "    this.world = cast(world, World);",
+      "    var dispatcher = this.world.dispatcher;",
+      "  }",
+      "}"
+    ],
+    "description": "Create a system class from template."
+  },
+  "ListenMessage": {
+    "prefix": ["mListen", "dispatcher.listen"],
+    "body": [
+      "// @:listen $TM_FILENAME_BASE ${1:Message} ${2:0} $4",
+      "${3:dispatcher}.listen($1.MessageType, function(message: zf.Message) {",
+      "  var m = cast(message, $1);",
+      "}, $2);"
+    ],
+    "description": ""
+  }
+}

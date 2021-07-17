@@ -9,7 +9,7 @@ require("telescope").setup {
         }
     },
     file_ignore_patterns = {
-        "aseprite", "png", "jpeg", "fnt",
+        "aseprite", "png", "jpeg", "fnt", "hl"
     },
   },
   pickers = {
@@ -32,4 +32,3 @@ require("telescope").setup {
 EOF
 nnoremap <C-P> <cmd>Telescope find_files<cr>
 nnoremap <silent><leader>b <cmd>Telescope buffers<cr>
-

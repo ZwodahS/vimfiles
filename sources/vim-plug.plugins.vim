@@ -41,8 +41,7 @@ if has('nvim') != 0
     " completion engine
     Plug 'hrsh7th/nvim-compe'
     Plug 'hrsh7th/vim-vsnip'
-    " use denite for fuzzy finder in neovim
-    "
+
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'neomake/neomake'
     "
