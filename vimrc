@@ -18,6 +18,7 @@ let $sources=$vim_home."/sources"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Unbind Stuffs that I am not using
 nnoremap Q <NOP>
+nnoremap <C-G> <NOP>
 nnoremap <C-H> <NOP>
 nnoremap <C-Q> <NOP>
 nnoremap <C-T> <NOP>
@@ -247,8 +248,9 @@ nmap <C-S><C-L> :SLoad! vim.session<CR>
 "airline
 let g:airline_powerline_fonts = 1
 
-"telescope
 nmap <leader>ct :ColorToggle<CR>
+
+" set the starting cwd to where we open vim.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Machine Specific Configuration
 " for config that are machine specfic
