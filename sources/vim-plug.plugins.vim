@@ -31,10 +31,13 @@ Plug 'ctrlpvim/ctrlp.vim'
 "" Silver Searcher
 " Plug 'rking/ag.vim' # sorry that you got replace, but you get to stay here
 Plug 'mileszs/ack.vim'
+
 if has('nvim') != 0
     " lua core
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
+
+    Plug 'semanticart/tag-peek.vim'
 
     Plug 'nvim-telescope/telescope.nvim'
 
@@ -46,7 +49,7 @@ if has('nvim') != 0
     Plug 'neomake/neomake'
     "
     " honorary entries as I have used them for a very long time
-    " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
     " Plug 'Shougo/deoppet.nvim', { 'do': ':UpdateRemotePlugins' }
     " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     " Plug 'deoplete-plugins/deoplete-tag'
@@ -73,6 +76,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "" Nice theme
 Plug 'nanotech/jellybeans.vim'
+Plug 'sts10/vim-pink-moon'
 Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
 Plug 'guns/xterm-color-table.vim'

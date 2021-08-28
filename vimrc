@@ -169,8 +169,8 @@ let @f = 'V$%zf'
 """" Insert mode goodies
 inoremap <C-e><C-e> <C-R>=expand("%:t:r")<CR>
 inoremap <C-e><C-i> <ESC>pa
-inoremap <C-e><C-d> <C-R>=strftime("%a %b %d %Y")<CR>
-inoremap <C-e><C-t> <C-R>=strftime("%a %b %d %H:%M:%S %Y")<CR>
+inoremap <C-e><C-d> <C-R>=strftime("%d %b %Y")<CR>
+inoremap <C-e><C-t> <C-R>=strftime("%a %H:%M:%S %d %b %Y")<CR>
 inoremap <C-e><C-j> <C-R>=strftime("%d/%m/%Y %H:%M")<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Plugins configurations
@@ -197,12 +197,13 @@ let g:python3_host_prog=$vim_home."/venv3/bin/python"
 if has('nvim') != 0
      "source $sources/deoppet.vim
     " source $sources/deoplete.vim
-    " source $sources/denite.vim
+    source $sources/denite.vim
     source $sources/defx.vim
     source $sources/neomake.vim
     source $sources/nvim-compe.vim
     source $sources/vsnip.vim
     source $sources/telescope.vim
+    source $sources/tagpeek.vim
     " source $sources/shade.vim
 else
     " this is untested, need to test.
@@ -249,6 +250,8 @@ nmap <C-S><C-L> :SLoad! vim.session<CR>
 let g:airline_powerline_fonts = 1
 
 nmap <leader>ct :ColorToggle<CR>
+
+nnoremap <C-T> :call tag_peek#ShowTag()<CR>
 
 " set the starting cwd to where we open vim.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

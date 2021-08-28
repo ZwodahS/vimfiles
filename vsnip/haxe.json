@@ -1,4 +1,10 @@
 {
+  "CommentLine": {
+    "prefix": [ "commentline", "****"],
+    "body": [
+    ],
+    "description": "Comment line"
+  },
   "CommentBlock": {
     "prefix": ["commentblock", "**"],
     "body": [
@@ -8,17 +14,33 @@
     ],
     "description": "Comment block"
   },
-  "CommentLine": {
-    "prefix": [ "commentline", "****"],
-    "body": [
-    ],
-    "description": "Comment line"
-  },
   "Nolint": {
     "prefix": ["nolint"],
     "body": [
       "// @formatter:off"
     ],
     "description": "Add no lint formatter comment"
+  },
+  "Function": {
+    "prefix": ["function"],
+    "body": [
+      "/**",
+      "${5}",
+      "**/",
+      "${4}function ${1:fN} ($2): ${3} {",
+      "}"
+    ]
+  },
+  "Breakpoint": {
+    "prefix": ["db"],
+    "body": [
+      "Debug.breakpoint();"
+    ]
+  },
+  "PrintVar": {
+    "prefix": ["printVar", "pv"],
+    "body": [
+      "Logger.debug('${1:var}: \\${$1}');"
+    ]
   }
 }

@@ -16,6 +16,7 @@ require("telescope").setup {
     file_ignore_patterns = {
         "aseprite", "png", "jpeg", "fnt", "hl"
     },
+    sorters = "fuzzy_with_index_bias",
   },
   pickers = {
     buffers = {
@@ -32,24 +33,22 @@ require("telescope").setup {
         }
     },
     find_files = {
-        theme = "dropdown",
         sorting_strategy = "descending",
+        follow = true
     },
     file_browser = {
-        previewer = false,
-        theme = "dropdown",
         sorting_strategy = "descending",
     },
     live_grep = {
-        theme = "dropdown",
         sorting_strategy = "descending",
     }
   },
 }
 EOF
-nnoremap <C-P> <cmd>Telescope find_files<CR>
-nnoremap <C-Space> <cmd>Telescope live_grep<CR>
+"used when I just want to go to the file
+nnoremap <C-P> <cmd>Telescope find_files previewer=false theme=get_dropdown<CR>
 nnoremap <silent><leadeR>tp <cmd>Telescope find_files<CR>
 nnoremap <silent><leader>tb <cmd>Telescope buffers<CR>
-nnoremap <silent><leader>tf <cmd>Telescope file_browser<CR>
-nnoremap <silent><leader>tg <cmd>Telescope live_grep<CR>
+nnoremap <silent><leader>tf <cmd>Telescope file_browser theme=get_dropdown previewer=false<CR>
+nnoremap <silent><leader>tg <cmd>Telescope live_grep find_command=rg,--follow,--files<CR>
+nnoremap <C-Space> <cmd>Telescope live_grep<CR>
