@@ -188,13 +188,14 @@ source $sources/tagbar.vim
 source $sources/startify.vim
 source $sources/trailing-whitespace.vim
 " source $sources/supertab.vim
-source $sources/easymotion.vim
 " using both ctrlp and telescope, but mapping ctrlp to <leader>p instead
 " in the case where vim is use, then ctrlp is mapped to cltrp
 source $sources/ctrlp.vim
+source $sources/easymotion.vim
 " nvim specific
 let g:python3_host_prog=$vim_home."/venv3/bin/python"
 if has('nvim') != 0
+    source $sources/hop.vim
      "source $sources/deoppet.vim
     " source $sources/deoplete.vim
     source $sources/denite.vim

@@ -11,8 +11,6 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 " deprecated
 " Plug 'sjl/gundo.vim'
 Plug 'mbbill/undotree'
-"" Super motion plugin
-Plug 'Lokaltog/vim-easymotion'
 "" Surround text with something + add 's' motion
 Plug 'tpope/vim-surround'
 "" A simple way of switching windows
@@ -31,13 +29,18 @@ Plug 'ctrlpvim/ctrlp.vim'
 "" Silver Searcher
 " Plug 'rking/ag.vim' # sorry that you got replace, but you get to stay here
 Plug 'mileszs/ack.vim'
+Plug 'Lokaltog/vim-easymotion'
 
 if has('nvim') != 0
     " lua core
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
 
+    " Look at any tag in a popup
     Plug 'semanticart/tag-peek.vim'
+
+    " A faster version of easy motion
+    Plug 'phaazon/hop.nvim'
 
     Plug 'nvim-telescope/telescope.nvim'
 
@@ -61,6 +64,7 @@ if has('nvim') != 0
     " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     " Plug 'deoplete-plugins/deoplete-tag'
 else
+    "" Super motion plugin
     " Buffer viewer
     Plug 'jeetsukumaran/vim-buffergator'
     "" File browser (if defx is not enabled)
