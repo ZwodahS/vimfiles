@@ -42,5 +42,11 @@
     "body": [
       "Logger.debug('${1:var}: \\${$1}');"
     ]
+  },
+  "TypeName": {
+    "prefix": ["TypeName", "TN"],
+    "body": [
+      "public static final TypeName = \"${2:$TM_FILENAME_BASE}\";"
+    ]
   }
 }

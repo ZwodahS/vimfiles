@@ -66,9 +66,35 @@
     "body": [
       "// @:listen $TM_FILENAME_BASE ${1:Message} ${2:0} $4",
       "${3:dispatcher}.listen($1.MessageType, function(message: zf.Message) {",
-      "\tvar m = cast(message, $1);",
+      "\tfinal m = cast(message, $1);",
       "}, $2);"
     ],
     "description": ""
+  },
+  "SaveLoad": {
+    "prefix": ["saveload"],
+    "body": [
+      "/** Saving loading code **/",
+      "",
+      "// save",
+      "public function toSaveStruct(context: SaveLoadContext): Dynamic {",
+      "\tfinal sf: ${2:$TM_FILENAME_BASE}SF = {",
+      "\t}",
+      "\treturn sf;",
+      "}",
+      "",
+      "// load",
+      "public function fromSaveStruct(context: SaveLoadContext, data: Dynamic): Bool {",
+      "\tfinal sf: ${2:$TM_FILENAME_BASE}SF = data;",
+      "\treturn true;",
+      "}"
+    ],
+    "descipriont": ""
+  },
+  "LoadDice": {
+    "prefix": ["loadDice"],
+    "body": [
+		  "action.${1}Region.loadDice([for (id in sf.$1.dice) cast(context.get(id), Die)]);"
+    ]
   }
 }

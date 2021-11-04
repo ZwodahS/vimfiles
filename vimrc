@@ -76,7 +76,7 @@ nnoremap - zc
 nnoremap = zo
 nnoremap + zO
 """" Fold method forcing
-nnoremap <silent> zs :set foldmethod=syntax<CR>
+nnoremap <silent> zs :setlocal foldmethod=syntax<CR>
 " map C-j C-k for moving by fold
 nnoremap <C-j> zj
 nnoremap <C-k> zk
@@ -199,11 +199,12 @@ if has('nvim') != 0
     " source $sources/deoplete.vim
     source $sources/denite.vim
     source $sources/defx.vim
-    source $sources/neomake.vim
-    source $sources/nvim-compe.vim
+    " source $sources/neomake.vim
+    " source $sources/nvim-compe.vim
     source $sources/vsnip.vim
     source $sources/telescope.vim
     source $sources/tagpeek.vim
+    source $sources/nvim-window.vim
     " source $sources/shade.vim
 else
     " this is untested, need to test.
@@ -223,10 +224,13 @@ source $sources/flake8-gutter.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Custom date stuffs
 " Provide some syntax stuffs that is common to all language
+" Mon 13:34:20 20 Sep 2021
 augroup syntaxchange
-    autocmd Syntax * syn match ZDatetime "\(Mon\|Tue\|Wed\|Thu\|Fri\|Sat\|Sun\) \(Jan\|Feb\|Mar\|Apr\|May\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\) \d\+ \(\d\d:\d\d:\d\d \|\)\d\d\d\d"
+    autocmd Syntax * syn match ZDatetime "\(Mon\|Tue\|Wed\|Thu\|Fri\|Sat\|Sun\) \(\d\d:\d\d:\d\d\) \d\+ \(Jan\|Feb\|Mar\|Apr\|May\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\) \d\d\d\d"
+    autocmd Syntax * syn keyword ZStop ISTOPHERE
 augroup END
 hi ZDatetime ctermfg=248 guifg=#a8a8a8
+hi ZStop ctermfg=160 guifg=#d70000
 hi CommentKeywordGreen ctermfg=28 guifg=#008700
 hi CommentKeywordBlue ctermfg=39 guifg=#00afff
 hi CommentKeywordRed ctermfg=197 guifg=#ff005f
@@ -251,6 +255,7 @@ let g:airline_powerline_fonts = 1
 
 nmap <leader>ct :ColorToggle<CR>
 
+let g:rainbow_active = 0
 nnoremap <C-T> :call tag_peek#ShowTag()<CR>
 
 " set the starting cwd to where we open vim.

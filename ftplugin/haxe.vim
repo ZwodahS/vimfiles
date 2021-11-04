@@ -1,5 +1,5 @@
 nnoremap <silent><leader>gi :call vaxe#ImportClass()<CR>
-nnoremap <silent>zz :set foldmethod=syntax<CR>
+nnoremap <silent>zz :setlocal foldmethod=syntax<CR>
 set suffixesadd+=.hx
 set path+=**
 setlocal noet

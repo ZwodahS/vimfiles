@@ -42,11 +42,11 @@ if has('nvim') != 0
     Plug 'nvim-telescope/telescope.nvim'
 
     " completion engine
-    Plug 'hrsh7th/nvim-compe'
+    " Plug 'hrsh7th/nvim-compe'
     Plug 'hrsh7th/vim-vsnip'
 
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'neomake/neomake'
+    " Plug 'neomake/neomake'
     "
     " honorary entries as I have used them for a very long time
     Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -64,7 +64,7 @@ endif
 Plug 'ZwodahS/vim-trailing-whitespace'
 " Investigate this later
 " Plug 'ntpeters/vim-better-whitespace'
-"" Git gutter for displaying changes
+" Git gutter for displaying changes
 Plug 'airblade/vim-gitgutter'
 " GitWrapper
 Plug 'tpope/vim-fugitive'
@@ -124,6 +124,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'chrisbra/unicode.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'chrisbra/colorizer'
+Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
 """""""""""""""""""""On the way out""""""""""""""""""""
 "" Quick modification of date
 Plug 'tpope/vim-speeddating'
@@ -135,3 +136,4 @@ Plug 'mattn/emmet-vim'
 " Plug 'kshenoy/vim-signature'
 "" Commenter
 Plug 'ddollar/nerdcommenter'
+Plug 'luochen1990/rainbow'
