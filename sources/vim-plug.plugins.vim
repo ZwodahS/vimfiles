@@ -21,7 +21,7 @@ Plug 'wesQ3/vim-windowswap'
 "Plug 'SirVer/ultisnips'
 "" Fuzzy File finder / Buffer viewer / Denite
 Plug 'Konfekt/FastFold'
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 "" Fuzzy File finder
 " Note: using ctrlp as backup for cases where the repo is big
 Plug 'ctrlpvim/ctrlp.vim'
@@ -42,7 +42,14 @@ if has('nvim') != 0
     Plug 'nvim-telescope/telescope.nvim'
 
     " completion engine
-    " Plug 'hrsh7th/nvim-compe'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+    Plug 'hrsh7th/cmp-omni'
+    Plug 'quangnguyen30192/cmp-nvim-tags'
+    Plug 'hrsh7th/nvim-cmp'
+
+    Plug 'hrsh7th/cmp-vsnip'
     Plug 'hrsh7th/vim-vsnip'
 
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }

@@ -187,7 +187,7 @@ source $sources/jsx.vim
 source $sources/tagbar.vim
 source $sources/startify.vim
 source $sources/trailing-whitespace.vim
-source $sources/supertab.vim
+" source $sources/supertab.vim
 source $sources/easymotion.vim
 " using both ctrlp and telescope, but mapping ctrlp to <leader>p instead
 " in the case where vim is use, then ctrlp is mapped to cltrp
@@ -200,7 +200,7 @@ if has('nvim') != 0
     source $sources/denite.vim
     source $sources/defx.vim
     " source $sources/neomake.vim
-    " source $sources/nvim-compe.vim
+    source $sources/nvim-compe.vim
     source $sources/vsnip.vim
     source $sources/telescope.vim
     source $sources/tagpeek.vim
