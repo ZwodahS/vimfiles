@@ -154,13 +154,13 @@ nnoremap <silent> <leader><Space> :FixWhitespace<CR>
 xnoremap <silent> <leader><Space> :FixWhitespace<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" complete opt
-" set completeopt=menu,noselect
-" set completeopt=menu,preview
 set completeopt=menuone,noselect
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Misc
 " generate a random sha and put into buffer
 nnoremap <silent> <leader>rs :let @"=system('echo -n $(date 2>/dev/null\|shasum 2>/dev/null\|cut -d " " -f 1)') <CR>
+" generate tags
+nnoremap <silent> <leader>gt :! ./.gen_tag.sh<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Macros
 " fold by brackets, only works in manual fold
@@ -187,7 +187,6 @@ source $sources/jsx.vim
 source $sources/tagbar.vim
 source $sources/startify.vim
 source $sources/trailing-whitespace.vim
-" source $sources/supertab.vim
 " using both ctrlp and telescope, but mapping ctrlp to <leader>p instead
 " in the case where vim is use, then ctrlp is mapped to cltrp
 source $sources/ctrlp.vim
@@ -196,17 +195,14 @@ source $sources/easymotion.vim
 let g:python3_host_prog=$vim_home."/venv3/bin/python"
 if has('nvim') != 0
     source $sources/hop.vim
-     "source $sources/deoppet.vim
-    " source $sources/deoplete.vim
     source $sources/denite.vim
     source $sources/defx.vim
-    " source $sources/neomake.vim
     source $sources/nvim-compe.vim
     source $sources/vsnip.vim
     source $sources/telescope.vim
     source $sources/tagpeek.vim
     source $sources/nvim-window.vim
-    " source $sources/shade.vim
+    source $sources/shade.vim
 else
     " this is untested, need to test.
     " if has('python3') != 0
@@ -246,29 +242,19 @@ let g:table_mode_corner='|'
 " Mac Vim Default font
 set guifont=FiraCode\ Nerd\ Font\ Mono:h11
 
-" prefer a local sessions over global sessions
-let g:startify_session_dir = '.sessions'
-nmap <C-S><C-S> :SSave! vim.session<CR>
-nmap <C-S><C-L> :SLoad! vim.session<CR>
-
 "airline
 let g:airline_powerline_fonts = 1
 
-nmap <leader>ct :ColorToggle<CR>
-
-let g:rainbow_active = 0
 nnoremap <C-T> :call tag_peek#ShowTag()<CR>
 
-" set the starting cwd to where we open vim.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Machine Specific Configuration
 " for config that are machine specfic
-" This hash is for project specific vim file.
-" In case some project accidentally have a file that is named in the same way
-" or someone trying to run this on my machine via a repo when i accidentally include it
+" This hash is for project specific vim file, incase some project accidentally have a file that
+" is named in the same way or someone trying to run this on my machine via an ext-repo
 " this hash in theory prevents it
 let g:project_hash=''
-source $sources/.local.vim
+source $sources/.local.vim " project hash is provided in here
 " source directory specific file.
 " This is dangerous when opening new repo from unknown origin so we put a hash
 " that is local to the machine that is never committed.
