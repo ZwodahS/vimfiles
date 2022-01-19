@@ -48,5 +48,23 @@
     "body": [
       "public static final TypeName = \"${2:$TM_FILENAME_BASE}\";"
     ]
+  },
+  "StringEnum": {
+    "prefix": ["strenum"],
+    "body": [
+      "public var ${1} = \"${1}\";"
+    ]
+  },
+  "CommentHeader": {
+    "prefix": ["----"],
+    "body": [
+      "// ---- ${1} ---- //"
+    ]
+  },
+  "Ternary Assignment": {
+    "prefix": ["?:"],
+    "body": [
+      "${1} != ${3:null} ? $1 : ${2:defaultValue}"
+    ]
   }
 }

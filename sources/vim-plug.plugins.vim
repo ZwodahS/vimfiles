@@ -45,11 +45,14 @@ if has('nvim') != 0
 
     " Telescope for grep / filesearch etc
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'williamboman/nvim-lsp-installer'
 
     " completion engine
-    Plug 'hrsh7th/cmp-buffer'
+    " Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/cmp-cmdline'
+    Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'ZwodahS/cmp-nvim-tags'
     Plug 'hrsh7th/nvim-cmp'
 
@@ -102,13 +105,17 @@ Plug 'sts10/vim-pink-moon'
 Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
 Plug 'guns/xterm-color-table.vim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " Auto highlight when cursor stop moving
 Plug 'ZwodahS/autohighlight.vim'
 
 if has('nvim') != 0
-    "Shade?
-    Plug 'sunjon/Shade.nvim'
+    " Shade
+    " not working with session =(, might want to test and see
+    " if this is fixed in the future
+    " also broken that I can't resize the windows with <C-W>=
+    " Plug 'sunjon/Shade.nvim'
 endif
 """"""""""""""""""""""""Language plugins""""""""""""""""""""""""
 "" Golang

@@ -17,12 +17,13 @@ lua <<EOF
         ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
     },
     sources = cmp.config.sources({
-      -- { name = 'nvim_lsp' },
+      { name = 'nvim_lsp' },
       { name = 'vsnip' }, -- For vsnip users.
       -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
       { name = 'tags' },
+      { name = 'buffer' },
     }, {
     })
   })
@@ -43,3 +44,5 @@ lua <<EOF
     })
   })
 EOF
+let g:compe = {}
+let g:compe.min_length = 1

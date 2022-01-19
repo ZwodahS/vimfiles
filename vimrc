@@ -29,10 +29,11 @@ call plug#begin($vim_home."/installed_plugins")
 source $sources/vim-plug.plugins.vim
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set colorcolumn=60,80,100,119,120
+set colorcolumn=119,120
 """ color scheme selection
 let g:gruvbox_italic=1
-colorscheme gruvbox
+colorscheme tokyonight
+let g:tokyonight_style = "night"
 let g:airline_theme='base16_gruvbox_dark_hard'
 set background=dark
 """
@@ -146,6 +147,7 @@ set splitright
 """" Additional Quality of life bindings
 nnoremap <Space> f<Space>
 vnoremap <Space> f<Space>
+nnoremap <Enter> :
 " show cursor line and column
 set cursorline
 set cursorcolumn
@@ -159,8 +161,12 @@ set completeopt=menuone,noselect
 """" Misc
 " generate a random sha and put into buffer
 nnoremap <silent> <leader>rs :let @"=system('echo -n $(date 2>/dev/null\|shasum 2>/dev/null\|cut -d " " -f 1)') <CR>
-" generate tags
-nnoremap <silent> <leader>gt :! ./.gen_tag.sh<CR>
+if (filereadable(".gen_tags.sh"))
+    " generate tags
+    nnoremap <silent> <leader>gt :! ./.gen_tags.sh<CR>
+    " auto generate tags
+    autocmd BufWritePost * silent :!./.gen_tags.sh \&
+endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Macros
 " fold by brackets, only works in manual fold
@@ -202,7 +208,8 @@ if has('nvim') != 0
     source $sources/telescope.vim
     source $sources/tagpeek.vim
     source $sources/nvim-window.vim
-    source $sources/shade.vim
+    source $sources/lsp.vim
+    " source $sources/shade.vim
 else
     " this is untested, need to test.
     " if has('python3') != 0
@@ -246,7 +253,6 @@ set guifont=FiraCode\ Nerd\ Font\ Mono:h11
 let g:airline_powerline_fonts = 1
 
 nnoremap <C-T> :call tag_peek#ShowTag()<CR>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Machine Specific Configuration
 " for config that are machine specfic
