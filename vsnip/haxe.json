@@ -62,9 +62,36 @@
     ]
   },
   "Ternary Assignment": {
-    "prefix": ["?:"],
+    "prefix": [":="],
     "body": [
-      "${1} != ${3:null} ? $1 : ${2:defaultValue}"
+      "${1} = $1 != ${3:null} ? $1 : ${2:defaultValue}"
+    ]
+  },
+  "publicvar": {
+    "prefix": ["prop"],
+    "body": [
+      "public var ${1:name}: ${2:type};"
+    ]
+  },
+  "publicgetnever": {
+    "prefix": ["proppgn"],
+    "body": [
+      "public var ${1:name}(get, never): ${2:type};",
+      "",
+      "public function get_$1(): $2 {",
+      "\treturn ${3:returnValue};",
+      "}"
+    ]
+  },
+  "publicdefaultset": {
+    "prefix": ["proppds"],
+    "body": [
+      "public var ${1:name}(default, set): ${2:type};",
+      "",
+      "public function set_$1(v: $2): $2 {",
+      "\tthis.$1 = v;",
+      "\treturn this.$1;",
+      "}"
     ]
   }
 }

@@ -1,1 +1,1 @@
-let g:vaxe_prefer_hxml = '.lint.hxml'
+let g:vaxe_prefer_hxml = '.lsp.hxml'

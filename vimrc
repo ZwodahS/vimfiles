@@ -32,7 +32,11 @@ call plug#end()
 set colorcolumn=119,120
 """ color scheme selection
 let g:gruvbox_italic=1
-colorscheme tokyonight
+if has('nvim') != 0
+    colorscheme tokyonight
+else
+    colorscheme gruvbox
+end
 let g:tokyonight_style = "night"
 let g:airline_theme='base16_gruvbox_dark_hard'
 set background=dark
@@ -164,8 +168,8 @@ nnoremap <silent> <leader>rs :let @"=system('echo -n $(date 2>/dev/null\|shasum 
 if (filereadable(".gen_tags.sh"))
     " generate tags
     nnoremap <silent> <leader>gt :! ./.gen_tags.sh<CR>
-    " auto generate tags
-    autocmd BufWritePost * silent :!./.gen_tags.sh \&
+    " auto generate tags no longer necessary after LSP ?
+    " autocmd BufWritePost * silent :!./.gen_tags.sh \&
 endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Macros
@@ -201,15 +205,15 @@ source $sources/easymotion.vim
 let g:python3_host_prog=$vim_home."/venv3/bin/python"
 if has('nvim') != 0
     source $sources/hop.vim
-    source $sources/denite.vim
-    source $sources/defx.vim
+    " source $sources/denite.vim
+    " source $sources/defx.vim
     source $sources/nvim-compe.vim
     source $sources/vsnip.vim
     source $sources/telescope.vim
     source $sources/tagpeek.vim
-    source $sources/nvim-window.vim
     source $sources/lsp.vim
-    " source $sources/shade.vim
+    source $sources/lualine.vim
+    source $sources/nvim-tree.vim
 else
     " this is untested, need to test.
     " if has('python3') != 0
@@ -219,6 +223,9 @@ else
     " else
     source $sources/buffergator.vim
     source $sources/nerdtree.vim
+
+    " airline
+    let g:airline_powerline_fonts = 1
     " endif
 endif
 source $sources/vaxe.vim
@@ -232,9 +239,11 @@ source $sources/flake8-gutter.vim
 augroup syntaxchange
     autocmd Syntax * syn match ZDatetime "\(Mon\|Tue\|Wed\|Thu\|Fri\|Sat\|Sun\) \(\d\d:\d\d:\d\d\) \d\+ \(Jan\|Feb\|Mar\|Apr\|May\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\) \d\d\d\d"
     autocmd Syntax * syn keyword ZStop ISTOPHERE
+    autocmd Syntax * syn keyword ZSpecial Assert
 augroup END
 hi ZDatetime ctermfg=248 guifg=#a8a8a8
 hi ZStop ctermfg=160 guifg=#d70000
+hi ZSpecial ctermfg=55 guifg=#5f00af
 hi CommentKeywordGreen ctermfg=28 guifg=#008700
 hi CommentKeywordBlue ctermfg=39 guifg=#00afff
 hi CommentKeywordRed ctermfg=197 guifg=#ff005f
@@ -248,9 +257,6 @@ let g:python_highlight_all = 1
 let g:table_mode_corner='|'
 " Mac Vim Default font
 set guifont=FiraCode\ Nerd\ Font\ Mono:h11
-
-"airline
-let g:airline_powerline_fonts = 1
 
 nnoremap <C-T> :call tag_peek#ShowTag()<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

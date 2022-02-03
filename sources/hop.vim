@@ -5,6 +5,7 @@ nmap J :HopLineAC<CR>
 nmap K :HopLineBC<CR>
 nmap ,w :HopWordAC<CR>
 nmap ,b :HopWordBC<CR>
+" nmap / :HopPattern<CR>
 "
 "
 lua << EOF

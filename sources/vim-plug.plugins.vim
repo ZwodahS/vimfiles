@@ -1,151 +1,214 @@
-"""""""""""""""""""""""Basic/Dependency Plugs""""""""""""""""""""""""
+"""""""""""""""""""""""CHANGE LOG"""""""""""""""""""""""""""""""
+" Thu 11:05:34 03 Feb 2022
+" Re-organise this file slightly to prepare to split the file into 2 based on
+" neovim and vim. I still think that it is still better to have a vim set up
+" that works.
+"""""""""""""""""""""""Deprecated ???"""""""""""""""""""""""""""
 "" Common vim library
-Plug 'tomtom/tlib_vim'
-Plug 'vim-scripts/L9'
-Plug 'MarcWeber/vim-addon-mw-utils'
+" Thu 20:29:13 27 Jan 2022
+" Disabling these, might not longer be needed ???? perhaps need to test and
+" disable these for neovim only ?
+" Plug 'tomtom/tlib_vim'
+" Plug 'vim-scripts/L9'
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug Konfekt/FastFold " https://github.com/Konfekt/FastFold
 
-""""""""""""""""""""""""Functional Plugs""""""""""""""""""""""""
-"" Undo tree visualization
+""""""""Common""""""""
+"""" Undo tree visualization
 " Plug 'sjl/gundo.vim' " - deprecated gundo
-Plug 'mbbill/undotree'
+" 03 Feb 2022 RE-ORG
+Plug 'mbbill/undotree' " https://github.com/mbbill/undotree
 
+"""" vim-surround
 "" Surround text with something + add 's' motion
-Plug 'tpope/vim-surround'
+" 03 Feb 2022 RE-ORG
+Plug 'tpope/vim-surround' " https://github.com/tpope/vim-surround
 
+"""" window switching
 "" A simple way of switching windows
-Plug 'wesQ3/vim-windowswap'
+" 03 Feb 2022 RE-ORG
+Plug 'wesQ3/vim-windowswap' " https://github.com/wesQ3/vim-windowswap
 
-Plug 'Konfekt/FastFold'
-
-"" Fuzzy File finder
+"""" Fuzzy File finder
 " Note: using ctrlp as backup for cases where the repo is big
+" 03 Feb 2022 RE-ORG
 Plug 'ctrlpvim/ctrlp.vim'
 
+"""" Searcher
 " Note: Similarly, even tho I could use denite for searching, ack is slightly
 " faster for really big repo.
-"" Silver Searcher
-" Plug 'rking/ag.vim' # sorry that you got replace, but you get to stay here
+" Plug 'rking/ag.vim' # you got replaced, keeping it here as memorial
+" 03 Feb 2022 RE-ORG
 Plug 'mileszs/ack.vim'
 
-" Easy motion is only used for '/' serach as hop doesn't have that yet.
-" Easy motion is also used when hop in not in neovim.
+"""" Motion
+" Note: Easy motion is only used for '/' search as hop doesn't have that yet.
+" Note: Easy motion is also used when hop in not in neovim.
+" Thu 20:30:34 27 Jan 2022
+" There is currently a bug in easymotion (I think) causing undo tree to break
+" 03 Feb 2022 RE-ORG
 Plug 'Lokaltog/vim-easymotion'
 
-" Enable for neovim lua
+"""" Trailing whitespace
+" Investigate this later 'ntpeters/vim-better-whitespace'
+" 03 Feb 2022 RE-ORG
+Plug 'ZwodahS/vim-trailing-whitespace'
+
+"""""""" Various Git stuffs
+"""" Git marks
+" Git gutter for displaying changes
+" 03 Feb 2022 RE-ORG
+Plug 'airblade/vim-gitgutter'
+
+"""" Git Wrapper
+" 03 Feb 2022 RE-ORG
+Plug 'tpope/vim-fugitive'
+
+"""" Git Browser
+" Git browser viewer
+" Thu 11:20:06 03 Feb 2022 Do I still use this ?
+" 03 Feb 2022 RE-ORG
+Plug 'junegunn/gv.vim'
+
+"""" Start screen
+" Note: Mainly using this for session mangement
+" 03 Feb 2022 RE-ORG
+Plug 'mhinz/vim-startify'
+
+" Auto highlight when cursor stop moving
+" 03 Feb 2022 RE-ORG
+Plug 'ZwodahS/autohighlight.vim'
+
+"""""""" Themes and colorscheme related
+" Thu 11:22:24 03 Feb 2022 might want to remove some of these
+" 03 Feb 2022 RE-ORG
+Plug 'nanotech/jellybeans.vim'
+Plug 'sts10/vim-pink-moon'
+Plug 'morhetz/gruvbox'
+Plug 'guns/xterm-color-table.vim'
+
+" 03 Feb 2022 RE-ORG
+Plug 'ryanoasis/vim-devicons'
+
+"""" Specific plugins for neovim and vim
 if has('nvim') != 0
-    " lua core
+    """" lua core
+    " 03 Feb 2022 RE-ORG
     Plug 'nvim-lua/popup.nvim'
+    " 03 Feb 2022 RE-ORG
     Plug 'nvim-lua/plenary.nvim'
 
-    " Look at any tag in a popup
+    """" Look at any tag in a popup
+    " 03 Feb 2022 RE-ORG
     Plug 'semanticart/tag-peek.vim'
 
     " A faster version of easy motion
+    " Thu 11:40:41 03 Feb 2022
+    " Still hoping that it has a / functionality like easy-motion
+    " 03 Feb 2022 RE-ORG
     Plug 'phaazon/hop.nvim'
 
+    """" Fuzzy finder viewer
     " Telescope for grep / filesearch etc
+    " 03 Feb 2022 RE-ORG
     Plug 'nvim-telescope/telescope.nvim'
+
+    """""""" LSP stuff
+    """" Config
+    " 03 Feb 2022 RE-ORG
     Plug 'neovim/nvim-lspconfig'
+    """" Installer
+    " 03 Feb 2022 RE-ORG
     Plug 'williamboman/nvim-lsp-installer'
 
-    " completion engine
+    """""""" completion engine
     " Plug 'hrsh7th/cmp-buffer'
+    " 03 Feb 2022 RE-ORG
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'ZwodahS/cmp-nvim-tags'
     Plug 'hrsh7th/nvim-cmp'
-
     Plug 'hrsh7th/cmp-vsnip'
+
+    """" Snippets
+    " 03 Feb 2022 RE-ORG
     Plug 'hrsh7th/vim-vsnip'
 
-    " file browser
-    Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 
+    " 03 Feb 2022 RE-ORG
     Plug 'neomake/neomake'
 
+    " 03 Feb 2022 RE-ORG
+    Plug 'nvim-lualine/lualine.nvim'
+
+    " 03 Feb 2022 ADDED
+    Plug 'kyazdani42/nvim-web-devicons'
+
+    """" File Browser
+    Plug 'kyazdani42/nvim-tree.lua'
+
+    """" file browser
     " honorary entries as I have used them for a very long time
-    Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+    " Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+    " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
     " Plug 'Shougo/deoppet.nvim', { 'do': ':UpdateRemotePlugins' }
     " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     " Plug 'deoplete-plugins/deoplete-tag'
+
+    " Color scheme, only works for neovim
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' } " https://github.com/folke/tokyonight.nvim/
 else
-    "" Super motion plugin
     " Buffer viewer
     Plug 'jeetsukumaran/vim-buffergator'
 
     "" File browser (if defx is not enabled)
     Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-    " endif
+
+    " 03 Feb 2022 RE-ORG
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 endif
 
-"" Trailing whitespace
-Plug 'ZwodahS/vim-trailing-whitespace'
-" Investigate this later
-" Plug 'ntpeters/vim-better-whitespace'
-
-" Git gutter for displaying changes
-Plug 'airblade/vim-gitgutter'
-" GitWrapper
-Plug 'tpope/vim-fugitive'
-" Git browser viewer
-Plug 'junegunn/gv.vim'
-" Mainly using this for sesssion mangement
-Plug 'mhinz/vim-startify'
-
-""""""""""""""""""""""""Visual Plugs""""""""""""""""""""""""
-"" Nice status line at the bottom
-"Plug 'itchyny/lightline.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-"" Nice theme
-Plug 'nanotech/jellybeans.vim'
-Plug 'sts10/vim-pink-moon'
-Plug 'morhetz/gruvbox'
-Plug 'ryanoasis/vim-devicons'
-Plug 'guns/xterm-color-table.vim'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-
-" Auto highlight when cursor stop moving
-Plug 'ZwodahS/autohighlight.vim'
-
-if has('nvim') != 0
-    " Shade
-    " not working with session =(, might want to test and see
-    " if this is fixed in the future
-    " also broken that I can't resize the windows with <C-W>=
-    " Plug 'sunjon/Shade.nvim'
-endif
 """"""""""""""""""""""""Language plugins""""""""""""""""""""""""
 "" Golang
+" 03 Feb 2022 RE-ORG
 Plug 'fatih/vim-go', { 'for': 'go' }
 
 "" Python
+" 03 Feb 2022 RE-ORG
 Plug 'vim-scripts/python_match.vim'
 "" Python Folding
+" 03 Feb 2022 RE-ORG
 Plug 'ZwodahS/SimpylFold', { 'for': 'python' }
 " only enable flake8 if the file exists in the current directory
 if filereadable(".flake8") != 0
     Plug 'nvie/vim-flake8', { 'for': 'python' }
 endif
+" 03 Feb 2022 RE-ORG
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 
 "" toml
+" 03 Feb 2022 RE-ORG
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 
 "" yaml
+" 03 Feb 2022 RE-ORG
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'pedrohdz/vim-yaml-folds', { 'for': 'yaml' }
 
 "" Haxe
+" 03 Feb 2022 RE-ORG
 Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
 Plug 'marcweber/vim-haxe-syntax', { 'for': 'haxe' }
 
 "" Typescript
+" 03 Feb 2022 RE-ORG
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
+
+"""""""""""NOT CONFIRMED"""""""""""
 """"""""""""""""""""""""Testing""""""""""""""""""""""""
 " Plug 'majutsushi/tagbar'
 " Plug 'ludovicchabant/vim-gutentags'
@@ -154,10 +217,6 @@ Plug 'chrisbra/unicode.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'chrisbra/colorizer'
 Plug 'dstein64/vim-startuptime'
-
-if has('nvim') != 0
-    Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
-endif
 """""""""""""""""""""On the way out""""""""""""""""""""
 "" Quick modification of date
 Plug 'tpope/vim-speeddating'
