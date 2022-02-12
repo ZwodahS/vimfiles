@@ -146,7 +146,21 @@ if has('nvim') != 0
     Plug 'kyazdani42/nvim-web-devicons'
 
     """" File Browser
+    " 05 Feb 2022 ADDED
     Plug 'kyazdani42/nvim-tree.lua'
+
+    " 07 Feb 2022 ADDED
+    Plug 'folke/trouble.nvim'
+
+    " 07 Feb 2022 DISABLED
+    " Mon 14:31:00 07 Feb 2022
+    " I really want Shade but I don't like the implementation at the moment.
+    " For one, it created a floating window above the current window, which
+    " does not allow us to close the window with <C-w>q.
+    " There are also bugs (which is actually fixed in my local branch) when
+    " closing the entire tab with :tabonly
+    " Keeping this here so I don't add it back in again in the future
+    " Plug 'sunjon/Shade.nvim'
 
     """" file browser
     " honorary entries as I have used them for a very long time

@@ -214,6 +214,7 @@ if has('nvim') != 0
     source $sources/lsp.vim
     source $sources/lualine.vim
     source $sources/nvim-tree.vim
+    source $sources/trouble.vim
 else
     " this is untested, need to test.
     " if has('python3') != 0
@@ -257,7 +258,8 @@ let g:python_highlight_all = 1
 let g:table_mode_corner='|'
 " Mac Vim Default font
 set guifont=FiraCode\ Nerd\ Font\ Mono:h11
-
+" Always keep the split resized equally
+autocmd WinEnter * wincmd =
 nnoremap <C-T> :call tag_peek#ShowTag()<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Machine Specific Configuration
