@@ -172,6 +172,9 @@ if has('nvim') != 0
 
     " Color scheme, only works for neovim
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' } " https://github.com/folke/tokyonight.nvim/
+
+    " lua tabline
+    Plug 'rafcamlet/tabline-framework.nvim'
 else
     " Buffer viewer
     Plug 'jeetsukumaran/vim-buffergator'

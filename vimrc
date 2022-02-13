@@ -215,6 +215,7 @@ if has('nvim') != 0
     source $sources/lualine.vim
     source $sources/nvim-tree.vim
     source $sources/trouble.vim
+    source $sources/tabline.vim
 else
     " this is untested, need to test.
     " if has('python3') != 0
