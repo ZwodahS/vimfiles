@@ -20,6 +20,7 @@ let $sources=$vim_home."/sources"
 nnoremap Q <NOP>
 nnoremap <C-G> <NOP>
 nnoremap <C-H> <NOP>
+inoremap <C-H> <NOP>
 nnoremap <C-Q> <NOP>
 nnoremap <C-T> <NOP>
 xnoremap <C-K> <NOP>
@@ -31,14 +32,13 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set colorcolumn=119,120
 """ color scheme selection
-let g:gruvbox_italic=1
 if has('nvim') != 0
     colorscheme tokyonight
 else
+    let g:gruvbox_italic=1
     colorscheme gruvbox
 end
 let g:tokyonight_style = "night"
-let g:airline_theme='base16_gruvbox_dark_hard'
 set background=dark
 """
 "use light bg if the env var is there.
@@ -59,8 +59,6 @@ set showtabline=2                                   " Always display the tabline
 set mouse=                                          " disable mouse, mainly for macvim
 set autoindent
 set noequalalways
-""" easy way to run bash command
-nnoremap ! :!
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set listchars=tab:¬\ ,eol:↵                         " set the character for EOL and tabs
 " toggle for showing eol and other char
@@ -152,6 +150,7 @@ set splitright
 nnoremap <Space> f<Space>
 vnoremap <Space> f<Space>
 nnoremap <Enter> :
+nnoremap ! :!
 " show cursor line and column
 set cursorline
 set cursorcolumn
@@ -212,10 +211,9 @@ if has('nvim') != 0
     source $sources/telescope.vim
     source $sources/tagpeek.vim
     source $sources/lsp.vim
-    source $sources/lualine.vim
     source $sources/nvim-tree.vim
     source $sources/trouble.vim
-    source $sources/tabline.vim
+    source $sources/lines.vim
     source $sources/colorizer.vim
 else
     " this is untested, need to test.
@@ -262,7 +260,6 @@ let g:table_mode_corner='|'
 set guifont=FiraCode\ Nerd\ Font\ Mono:h11
 " Always keep the split resized equally
 autocmd WinEnter * wincmd =
-nnoremap <C-T> :call tag_peek#ShowTag()<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Machine Specific Configuration
 " for config that are machine specfic
@@ -277,6 +274,6 @@ source $sources/.local.vim " project hash is provided in here
 let $localfile=join([getcwd(), "/.project.", g:project_hash, ".vim"], '')
 if (g:project_hash != '' && filereadable($localfile))
     source $localfile
-    echom 'Project Script loaded!!!'
+    let g:project_file = 1
 endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
