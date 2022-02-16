@@ -145,6 +145,10 @@ if has('nvim') != 0
     " 03 Feb 2022 ADDED
     Plug 'kyazdani42/nvim-web-devicons'
 
+    " 15 Feb 2022 ADDED
+    " Plug 'ZwodahS/lsp_signature.nvim'
+    Plug 'ray-x/lsp_signature.nvim'
+
     """" File Browser
     " 05 Feb 2022 ADDED
     Plug 'kyazdani42/nvim-tree.lua'
@@ -171,10 +175,16 @@ if has('nvim') != 0
     " Plug 'deoplete-plugins/deoplete-tag'
 
     " Color scheme, only works for neovim
+    " 03 Feb 2022 RE-ORG
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' } " https://github.com/folke/tokyonight.nvim/
 
     " lua tabline
+    " 13 Feb 2022 ADDED
     Plug 'rafcamlet/tabline-framework.nvim'
+
+    " Dashboard
+    " 14 Feb 2022 Added, need to configure first
+    " Plug 'glepnir/dashboard-nvim'
 else
     " Buffer viewer
     Plug 'jeetsukumaran/vim-buffergator'
