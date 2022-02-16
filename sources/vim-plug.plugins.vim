@@ -182,6 +182,9 @@ if has('nvim') != 0
     " 13 Feb 2022 ADDED
     Plug 'rafcamlet/tabline-framework.nvim'
 
+    " 16 Feb 2022 ADDED
+    Plug 'ZwodahS/nvim-colorizer.lua'
+
     " Dashboard
     " 14 Feb 2022 Added, need to configure first
     " Plug 'glepnir/dashboard-nvim'
@@ -242,7 +245,6 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'chrisbra/unicode.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'chrisbra/colorizer'
 Plug 'dstein64/vim-startuptime'
 """""""""""""""""""""On the way out""""""""""""""""""""
 "" Quick modification of date
