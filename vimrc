@@ -215,6 +215,8 @@ if has('nvim') != 0
     source $sources/trouble.vim
     source $sources/lines.vim
     source $sources/colorizer.vim
+    source $sources/truezen.vim
+    source $sources/colors.vim
 else
     " this is untested, need to test.
     " if has('python3') != 0
@@ -240,15 +242,19 @@ source $sources/flake8-gutter.vim
 augroup syntaxchange
     autocmd Syntax * syn match ZDatetime "\(Mon\|Tue\|Wed\|Thu\|Fri\|Sat\|Sun\) \(\d\d:\d\d:\d\d\) \d\+ \(Jan\|Feb\|Mar\|Apr\|May\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\) \d\d\d\d"
     autocmd Syntax * syn keyword ZStop ISTOPHERE
+    autocmd Syntax * syn keyword CommentKeywordBlue Hack Assumption
     autocmd Syntax * syn keyword ZSpecial Assert
 augroup END
-hi ZDatetime ctermfg=248 guifg=#a8a8a8
-hi ZStop ctermfg=160 guifg=#d70000
-hi ZSpecial ctermfg=55 guifg=#5f00af
-hi CommentKeywordGreen ctermfg=28 guifg=#008700
-hi CommentKeywordBlue ctermfg=39 guifg=#00afff
-hi CommentKeywordRed ctermfg=197 guifg=#ff005f
-hi CommentNearInvisible ctermfg=237 guifg=#3a3a3a
+" 23 Feb 2022
+"   These are moved to colors.vim to use tokyonight's color scheme
+"   Keeping it here for vim migration in the future
+" hi ZDatetime ctermfg=248 guifg=#a8a8a8
+" hi ZStop ctermfg=160 guifg=#f7768e
+" hi ZSpecial ctermfg=55 guifg=#db4b4b
+" hi CommentKeywordGreen ctermfg=28 guifg=#008700
+" hi CommentKeywordBlue ctermfg=39 guifg=#00afff
+" hi CommentKeywordRed ctermfg=197 guifg=#ff005f
+" hi CommentNearInvisible ctermfg=237 guifg=#3a3a3a
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" Unknown/TBC/Deprecating
 let g:python_highlight_all = 1

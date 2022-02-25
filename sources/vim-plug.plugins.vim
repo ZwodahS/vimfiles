@@ -35,8 +35,7 @@ Plug 'wesQ3/vim-windowswap' " https://github.com/wesQ3/vim-windowswap
 Plug 'ctrlpvim/ctrlp.vim'
 
 """" Searcher
-" Note: Similarly, even tho I could use denite for searching, ack is slightly
-" faster for really big repo.
+" Ack is slightly faster if I need to search really fast repo.
 " Plug 'rking/ag.vim' # you got replaced, keeping it here as memorial
 " 03 Feb 2022 RE-ORG
 Plug 'mileszs/ack.vim'
@@ -68,12 +67,15 @@ Plug 'tpope/vim-fugitive'
 " Git browser viewer
 " Thu 11:20:06 03 Feb 2022 Do I still use this ?
 " 03 Feb 2022 RE-ORG
-Plug 'junegunn/gv.vim'
+" 17 Feb 2022 DEPRECATED. Remove the next time I clean up
+" Plug 'junegunn/gv.vim'
 
 """" Start screen
 " Note: Mainly using this for session mangement
 " 03 Feb 2022 RE-ORG
+" 14 Feb 2022 to be replaced with Dashboard later
 Plug 'mhinz/vim-startify'
+" Plug 'glepnir/dashboard-nvim'
 
 " Auto highlight when cursor stop moving
 " 03 Feb 2022 RE-ORG
@@ -82,8 +84,9 @@ Plug 'ZwodahS/autohighlight.vim'
 """""""" Themes and colorscheme related
 " Thu 11:22:24 03 Feb 2022 might want to remove some of these
 " 03 Feb 2022 RE-ORG
-Plug 'nanotech/jellybeans.vim'
-Plug 'sts10/vim-pink-moon'
+" Plug 'nanotech/jellybeans.vim'
+" Plug 'sts10/vim-pink-moon'
+" 17 Feb 2022 Keep gruvbox for vim
 Plug 'morhetz/gruvbox'
 Plug 'guns/xterm-color-table.vim'
 
@@ -128,8 +131,8 @@ if has('nvim') != 0
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'ZwodahS/cmp-nvim-tags'
-    Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-vsnip'
+    Plug 'hrsh7th/nvim-cmp'
 
     """" Snippets
     " 03 Feb 2022 RE-ORG
@@ -180,14 +183,13 @@ if has('nvim') != 0
 
     " lua tabline
     " 13 Feb 2022 ADDED
-    Plug 'rafcamlet/tabline-framework.nvim'
+    Plug 'rafcamlet/tabline-framework.nvim' " https://github.com/rafcamlet/tabline-framework.nvim/
 
     " 16 Feb 2022 ADDED
     Plug 'ZwodahS/nvim-colorizer.lua'
 
-    " Dashboard
-    " 14 Feb 2022 Added, need to configure first
-    " Plug 'glepnir/dashboard-nvim'
+    " 22 Feb 2022 ADDED, NOT CONFIRMED YET
+    Plug 'Pocco81/TrueZen.nvim'
 else
     " Buffer viewer
     Plug 'jeetsukumaran/vim-buffergator'

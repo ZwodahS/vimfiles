@@ -39,6 +39,8 @@ cmp.setup({
   mapping = {
       ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
       ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
+      ['<C-J>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
+      ['<C-K>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
   },
   sorting = {
     comparators = {

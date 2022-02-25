@@ -3,40 +3,53 @@
 " via https://github.com/rafcamlet/tabline-framework.nvim
 
 lua << EOF
-local colors = require("tokyonight.colors").setup(config)
+local colors = require("tokyonight.colors").setup()
+local status_color = require("lualine.themes.tokyonight")
 
 local render = function(f)
     local errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
     local warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
     local hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
 
-
     f.add({ '  ' .. errors, fg = "#db4b4b" })
     f.add({ '  ' .. warnings, fg = "#e0af68"})
     f.add({ '  ' .. hints, fg = "#41a6b5"})
 
-    if vim.g.project_file then
-        f.add(' ')
-        f.add({'P', bg = "#db4b4b"})
-    end
-
-    f.add(' ')
+    f.add({'  ', fg = status_color.normal.b.fg})
 
     f.make_tabs(function(info)
-        f.add(' (' .. info.index .. ') ')
+        if info.current then
+            f.add({'', fg = status_color.normal.b.fg, bg = status_color.normal.c.bg})
+        else
+            f.add('.')
+            f.add({info.index, fg="#89ddff"})
+            f.add('.')
+        end
 
         if info.filename then
+            f.add {
+            ' ' .. f.icon(info.filename) .. ' ',
+            }
             f.add(info.filename)
             f.add(info.modified and '[+]')
-            f.add {
-            ' ' .. f.icon(info.filename),
-            }
         else
-            f.add('[NO NAME]')
-            f.add(info.modified and '[+]')
+            f.add('       ')
         end
+
+        if info.current then
             f.add(' ')
+            f.add({'', fg = status_color.normal.b.fg, bg = status_color.normal.c.bg})
+        else
+            f.add(' ')
+        end
     end)
+
+    f.add_spacer()
+    if vim.g.project_file then
+        f.add({'', fg = status_color.normal.b.fg})
+        f.add({'  Project Conf Loaded ', bg = status_color.normal.a.bg, fg = status_color.normal.a.fg})
+    end
+
 end
 require('tabline_framework').setup({
   -- Render function is resposible for generating content of tabline
@@ -92,8 +105,8 @@ require('lualine').setup {
       },
       inactive_sections = {
         lualine_a = {},
-        lualine_b = {},
-        lualine_c = {'filename'},
+        lualine_b = {{'filename', path = 2}},
+        lualine_c = {},
         lualine_x = {'location'},
         lualine_y = {},
         lualine_z = {}
