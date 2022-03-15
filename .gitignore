@@ -6,7 +6,6 @@ installed_plugins.vim
 .tmp
 tmp
 view
-init.vim
 installed_plugins
 sources/.local
 sources/.local.vim

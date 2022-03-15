@@ -1,27 +1,14 @@
-let g:nvim_tree_quit_on_open = 1 "0 by default, closes the tree when you open a file
 let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
 let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
 let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
 let g:nvim_tree_add_trailing = 1 "0 by default, append a trailing slash to folder names
 let g:nvim_tree_group_empty = 1 " 0 by default, compact folders that only contain a single folder into one node in the file tree
-let g:nvim_tree_change_dir_global = 0 "0 by default, use :cd when changing directories.
-let g:nvim_tree_disable_window_picker = 0 "0 by default, will disable the window picker.
 let g:nvim_tree_icon_padding = ' ' "one space by default, used for rendering the space between the icon and the filename. Use with caution, it could break rendering if you set an empty string depending on your font.
 let g:nvim_tree_symlink_arrow = ' >> ' " defaults to ' ➛ '. used as a separator between symlinks' source and target.
 let g:nvim_tree_respect_buf_cwd = 1 "0 by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
 let g:nvim_tree_create_in_closed_folder = 0 "1 by default, When creating files, sets the path of a file when cursor is on a closed folder to the parent folder when 0, and inside the folder when 1.
 let g:nvim_tree_refresh_wait = 500 "1000 by default, control how often the tree can be refreshed, 1000 means the tree can be refresh once per 1000ms.
-let g:nvim_tree_window_picker_exclude = {
-    \   'filetype': [
-    \     'notify',
-    \     'packer',
-    \     'qf'
-    \   ],
-    \   'buftype': [
-    \     'terminal'
-    \   ]
-    \ }
 " Dictionary of buffer option names mapped to a list of option values that
 " indicates to the window picker that the buffer's window should not be
 " selectable.
@@ -68,86 +55,91 @@ highlight NvimTreeFolderIcon guibg=blue
 lua << END
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
-require'nvim-tree'.setup {
-  disable_netrw       = true,
-  hijack_netrw        = true,
-  open_on_setup       = false,
-  ignore_ft_on_setup  = {},
-  auto_close          = false,
-  open_on_tab         = false,
-  hijack_cursor       = false,
-  update_cwd          = false,
-  update_to_buf_dir   = {
-    enable = true,
-    auto_open = true,
-  },
-  diagnostics = {
-    enable = false,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    }
-  },
-  update_focused_file = {
-    enable      = false,
-    update_cwd  = false,
-    ignore_list = {}
-  },
-  system_open = {
-    cmd  = nil,
-    args = {}
-  },
-  filters = {
-    dotfiles = false,
-    custom = {}
-  },
-  git = {
-    enable = true,
-    ignore = true,
-    timeout = 500,
-  },
-  view = {
-    width = 80,
-    height = 30,
-    hide_root_folder = false,
-    side = 'left',
-    auto_resize = true,
-    mappings = {
-      custom_only = true,
-      -- default mappings
-      list = {
-          { key = {"<CR>"}, action = "edit_no_picker" },
-          { key = "<C-v>",                        action = "vsplit" },
-          { key = "<C-x>",                        action = "split" },
-          { key = "<C-t>",                        action = "tabnew" },
-          { key = "<",                            action = "prev_sibling" },
-          { key = ">",                            action = "next_sibling" },
-          { key = "P",                            action = "parent_node" },
-          { key = "h",                            action = "close_node" },
-          { key = "l",                            action = "dir_open" },
-          { key = "<Tab>",                        action = "preview" },
-          { key = "R",                            action = "refresh" },
-          { key = "n",                            action = "create" },
-          { key = "d",                            action = "remove" },
-          { key = "D",                            action = "trash" },
-          { key = "r",                            action = "rename" },
-          { key = "m",                            action = "cut" },
-          { key = "c",                            action = "copy" },
-          { key = "p",                            action = "paste" },
-          { key = "q",                            action = "close" },
-      }
+require('nvim-tree').setup({
+    actions = {
+        open_file = {
+            quit_on_open        = true,
+        }
     },
-    number = false,
-    relativenumber = false,
-    signcolumn = "yes"
-  },
-  trash = {
-    cmd = "trash",
-    require_confirm = true
-  }
-}
+    disable_netrw       = true,
+    hijack_netrw        = true,
+    open_on_setup       = false,
+    ignore_ft_on_setup  = {},
+    auto_close          = true,
+    open_on_tab         = false,
+    hijack_cursor       = false,
+    update_cwd          = false,
+    update_to_buf_dir   = {
+        enable = true,
+        auto_open = true,
+    },
+    diagnostics = {
+        enable = false,
+        icons = {
+          hint = "",
+          info = "",
+          warning = "",
+          error = "",
+        }
+    },
+    update_focused_file = {
+        enable      = false,
+        update_cwd  = false,
+        ignore_list = {}
+    },
+    system_open = {
+        cmd  = nil,
+        args = {}
+    },
+    filters = {
+        dotfiles = false,
+        custom = {}
+    },
+    git = {
+        enable = true,
+        ignore = true,
+        timeout = 500,
+    },
+    view = {
+        width = 60,
+        height = 30,
+        hide_root_folder = false,
+        side = 'right',
+        auto_resize = true,
+        mappings = {
+          custom_only = true,
+          -- default mappings
+          list = {
+              { key = {"<CR>"}, action = "edit_no_picker" },
+              { key = "<C-v>",                        action = "vsplit" },
+              { key = "<C-x>",                        action = "split" },
+              { key = "<C-t>",                        action = "tabnew" },
+              { key = "<",                            action = "prev_sibling" },
+              { key = ">",                            action = "next_sibling" },
+              { key = "P",                            action = "parent_node" },
+              { key = "h",                            action = "close_node" },
+              { key = "l",                            action = "dir_open" },
+              { key = "<Tab>",                        action = "preview" },
+              { key = "R",                            action = "refresh" },
+              { key = "n",                            action = "create" },
+              { key = "d",                            action = "remove" },
+              { key = "D",                            action = "trash" },
+              { key = "r",                            action = "rename" },
+              { key = "m",                            action = "cut" },
+              { key = "c",                            action = "copy" },
+              { key = "p",                            action = "paste" },
+              { key = "q",                            action = "close" },
+          }
+        },
+        number = false,
+        relativenumber = false,
+        signcolumn = "yes"
+    },
+    trash = {
+        cmd = "trash",
+        require_confirm = true
+    }
+})
 END
 nnoremap <leader>f :NvimTreeFocus <CR>
 nnoremap <leader>F :NvimTreeFindFile<CR>

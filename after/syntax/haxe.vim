@@ -5,8 +5,8 @@ syn keyword haxeTODO TODO FIXME TOFIX LOGS NOTE QUESTION IDEA
 
 syn match haxeAt "@[^ ]\+" contained
 syn match formatterOff "@formatter:off"
-syn match haxeComment "//.*" contains=haxeTODO,@Spell,ZDatetime,formatterOff,ZStop,CommentKeywordGreen,CommentKeywordBlue,CommentKeywordGreen
-syn region haxeComment2 start=+/\*+ end=+\*/+ contains=haxeTODO,@Spell,ZDatetime,haxeAt,MDTitle,MDBullet,ZStop,CommentKeywordGreen,CommentKeywordBlue,CommentKeywordGreen
+syn match haxeComment "//.*" contains=haxeTODO,@Spell,ZDatetime,formatterOff,ZStop,ZCommentSpecial1,ZCommentSpecial2,ZCommentSpecial3
+syn region haxeComment2 start=+/\*+ end=+\*/+ contains=haxeTODO,@Spell,ZDatetime,haxeAt,MDTitle,MDBullet,ZStop,ZCommentSpecial1,ZCommentSpecial2,ZCommentSpecial3
 syn match MDTitle "\v^\s*#+ .*" contained
 syn match MDBullet '\v^\s*\-' contained
 

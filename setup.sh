@@ -22,10 +22,6 @@ if [ ! -e "plug.vim" ]; then
 fi
 popd
 
-if [ ! -e "init.vim" ]; then
-    ln -s vimrc init.vim
-fi
-
 CONFIG_FDR="$HOME/.config"
 mkdir -p "${CONFIG_FDR}"
 pushd ${CONFIG_FDR}
