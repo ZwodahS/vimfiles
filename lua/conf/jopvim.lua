@@ -5,3 +5,4 @@ require('jopvim').setup({
 })
 
 m.nmap('<leader>j', '<cmd>lua require("jopvim.telescope").joplin_notes()<CR>')
+m.nmap('<leader>k', '<cmd>lua require("jopvim.telescope").joplin_folders()<CR>')
