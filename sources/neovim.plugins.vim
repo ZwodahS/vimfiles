@@ -66,6 +66,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-lua/popup.nvim'
 " 03 Feb 2022 RE-ORG
 Plug 'nvim-lua/plenary.nvim'
+" 31 Mar 2022 ADDED
+Plug 'MunifTanjim/nui.nvim'
 
 """" Look at any tag in a popup
 " 03 Feb 2022 RE-ORG
@@ -174,6 +176,7 @@ Plug 'marcweber/vim-haxe-syntax', { 'for': 'haxe' }
 
 """""""""""NOT CONFIRMED"""""""""""
 Plug 'TimUntersberger/neogit'
+Plug 'petertriho/nvim-scrollbar'
 
 """"" WIP
 Plug 'ZwodahS/jopvim.nvim'

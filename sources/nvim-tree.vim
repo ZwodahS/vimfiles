@@ -1,4 +1,3 @@
-let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
 let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
 let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
@@ -58,21 +57,17 @@ lua << END
 require('nvim-tree').setup({
     actions = {
         open_file = {
-            quit_on_open        = true,
+            quit_on_open = true,
+            resize_window = true,
         }
     },
     disable_netrw       = true,
     hijack_netrw        = true,
     open_on_setup       = false,
     ignore_ft_on_setup  = {},
-    auto_close          = true,
     open_on_tab         = false,
     hijack_cursor       = false,
     update_cwd          = false,
-    update_to_buf_dir   = {
-        enable = true,
-        auto_open = true,
-    },
     diagnostics = {
         enable = false,
         icons = {
@@ -105,7 +100,6 @@ require('nvim-tree').setup({
         height = 30,
         hide_root_folder = false,
         side = 'right',
-        auto_resize = true,
         mappings = {
           custom_only = true,
           -- default mappings
@@ -134,6 +128,11 @@ require('nvim-tree').setup({
         number = false,
         relativenumber = false,
         signcolumn = "yes"
+    },
+    renderer = {
+        indent_markers = {
+            enable = true,
+        }
     },
     trash = {
         cmd = "trash",

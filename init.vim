@@ -32,6 +32,7 @@ let $vim_home=expand('~/.vim')
 let $vim_rc=$vim_home."/init.vim"
 let $sources=$vim_home."/sources"
 let $vim_plug_file=$vim_home."/sources/neovim.plugins.vim"
+let g:vim_home = expand('~/.vim')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" For vim-plug
 call plug#begin($vim_home."/installed_plugins")
@@ -49,22 +50,6 @@ lua require('conf.settings')
 lua require('conf.theme')
 lua require('conf.lsp')
 
-""" Generic setup
-syntax enable
-set title                                           " Display path at top
-set backspace=2                                     " Allow backspace to delete other keys
-set scroll=3                                        " Set scroll for ctrl-U ctrl-D
-set autoread                                        " Auto read file if it has been changed outside but not in vim
-set hlsearch                                        " highlight search term
-set hidden                                          " allow buffer to switch when not saved
-set nowrap                                          " Disable line wrap
-set directory=~/.vim/.swp//                         " set directory to store swp
-set noshowmode                                      " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-set laststatus=2                                    " Always display the statusline in all windows
-set showtabline=2                                   " Always display the tabline, even if there is only one tab
-set mouse=                                          " disable mouse, mainly for macvim
-set autoindent
-set noequalalways
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """" For tabbing (default tabbing)
 set softtabstop=4
@@ -136,12 +121,13 @@ lua require('conf.undotree')
 lua require('conf.nvim-cmp')
 lua require('conf.tag')
 lua require('conf.jopvim')
-lua require('test.neogit')
+lua require('conf.nvim-tree')
+lua require('conf.lines')
+lua require('test.others')
 
 "lua require('joplin').fetchNotesIndex()
 
 source $sources/nvim-tree.vim
-source $sources/lines.vim
 source $sources/colorizer.vim
 source $sources/vaxe.vim
 " Non-plugin
@@ -155,8 +141,8 @@ augroup syntaxchange
     autocmd Syntax * syn match ZDatetime "\(Mon\|Tue\|Wed\|Thu\|Fri\|Sat\|Sun\) \(\d\d:\d\d:\d\d\) \d\+ \(Jan\|Feb\|Mar\|Apr\|May\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\) \d\d\d\d"
     autocmd Syntax * syn keyword ZStop ISTOPHERE
     autocmd Syntax * syn keyword ZSpecial Assert
-    autocmd Syntax * syn keyword ZCommentSpecial1 Hack Assumption Future Thoughts Idea Question
     autocmd Syntax * syn match ZCommentSpecial1 "@fixme"
+    autocmd Syntax * syn match ZCommentSpecial1 "@hack"
     autocmd Syntax * syn match ZCommentSpecial1 "@todo"
     autocmd Syntax * syn match ZCommentSpecial2 "@idea"
     autocmd Syntax * syn match ZCommentSpecial2 "@future"

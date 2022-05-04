@@ -7,10 +7,16 @@ m.imap('<C-H>', '<NOP>')
 m.nmap('<C-Q>', '<NOP>')
 m.nmap('<C-T>', '<NOP>')
 
+------ Options
+vim.opt.listchars = { eol = '↵', tab = '¬ ' }
+vim.opt.wrap = false
+vim.opt.directory = vim.g.vim_home .. "/.swp"
+vim.opt.colorcolumn = "119,120"
+vim.opt.showmode = false
+vim.opt.showtabline = 2
+vim.opt.equalalways = false
 ------ various key mappings
 -- set the character for EOL and tabs
-vim.opt.listchars = { eol = '↵', tab = '¬ ' }
--- vim.opt.listchars = { tab = '¬' }
 m.nmap('<leader>l', ':set list!<CR>')
 -- line number and relative number switching
 m.nmap('<leader>nn', ':set number!<CR>')
@@ -22,17 +28,6 @@ m.nmap('<leader>gc', ':let @/= ""<CR>')
 m.nmap('<leader>w', ':set wrap!<CR>')
 -- Toggle paste mode, (aka turn off smart indent)
 m.nmap('<leader>i', ':set paste!<CR>')
-
--- update vimrc
--- 28 Feb 2022 disable for now
--- m.nmap('<leader>uv', ':source $MYVIMRC<CR>')
--- update syntax highlighting
--- 28 Feb 2022 disable for now
--- m.nmap('<leader>uf', ':syntax sync fromstart<CR>')
--- remove syntax for this file
--- 28 Feb 2022 disable for now
--- m.nmap('<leader>sf', ':setlocal syntax=text<CR>')
-
 ---- Folding remap
 -- - to fold/close +/= to open
 -- map C-j C-k for moving by fold

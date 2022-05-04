@@ -1,8 +1,5 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Tabline configuration
-" via https://github.com/rafcamlet/tabline-framework.nvim
-
-lua << EOF
+---- Tabline configuration
+-- via https://github.com/rafcamlet/tabline-framework.nvim
 local colors = require("tokyonight.colors").setup()
 local status_color = require("lualine.themes.tokyonight")
 
@@ -56,13 +53,10 @@ require('tabline_framework').setup({
   -- This is the place where you do your magic!
   render = render,
 })
-EOF
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Statusline configuration
-" via https://github.com/nvim-lualine/lualine.nvim
-
-lua << EOF
+----
+-- Statusline configuration
+-- via https://github.com/nvim-lualine/lualine.nvim
 local function mixed()
   local space_pat = [[\v^ +]]
   local tab_pat = [[\v^\t+]]
@@ -114,4 +108,3 @@ require('lualine').setup {
       tabline = {},
       extensions = {}
 }
-EOF

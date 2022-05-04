@@ -65,7 +65,7 @@
     "prefix": ["mListen", "dispatcher.listen"],
     "body": [
       "// @:listen $TM_FILENAME_BASE ${1:Message} ${2:0} $4",
-      "${3:dispatcher}.listen($1.MessageType, function(message: zf.Message) {",
+      "${3:dispatcher}.listen($1.MessageType, (message: zf.Message) -> {",
       "\tfinal m = cast(message, $1);",
       "}, $2);"
     ],
